@@ -52,18 +52,18 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 Hello {},
-My Name is Naruto Uzamaki🔥
-I AM A Young Ninja of Konohagakure. 
+My Name is Emilia❄
+I am the Silver Haired Half Elf. 
 I will help you manage your group.
 TO KNOW MY COMMANDS CLICK /help.
 
 If more Assistance is needed, Contact Dev: @izumibotofficial
-《DO NOT ASK SAITAMA SUPPORT FOR ISSUES, WE HAVE OUR OWN SUPPORT GROUP》
+《DO NOT BOTHER SAITAMA SUPPORT FOR ISSUES, WE HAVE OUR OWN SUPPORT GROUP》
 """
 
 HELP_STRINGS = """
 Hey there! My name is *{}*.
-I'm the loved Young Ninja, Naruto! I will help you manage your groups! Have a look at the following for an idea of some of \
+I'm the loved Half Elf, Emilia! I will help you manage your groups! Have a look at the following for an idea of some of \
 the things I can help you with. 
 
 *Main* commands available:
@@ -81,8 +81,8 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/7adc7f708ed85e38467bd.mp4"
-YUMEKOIMGSTART = "https://telegra.ph/file/7adc7f708ed85e38467bd.mp4"
+SAITAMA_IMG = "https://telegra.ph/file/abd69965f2df5d665b411.mp4"
+YUMEKOIMGSTART = "https://telegra.ph/file/abd69965f2df5d665b411.mp4"
 
 DONATE_STRING = """donate to the original writer of the Base code, Paul
 There are two ways of supporting him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
@@ -183,14 +183,14 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(                   
                           [[
                               InlineKeyboardButton(
-                              text="🔥Add Naruto To Your Group🔥",
+                              text="❄Add Emilia To Your Group❄",
                               url="t.me/{}?startgroup=true".format(
                                   context.bot.username))
                           ], 
                           [
                               InlineKeyboardButton(
-                              text="🍁 Support Group 🍁",
-                              url=f"https://t.me/NarutoUzamakiBotSupport"),
+                              text="📤 Support Group 📥",
+                              url=f"https://t.me/EmiliaAnimeBotSupport"),
                               InlineKeyboardButton(
                               text="✨ Anime Openings ✨",
                               url="https://t.me/animeopendings")
