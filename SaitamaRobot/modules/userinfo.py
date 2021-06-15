@@ -273,8 +273,7 @@ def info(update: Update, context: CallbackContext):
     if user.id == OWNER_ID:
         text += "\n\nThis person you see here is GOD, Their Magic level is in top heavenly level."
         disaster_level_present = True
-    elif user.id in DEV_USERS:f
-..
+    elif user.id in DEV_USERS:
         text += "\n\nThis user is a Assistance to GOD, This user is in the sub Heavenly Level of Magic"
         disaster_level_present = True
     elif user.id in DRAGONS:
