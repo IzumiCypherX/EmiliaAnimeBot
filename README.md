@@ -1,4 +1,4 @@
-![Yumeko Jabami](https://telegra.ph/file/92b754666e7468c923abd.jpg) 
+![Emilia]() 
 # Yumeko Jabami
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6141417ceaf84545bab6bd671503df51)](https://app.codacy.com/gh/AnimeKaizoku/SaitamaRobot?utm_source=github.com&utm_medium=referral&utm_content=AnimeKaizoku/SaitamaRobot&utm_campaign=Badge_Grade_Settings)  [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://perso.crans.org/besson/LICENSE.html) [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com) [![Updates channel!](https://img.shields.io/badge/Join%20Channel-!-red)](https://t.me/IGRIS_BOT1)
 
@@ -7,10 +7,10 @@ A modular Telegram Python bot running on python3 with a sqlalchemy database.
 
 Originally a Marie fork, Yumeko Jabami evolved further and was built to be more robust and more dedicated to Anime Chats. 
 
-Can be found on telegram as [Yumeko Jabami](https://t.me/yumekojabami_robot).
+Can be found on telegram as [Emilia](https://t.me/EmiliaAnimeBot).
 
-The Support group can be reached out to at [Devil's Territory](https://t.me/joinchat/SSYHLu5SbWEJRxjl), where you can ask for help about [Yumeko Jabami](https://t.me/joinchat/SSYHLu5SbWEJRxjl),discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
-
+The Support group can be reached out to at [Anime Hub](https//t.me/fuckinweebs), where you can ask for support about [Emilia](https://t.me/EmiliaAnimeBot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
+Else, You Can ask Developer [Izumi](https://t.me/izumibotofficial)
 
 
 ## How to setup/deploy.
