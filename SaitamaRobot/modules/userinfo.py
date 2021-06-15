@@ -271,26 +271,27 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person here is the 'GOD OF WAR' , his cultivation level is in top heavenly level."
+        text += "\n\nThis person you see here is GOD, Their Magic level is in top heavenly level."
         disaster_level_present = True
-    elif user.id in DEV_USERS:
-        text += "\n\nThis user is a 'GODLYDEMON' , Cultivation level of this user is in 8th heavens"
+    elif user.id in DEV_USERS:f
+..
+        text += "\n\nThis user is a Assistance to GOD, This user is in the sub Heavenly Level of Magic"
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe person here is one of the '10 COMMANDMENTS' , he is in the 6th heavenly level of cultivation."
+        text += "\n\nThe person here is one of the SnatcherClass, they posses the Authority to Snatch Anyone's Soul."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe person have the authority to seal anyones soul , with cultivation level high sky."
+        text += "\n\nThe person have the authority to seal anyones Heart, with Magic level high sky."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThis user is one of the'WAR-COMMANDERS' , his cultivation level is in 8th ground group."
+        text += "\n\nThis user is one of the Ultimate Warriors, his cultivation level is in 8th ground group."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThis user is one of the DEMON RACE , cultivation level of this users are in 6th Sky level."
+        text += "\n\nThis user is one of the Warrior Race, cultivation level of this users are in 6th Sky level."
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/YumekoJabamiUpdates/5">?</a>]'.format(
+        text += ' [<a href="https://t.me/EmiliaAnimeBotSupport/123">?</a>]'.format(
             bot.username)
 
     try:
@@ -458,7 +459,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == bot.id and sender_id not in DEV_USERS:
             message.reply_text(
-                "Erm... yeah, I only trust * Lord Devil * to set my bio.")
+                "Erm... yeah, I only trust * Lord Izumi * to set my bio.")
             return
 
         text = message.text
