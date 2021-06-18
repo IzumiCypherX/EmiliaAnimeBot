@@ -18,6 +18,7 @@ CUDDLE_TEMPLATES = (
     "{user1} cuddles {user2} with love whole night.",
     "It's cuddle time for {user1} and {user2}.",
     "{user1} cuddled {user2}. Such a romantic moment",
+    "No Cuddles For {user2}!",
 )
 
 FLIRT_TEXT = (
