@@ -107,7 +107,7 @@ IGRIS_IMG = (
      "https://i.imgur.com/HwMKx0Z.jpg", 
      "https://i.imgur.com/mHhK3GO.jpg", 
      "https://i.imgur.com/Eg2BV3V.jpg", 
-     "https://i.imgur.com/GXmMZ2o.jpg"
+     "https://telegra.ph/file/6ae266b389380d0edc23b.jpg"
 
      ) 
 
