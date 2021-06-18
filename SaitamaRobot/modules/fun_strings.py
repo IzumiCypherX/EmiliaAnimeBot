@@ -104,7 +104,7 @@ DARE_STRINGS = (
      )
 
 IGRIS_IMG = (
-     "https://i.imgur.com/HwMKx0Z.jpg", 
+     "https://telegra.ph/file/17f7cf494420f54a4c53a.jpg",
      "https://telegra.ph/file/aebd88f3b99e53e144f63.jpg",
      "https://telegra.ph/file/2f4a5342b4e5a11f79b3a.jpg",
      "https://telegra.ph/file/6ae266b389380d0edc23b.jpg"
