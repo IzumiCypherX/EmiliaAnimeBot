@@ -271,7 +271,7 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person you see here is Otsutsuki, They are the GOB OF CHAKRA!"
+        text += "\n\nThis person you see here is Otsutsuki, They are the GOD OF CHAKRA!"
         disaster_level_present = True
     elif user.id in DEV_USERS:
         text += "\n\nThis user is a Hokage, The GOD OF SHINOBI!"
