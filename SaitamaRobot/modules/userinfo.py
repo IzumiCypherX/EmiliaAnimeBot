@@ -271,26 +271,26 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person you see here is GOD, Their Magic level is in top heavenly level."
+        text += "\n\nThis person you see here is Otsutsuki, They are the GOB OF CHAKRA!"
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is a Assistance to GOD, This user is in the sub Heavenly Level of Magic"
+        text += "\n\nThis user is a Hokage, The GOD OF SHINOBI!"
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe person here is one of the SnatcherClass, they posses the Authority to Snatch Anyone's Soul."
+        text += "\n\nThe person here is one of the Shadow Hokage, Their Ranking is UCHIHA GHOST."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe person have the authority to seal anyones Heart, with Magic level high sky."
+        text += "\n\nThis person here is one of the Assassination Squad, Namely, ANBU."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThis user is one of the Ultimate Warriors, his cultivation level is in 8th ground group."
+        text += "\n\nThis user is one of those JONIN, Their Group is called the Deadly Trio."
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThis user is one of the Warrior Race, cultivation level of this users are in 6th Sky level."
+        text += "\n\nThis user is one of the CHUNINs, The Three Way DEADLOCK"
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/EmiliaAnimeBotSupport/123">?</a>]'.format(
+        text += ' [<a href="https://t.me/EmiliaAnimeBotSupport/1312">?</a>]'.format(
             bot.username)
 
     try:
