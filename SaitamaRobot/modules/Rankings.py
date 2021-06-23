@@ -63,16 +63,16 @@ def addcommandment(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        message.reply_text("This member already have a commandment")
+        message.reply_text("This member already is a Hokage! ")
         return ""
 
     if user_id in DEMONS:
-        rt += "Requested HA to give a commandment to a Supreme Demon."
+        rt += "Requested HA to give Hokage to this User."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "Requested HA to give a commandment to a War Commander."
+        rt += "Requested HA to give a Shadow Hokage to an Anbu."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -83,7 +83,7 @@ def addcommandment(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully Gave a commandment to this user".format(
+        rt + "\nSuccessfully Gave a Rank to this user".format(
             user_member.first_name))
 
     log_message = (
@@ -122,12 +122,12 @@ def addsupreme(
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "Requested DP to take back Commandment of this demon "
+        rt += "Requested DP to take back Rank of this demon "
         data['sudos'].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        message.reply_text("This user is already a Supreme Demon.")
+        message.reply_text("This user already has a Rank.")
         return ""
 
     if user_id in WOLVES:
