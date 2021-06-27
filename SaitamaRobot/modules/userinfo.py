@@ -107,7 +107,7 @@ def hpmanager(user):
 
 def make_bar(per):
     done = min(round(per / 10), 10)
-    return "💠" * done + "🔸️" * (10 - done)
+    return "✰" * done + "☆" * (10 - done)
 
 
 @run_async
@@ -224,9 +224,9 @@ def info(update: Update, context: CallbackContext):
         return
 
     rep = message.reply_text(
-        "<code>Appraising...</code>", parse_mode=ParseMode.HTML)
+        "<code>Gathering Info...</code>", parse_mode=ParseMode.HTML)
 
-    text = (f"╒═══「<b> Appraisal results:</b> 」\n"
+    text = (f"╒═══「<b> Information Gathered:</b> 」\n"
             f"ID: <code>{user.id}</code>\n"
             f"First Name: {html.escape(user.first_name)}")
 
@@ -484,9 +484,9 @@ def __user_info__(user_id):
     me = html.escape(sql.get_user_me_info(user_id) or "")
     result = ""
     if me:
-        result += f"<b>About user:</b>\n{me}\n"
+        result += f"<b>Self Satisfaction:</b>\n{me}\n"
     if bio:
-        result += f"<b>What others say:</b>\n{bio}\n"
+        result += f"<b>What others Speak Of:</b>\n{bio}\n"
     result = result.strip("\n")
     return result
 
