@@ -171,7 +171,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Oh,the Devil himself has joined the chat !",
+                    "Oh,The Izumi himself has joined the chat !",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
@@ -181,7 +181,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Whoa! A member of the 🍁SOLO•GUILD🍁 just joined!",
+                    "Whoa! A member of the 🍁SHINOBI•RANKS🍁 just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -189,7 +189,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "GOD! I wasn't expecting a high level demon in here!",
+                    "GOD! I wasn't expecting a high level Shinobi in here!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -197,7 +197,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "Huh a Demon! A respected demon from hell just arrived!",
+                    "Huh a Shinobi?! A respected Shinobi just arrived!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -205,14 +205,14 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
-                    "OH YEAH! A B-RANK Hunter just joined!",
+                    "OH YEAH! A Chunin just joined!",
                     reply_to_message_id=reply)
                 continue
 
             # Welcome Tigers
             elif new_mem.id in WOLVES:
                 update.effective_message.reply_text(
-                    "JEZZ! I wasn't expecting a demon of this level to come here!",
+                    "JEZZ! I wasn't expecting a Shinobi to come here!",
                     reply_to_message_id=reply)
                 continue
 
