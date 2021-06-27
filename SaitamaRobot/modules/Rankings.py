@@ -182,7 +182,7 @@ def addwarlevel(update: Update, context: CallbackContext) -> str:
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is a Supreme Demon , denoting to War Commander."
+        rt += "This user is a Shinobi, denoting to War Commandment."
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
@@ -238,17 +238,17 @@ def addrace(update: Update, context: CallbackContext) -> str:
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is already a Supreme Demon , denoting to a normal Demon"
+        rt += "This user is already a Supreme Shinobi , denoting to a normal Demon"
         data['supports'].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "This user is already a War Commander , demoting to Normal Demon."
+        rt += "This user is already a War Commander , demoting to Normal Shinobi."
         data['whitelists'].remove(user_id)
         WOLVES.remove(user_id)
 
     if user_id in TIGERS:
-        message.reply_text("This user is already a Member of Demon Race.")
+        message.reply_text("This user is already a Member of Shinobi.")
         return ""
 
     data['tigers'].append(user_id)
@@ -357,7 +357,7 @@ def removesupreme(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a A-RANK HUNTER!")
+        message.reply_text("This user is not a A-RANK Shinobi!")
         return ""
 
 
@@ -448,7 +448,7 @@ def removerace(update: Update, context: CallbackContext) -> str:
 @run_async
 @whitelist_plus
 def demonrace(update: Update, context: CallbackContext):
-    reply = "<b>Known members of Demon Grace🎗:</b>\n"
+    reply = "<b>Known members of Shinobi Grace🎗:</b>\n"
     bot = context.bot
     for each_user in WOLVES:
         user_id = int(each_user)
@@ -480,7 +480,7 @@ def warcommanders(update: Update, context: CallbackContext):
 @whitelist_plus
 def supremedemons(update: Update, context: CallbackContext):
     bot = context.bot
-    reply = "<b>Known Supreme Demons🥇:</b>\n"
+    reply = "<b>Known Supreme Shinobi🥇:</b>\n"
     for each_user in DEMONS:
         user_id = int(each_user)
         try:
@@ -496,7 +496,7 @@ def supremedemons(update: Update, context: CallbackContext):
 def commandments(update: Update, context: CallbackContext):
     bot = context.bot
     true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>Known Demons with Commandments 🏅:</b>\n"
+    reply = "<b>Known Shinobis with Commandments 🏅:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -512,7 +512,7 @@ def commandments(update: Update, context: CallbackContext):
 def paradise(update: Update, context: CallbackContext):
     bot = context.bot
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>🍁Demons with access to Paradise⚡️:</b>\n"
+    reply = "<b>🍁Shinobis with access to Chakra⚡️:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
