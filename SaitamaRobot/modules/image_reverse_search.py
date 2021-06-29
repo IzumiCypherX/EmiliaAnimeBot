@@ -38,7 +38,7 @@ def reverse(update: Update, context:CallbackContext):
         elif reply.document:
             file_id = reply.document.file_id
         else:
-            msg.reply_text("Reply to an image or sticker to lookup.")
+            msg.reply_text("Reply to an image or sticker to lookup!")
             return
         image_file = bot.get_file(file_id)
         image_file.download(imagename)
@@ -68,7 +68,7 @@ def reverse(update: Update, context:CallbackContext):
             urllib.request.urlretrieve(img_link, imagename)
         except HTTPError as HE:
             if HE.reason == 'Not Found':
-                msg.reply_text("Image not found.")
+                msg.reply_text("Cannot Find This Query.")
                 return
             elif HE.reason == 'Forbidden':
                 msg.reply_text("Couldn't access the provided link, The website might have blocked accessing to the website by bot or the website does not existed.")
@@ -90,7 +90,7 @@ def reverse(update: Update, context:CallbackContext):
         fetchUrl = response.headers['Location']
 
         if response != 400:
-            xx = bot.send_message(chat_id, "Image was successfully uploaded to Google."
+            xx = bot.send_message(chat_id, "Here Take The Waifu bsdk"
                                   "\nParsing it, please wait.", reply_to_message_id=rtmid)
         else:
             xx = bot.send_message(chat_id, "Google told me to go away.", reply_to_message_id=rtmid)
@@ -105,14 +105,14 @@ def reverse(update: Update, context:CallbackContext):
             imgspage = match['similar_images']
 
         if guess and imgspage:
-            xx.edit_text(f"[{guess}]({fetchUrl})\nProcessing...", parse_mode='Markdown', disable_web_page_preview=True)
+            xx.edit_text(f"[{guess}]({fetchUrl})\nSᴇᴀʀᴄʜɪɴɢ ғᴏʀ ᴛʜʀ ɪɴᴀɢʀ...", parse_mode='Markdown', disable_web_page_preview=True)
         else:
-            xx.edit_text("Couldn't find anything.")
+            xx.edit_text("𝑁𝑜𝑡ℎ𝑖𝑛𝑔 𝑊𝑎𝑠 𝐹𝑜𝑢𝑛𝑑, 𝑆𝑎𝑑𝑙𝑦.")
             return
 
         images = scam(imgspage, lim)
         if len(images) == 0:
-            xx.edit_text(f"[{guess}]({fetchUrl})\n[Visually similar images]({imgspage})"
+            xx.edit_text(f"[{guess}]({fetchUrl})\n[Visually alike Results]({imgspage})"
                           "\nCouldn't fetch any images.", parse_mode='Markdown', disable_web_page_preview=True)
             return
 
