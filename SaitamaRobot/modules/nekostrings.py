@@ -11,8 +11,31 @@ NEKO_GIFS = [
       "CgACAgQAAx0CS3FrwgABA7QzYN4RjoFTcPK4m6uYv7YrY7PEEh0AAk8CAAIKeKRSrRPpeh2C9XQgBA"
    ]
 
+
+
 NEKO_TEXT = [
      "@weebarsh, the Neko, Scratches you!",
      "Nya! {user1} is a Neko!"
    ]
      
+CATTO_GIFS = [
+     "CgACAgQAAxkBAAIJ_2DeKUy5t1snrwG5JLFMjUc-8uLbAALLBwACBdNQU1arAX5_1F_7IAQ",
+     "CgACAgIAAxkBAAIKAWDeKVb0U7CcjMa9CeJdDxpaWZbUAAJ4CgACJYfJSlV3Kl5rpvBxIAQ",
+     "CgACAgQAAxkBAAIKAAFg3ilR2PkQOXYNmDDkOnYbE5McXAACjwIAAqjevVHVJ1dqqXmVbCAE",
+     "CgACAgQAAxkBAAIKAmDeKVvPemPy0nznKEj0HTl2XntbAAK3AgAC62NsURUCu8Fufv1SIAQ",
+     "CgACAgQAAxkBAAIKA2DeKWHmgoz28Ln2m0zbnm5XJxQ4AAJVAgACsx2UUr0joi8r6Wk1IAQ",
+     "CgACAgQAAxkBAAIKBGDeKWef8xHiF017pg3yfKKulCknAAKwAgAC3BIlUgABIeW601qZPSAE",
+     "CgACAgQAAxkBAAIKBWDeKWwS2lfVRh_SffXbxZvG34ZGAAJAAgACoNmFUhHMKYTMCDTEIAQ",
+     "CgACAgQAAxkBAAIKBmDeKXFdBFSPHgGShQl_4wt4fQvYAAJyAgACRCiNULIN3-yqjEPTIAQ",
+     "CgACAgQAAxkBAAIKB2DeKXd0oBthVOKTlnE9IRx3vZO0AAJkAgACVp2FUkL9sI849nBVIAQ",
+     "CgACAgUAAxkBAAIKCGDeIAMDOcdV6ILZ9vw6KPA-Z6lQAAJMAAPix0lUneXvfTnra18gBA"
+    ]
+
+
+CATTO_TEXT = [
+      "Cat Is Sleeping Nya!",
+      "Catto Just Scratched you",
+      "@weebarsh is the Catto Lord",
+      "Catto is playing with @izumibotofficial now!",
+      "Catto Loves You ❤"
+    ]
