@@ -82,4 +82,9 @@ def meow(update: Update, context: CallbackContext):
     if meow_type == "Text":
         temp = random.choice(nekostrings.CATTO_TEXT)
         reply = temp.format(user1=user1, user2=user2)
-        reply_to.reply_text(reply, parse_mode=ParseMode.
+        reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
+
+__help__ = """
+ • `/nyaa`*:* Use this to get cute Anime Neko Gifs!
+ • `/meow`*:* Use this to get cute Real Cat Gifs!
+"""
