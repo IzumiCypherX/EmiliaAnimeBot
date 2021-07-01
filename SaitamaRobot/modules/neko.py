@@ -98,3 +98,6 @@ dispatcher.addhandler(NYAA_HANDLER)
 dispatcher.addhandler(MEOW_HANDLER)
 
 __mod_name__ = "Neko"
+
+__command_list__ = [
+'nyaa','meow'
