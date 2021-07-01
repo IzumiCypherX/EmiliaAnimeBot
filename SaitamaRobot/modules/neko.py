@@ -100,4 +100,8 @@ dispatcher.addhandler(MEOW_HANDLER)
 __mod_name__ = "Neko"
 
 __command_list__ = [
-'nyaa','meow'
+       "nyaa", "meow"
+]
+__handlers__ = [
+       NYAA_HANDLER, MEOW_HANDLER
+]
