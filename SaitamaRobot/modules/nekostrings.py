@@ -10,4 +10,11 @@ NEKO_GIFS = [
     "CgACAgQAAxkBAAIJ6WDeBL9OER_VyjVXadb8PCe7g13xAAJyAgACRCiNULIN3-yqjEPTIAQ",
     "CgACAgQAAxkBAAIJ6mDeBL8PuBBIVbt6GZAAAZYkOugRoAACZAIAAladhVJC_bCPOPZwVSAE"
   ]
-  
+
+
+
+NEKO_TEXT = [
+     "@weebarsh, the Neko, Scratches you!",
+     "Nya! {user1} is a Neko!"
+   ]
+     
