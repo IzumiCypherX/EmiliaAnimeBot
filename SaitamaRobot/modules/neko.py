@@ -47,3 +47,39 @@ def nyaa(update: Update, context: CallbackContext):
         temp = random.choice(nekostrings.NEKO_TEXT)
         reply = temp.format(user1=user1, user2=user2)
         reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
+
+
+
+
+@run_async
+def meow(update: Update, context: CallbackContext):
+    bot = context.bot
+    args = context.args
+    message = update.effective_message
+
+    reply_to = message.reply_to_message if message.reply_to_message else message
+
+    curr_user = html.escape(message.from_user.first_name)
+    user_id = extract_user(message, args)
+
+    if user_id:
+        meow_user = bot.get_chat(user_id)
+        user1 = curr_user
+        user2 = html.escape(neko_user.first_name)
+
+    else:
+        user1 = bot.first_name
+        user2 = curr_user
+
+    meow_type = random.choice(("Text", "Gif"))
+    if meow_type == "Gif":
+        try:
+            temp = random.choice(nekostrings.CATTO_GIFS)
+            reply_to.reply_animation(temp)
+        except BadRequest:
+            nyaa_type = "Text"
+
+    if meow_type == "Text":
+        temp = random.choice(nekostrings.CATTO_TEXT)
+        reply = temp.format(user1=user1, user2=user2)
+        reply_to.reply_text(reply, parse_mode=ParseMode.
