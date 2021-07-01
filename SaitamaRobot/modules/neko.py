@@ -88,3 +88,7 @@ __help__ = """
  • `/nyaa`*:* Use this to get cute Anime Neko Gifs!
  • `/meow`*:* Use this to get cute Real Cat Gifs!
 """
+
+
+NYAA_HANDLER = DisableAbleCommandHandler("nyaa", nyaa)
+MEOW_HANDLER = DisableAbleCommandHandler("meow", meow)
