@@ -7,7 +7,7 @@ from telegram import ParseMode, Update, ChatPermissions
 from telegram.ext import CallbackContext, run_async
 from telegram.error import BadRequest
 
-import SaitamaRobot.modules.nekostrings as neko_strings
+import SaitamaRobot.modules.nekostrings as nekostrings
 from SaitamaRobot import dispatcher
 from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 from SaitamaRobot.modules.helper_funcs.chat_status import (is_user_admin)
@@ -38,12 +38,12 @@ def nyaa(update: Update, context: CallbackContext):
     nyaa_type = random.choice(("Text", "Gif"))
     if nyaa_type == "Gif":
         try:
-            temp = random.choice(neko_strings.NEKO_GIF)
+            temp = random.choice(nekostrings.NEKO_GIFS)
             reply_to.reply_animation(temp)
         except BadRequest:
-            cuddle_type = "Text"
+            nyaa_type = "Text"
 
-    if cuddle_type == "Text":
-        temp = random.choice(love_strings.CUDDLE_TEMPLATES)
+    if nyaa_type == "Text":
+        temp = random.choice(nekostrings.NEKO_TEXT)
         reply = temp.format(user1=user1, user2=user2)
         reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
