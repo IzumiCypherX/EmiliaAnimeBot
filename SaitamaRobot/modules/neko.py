@@ -94,8 +94,8 @@ NYAA_HANDLER = DisableAbleCommandHandler("nyaa", nyaa)
 MEOW_HANDLER = DisableAbleCommandHandler("meow", meow)
 
 
-dispatcher.addhandler(NYAA_HANDLER)
-dispatcher.addhandler(MEOW_HANDLER)
+dispatcher.add_handler(NYAA_HANDLER)
+dispatcher.add_handler(MEOW_HANDLER)
 
 __mod_name__ = "Neko"
 
