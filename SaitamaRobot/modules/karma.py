@@ -38,7 +38,7 @@ async def upvote(_, message):
     )
 
 
-@pbot.on_message(filters.text
+@pgram.on_message(filters.text
                 & filters.group
                 & filters.incoming
                 & filters.reply
@@ -67,7 +67,7 @@ async def downvote(_, message):
         f'Decremented Karma Of {user_mention} By 1 \nTotal Points: {karma}'
     )
 
-@pbot.on_message(filters.command("karma") & filters.group)
+@pgram.on_message(filters.command("karma") & filters.group)
 async def karma(_, message):
     chat_id = message.chat.id
 
