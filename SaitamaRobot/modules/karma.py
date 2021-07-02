@@ -38,7 +38,7 @@ async def upvote(_, message):
     )
 
 
-@pbot.on_message(filters.text
+@pgram.on_message(filters.text
                 & filters.group
                 & filters.incoming
                 & filters.reply
