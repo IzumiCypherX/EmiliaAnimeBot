@@ -15,7 +15,10 @@ NEKO_GIFS = [
 
 NEKO_TEXT = [
      "@weebarsh, the Neko, Scratches you!",
-     "Nya! {user1} is a Neko!"
+     "Nya! {user1} is a Neko!",
+     "My Heart Goes Meow😻",
+     "Neko Neko Niii!"
+     "{user1} nyaed {user2}"
    ]
      
 CATTO_GIFS = [
