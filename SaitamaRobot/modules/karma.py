@@ -1,7 +1,7 @@
 from SaitamaRobot import pgram
-from SaitamaRobot.utils.dbfunctions import (update_karma, get_karma, get_karmas,
+from SaitamaRobot.modules.helper_funcs.dbfunctions import (update_karma, get_karma, get_karmas,
                                    int_to_alpha, alpha_to_int)
-from SaitamaRobot.utils.filter_groups import karma_positive_group, karma_negative_group
+from SaitamaRobot.modules.helper_funcs.filter_groups import karma_positive_group, karma_negative_group
 from pyrogram import filters
 
 regex_upvote = r"^((?i)\+|\+\+|\+1|thx|tnx|ty|thank you|thanx|thanks|pro|cool|good|👍)$"
