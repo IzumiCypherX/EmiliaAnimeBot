@@ -32,7 +32,7 @@ def ban(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("I doubt that's a user.")
+        message.reply_text("My Sixth Sense says this is not a User.")
         return log_message
 
     try:
@@ -45,33 +45,33 @@ def ban(update: Update, context: CallbackContext) -> str:
             raise
 
     if user_id == bot.id:
-        message.reply_text("Oh yeah, ban myself, noob!")
+        message.reply_text("Oh yeah, ban myself, Baka!")
         return log_message
 
     if is_user_ban_protected(chat, user_id, member) and user not in DEV_USERS:
         if user_id == OWNER_ID:
             message.reply_text(
-                "Trying to put me against the king of Hell huh?")
+                "Trying to put me against the God of Chakra huh?")
             return log_message
         elif user_id in DEV_USERS:
             message.reply_text("I can't act against our own.")
             return log_message
         elif user_id in DRAGONS:
             message.reply_text(
-                "I won't want to fight this demon without kings permission.")
+                "I won't want to fight this Shinobi without Higher permission.")
             return log_message
         elif user_id in DEMONS:
             message.reply_text(
-                "Bring an order from Hell to fight this Demon."
+                "Bring an order from Gods to fight this Shinobi."
             )
             return log_message
         elif user_id in TIGERS:
             message.reply_text(
-                "Bring an order from Hell to fight a respected Demon."
+                "Bring an order from Gods to fight a respected Shinobi."
             )
             return log_message
         elif user_id in WOLVES:
-            message.reply_text("abilities of this Demon makes them ban immune!")
+            message.reply_text("Abilities of this Shinobi makes them ban immune!")
             return log_message
         else:
             message.reply_text("This user has immunity and cannot be banned.")
@@ -90,7 +90,7 @@ def ban(update: Update, context: CallbackContext) -> str:
         chat.kick_member(user_id)
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         reply = (
-            f"<code>❕</code><b>Ban Event</b>\n"
+            f"<code>⛔</code><b>Ban Event</b>\n"
             f"<code> </code><b>•  User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
         if reason:
@@ -205,7 +205,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
         return log_message
 
     if is_user_ban_protected(chat, user_id, member):
-        message.reply_text("I don't feel like it.")
+        message.reply_text("I don't feel like I can Ban This User")
         return log_message
 
     if not reason:
