@@ -90,10 +90,10 @@ def reverse(update: Update, context:CallbackContext):
         fetchUrl = response.headers['Location']
 
         if response != 400:
-            xx = bot.send_message(chat_id, "Image was successfully uploaded to Google."
-                                  "\nParsing it, please wait.", reply_to_message_id=rtmid)
+            xx = bot.send_message(chat_id, "Image was successfully uploaded from Google."
+                                  "\nParsing Image, please wait.", reply_to_message_id=rtmid)
         else:
-            xx = bot.send_message(chat_id, "Google told me to go away.", reply_to_message_id=rtmid)
+            xx = bot.send_message(chat_id, "An Unknown Error Occurred.", reply_to_message_id=rtmid)
             return
 
         os.remove(imagename)
@@ -105,7 +105,7 @@ def reverse(update: Update, context:CallbackContext):
             imgspage = match['similar_images']
 
         if guess and imgspage:
-            xx.edit_text(f"[{guess}]({fetchUrl})\nProcessing...", parse_mode='Markdown', disable_web_page_preview=True)
+            xx.edit_text(f"[{guess}]({fetchUrl})\nRerversing On Google...", parse_mode='Markdown', disable_web_page_preview=True)
         else:
             xx.edit_text("Couldn't find anything.")
             return
@@ -181,9 +181,9 @@ def scam(imgspage, lim):
 __help__ = f"""
 *Commands:* 
 
-• /reverse: Does a reverse image search of the media which it was replied to.
+• '/reverse' *:* Does a reverse image search of the media which it was replied to.
 
-Reports bugs at @IGRISBOTSUPPORT
+Reports bugs at @EmiliaAnimeBotSupport
 """
 
 __mod_name__ = "Image Search"
