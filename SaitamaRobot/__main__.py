@@ -53,7 +53,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hey There!` [👩‍💼](https://telegra.ph/file/0ed48df18f4175d61b5d8.jpg) `My name is` *Emilia*
+`Hey There!` [👩‍💼]("https://telegra.ph/file/f40ed0b74e2b73016c887.jpg") `My name is` *Emilia*
 `I am an Anime Themed group management bot.
 Managed by Izumi for Your Telegram Group , I specialize in managing anime and similar themed groups.
 You can find my list of available commands with! Hit` *🔐Commands*   
@@ -93,11 +93,11 @@ InlineKeyboardButton(
 
 
 HELP_STRINGS = """
-`Hey there! My name is` [Emilia]("https://telegra.ph/file/8cab4bb122cf76702b06d.jpg") 
+`Hey there! My name is` [Emilia]("https://telegra.ph/file/83909a7bd542f97edcbb3.jpg") 
 I'm a Half Elf and help admins manage their groups with Some Powerful Features! `Have a look at the following for an idea of some of the things I can help you with.`"""
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paytm](#) or by contacting @The_Ghost_Hunter\
+ You can support the project via [Paytm](#) or by contacting @izumibotifficial\
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
