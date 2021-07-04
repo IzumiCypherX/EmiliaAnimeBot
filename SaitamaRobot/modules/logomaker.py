@@ -1,6 +1,6 @@
-from AsunaRobot.events import register
-from AsunaRobot import OWNER_ID
-from AsunaRobot import telethn as tbot
+from SaitamaRobot.events import register
+from SaitamaRobot import OWNER_ID
+from SaitamaRobot import telethn as tbot
 import os 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -80,7 +80,7 @@ async def lego(event):
     if os.path.exists(fname2):
             os.remove(fname2)
  except Exception as e:
-   await event.reply(f'Error Report @AsunaRobotSupport, {e}')
+   await event.reply(f'Error Report @EmiliaAnimeBotSupport, {e}')
 
 file_help = os.path.basename(__file__)
 file_help = file_help.replace(".py", "")
