@@ -362,7 +362,7 @@ def gabi_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "gabi_back":
+    elif query.data == "asuna_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -384,12 +384,12 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="source_back")
+                    InlineKeyboardButton(text="Go Back", callback_data="asuna_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "source_back":
+    elif query.data == "asuna_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
