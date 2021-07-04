@@ -1,3 +1,4 @@
+from math import ceil
 from typing import Dict, List
 
 from SaitamaRobot import NO_LOAD
