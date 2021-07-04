@@ -12,8 +12,8 @@ from pyrogram import Client
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Chat, Message, User
 
-from AsunaRobot  import OWNER_ID, SUPPORT_CHAT
-from AsunaRobot import pbot
+from SaitamaRobot  import OWNER_ID, SUPPORT_CHAT
+from SaitamaRobot import pgram
 
 
 def get_user(message: Message, text: str) -> [int, str, None]:
@@ -333,7 +333,7 @@ def capture_err(func):
 
 async def member_permissions(chat_id, user_id):
     perms = []
-    member = await pbot.get_chat_member(chat_id, user_id)
+    member = await pgram.get_chat_member(chat_id, user_id)
     if member.can_post_messages:
         perms.append("can_post_messages")
     if member.can_edit_messages:
