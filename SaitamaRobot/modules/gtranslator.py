@@ -3,8 +3,8 @@ from google_trans_new import LANGUAGES, google_translator
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from Jarvis import dispatcher
-from Jarvis.modules.disable import DisableAbleCommandHandler
+from SaitamaRobot import dispatcher
+from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
