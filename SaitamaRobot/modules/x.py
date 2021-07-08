@@ -22,18 +22,18 @@ def neko(update, context):
     msg.reply_photo(nekos.img(target))
 
 
-@run_async
-def feet(update, context):
-    msg = update.effective_message
-    target = "feet"
-    msg.reply_photo(nekos.img(target))
+#@run_async
+#def feet(update, context):
+   # msg = update.effective_message
+    #target = "feet"
+  #  msg.reply_photo(nekos.img(target))
 
 
-@run_async
-def yuri(update, context):
-    msg = update.effective_message
-    target = "yuri"
-    msg.reply_photo(nekos.img(target))
+#@run_async
+#def yuri(update, context):
+   # msg = update.effective_message
+   # target = "yuri"
+  #  msg.reply_photo(nekos.img(target))
 
 
 #@run_async
