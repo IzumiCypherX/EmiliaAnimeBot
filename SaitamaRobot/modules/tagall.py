@@ -10,7 +10,7 @@
 from pyrogram import filters
 
 from SaitamaRobot.pyrogramee.pluginshelper import admins_only, get_text
-from AsunaRobot import pgram
+from SaitamaRobot import pgram
 
 
 @pbot.on_message(filters.command("tagall") & ~filters.edited & ~filters.bot)
