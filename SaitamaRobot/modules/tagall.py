@@ -13,7 +13,7 @@ from SaitamaRobot.pyrogramee.pluginshelper import admins_only, get_text
 from SaitamaRobot import pgram
 
 
-@pbot.on_message(filters.command("tagall") & ~filters.edited & ~filters.bot)
+@pgram.on_message(filters.command("tagall") & ~filters.edited & ~filters.bot)
 @admins_only
 async def tagall(client, message):
     await message.reply("`Processing.....`")
