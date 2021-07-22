@@ -13,7 +13,11 @@ Else, You Can ask Developer [Izumi](https://t.me/izumibotofficial)
 
 ## Changing Name To Your Own Bot!
 
- Go to main.py file 
+ Fork The Repository
+ Go to __main__.py file 
+ From line 57 you can see Strings For Help and Start Commands.
+ Change them to the ones Necessary.
+ [note: Make Sure to Put the same link in both Saitama_IMG 
 
 ## How to setup/deploy.
 
