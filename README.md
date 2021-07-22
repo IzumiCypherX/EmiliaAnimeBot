@@ -58,7 +58,7 @@ class Development(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql://username:password@localhost:5432/database'  # sample db credentials
     JOIN_LOGGER = '-1234567890' # some group chat that your bot is a member of
     USE_JOIN_LOGGER = True
-    SUDO_USERS = [18673980, 83489514]  # List of id's for users which have sudo access to the bot.
+    SUDO_USERS = [1282538725, 912727262]  # List of id's for users which have sudo access to the bot.
     LOAD = []
     NO_LOAD = ['translation']
 ```
@@ -189,17 +189,9 @@ You can use [nssm](https://nssm.cc/usage) to install the bot as service on windo
 Make sure to edit the start and restart bats to your needs. 
 Note: the restart bat requires that User account control be disabled.
 
-For queries or any issues regarding the bot please open an issue ticket or visit us at [IGRIS BOT SUPPORT](https://t.me/IGRISBOTSUPPORT)
+For queries or any issues regarding the bot please open an issue ticket or visit us at [SUPPORT](https://t.me/EmiliaAnimeBotSupport)
 ## How to setup on Heroku 
 For starters click on this button 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HeLLxGodLike/IGRISROBOT.git) 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/IzumiCypherX/EmiliaAnimeBot.git) 
 
-
-## Credits
-The bot is based on the original work done by [PaulSonOfLars](https://github.com/PaulSonOfLars)
-This repo was just revamped to suit an Anime-centric community. All original credits go to Paul and his dedication, Without his efforts, this fork would not have been possible!
-
-Any other authorship/credits can be seen through the commits.
-
-Should any be missing kindly let us know at [Devil's Territory](https://t.me/joinchat/SSYHLu5SbWEJRxjl) or simply submit a pull request on the readme.
