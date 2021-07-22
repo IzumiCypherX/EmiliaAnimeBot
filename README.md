@@ -11,6 +11,10 @@ The Support group can be reached out to at [EmiliaSupport](https//t.me/EmiliaAni
 Else, You Can ask Developer [Izumi](https://t.me/izumibotofficial)
 
 
+## Changing Name To Your Own Bot!
+
+ Go to main.py file 
+
 ## How to setup/deploy.
 
 <details>
@@ -27,6 +31,9 @@ Now send the bot /start, If it doesn't respond go to https://dashboard.heroku.co
 
 </details>  
 <details>
+
+
+
   <summary>Steps to self Host!! </summary>
 
 Note: This instruction set is just a copy-paste from Marie, note that [One Punch Support](https://t.me/OnePunchSupport) aims to handle support for @SaitamaRobot and not how to set up your own fork. If you find this bit confusing/tough to understand then we recommend you ask a dev, kindly avoid asking how to set up the bot instance in the support chat, it aims to help our own instance of the bot and not the forks.
