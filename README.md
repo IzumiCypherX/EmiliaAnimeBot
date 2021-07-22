@@ -14,10 +14,10 @@ Else, You Can ask Developer [Izumi](https://t.me/izumibotofficial)
 ## Changing Name To Your Own Bot!
 
  Fork The Repository
- Go to __main__.py file 
+ Go to [__main__.py](https://github.com/IzumiCypherX/EmiliaAnimeBot/blob/Alpha/SaitamaRobot/__main__.py) file 
  From line 57 you can see Strings For Help and Start Commands.
  Change them to the ones Necessary.
- [note: Make Sure to Put the same link in both Saitama_IMG 
+ [note: For Any Assistance, Contact The Devs Via @EmiliaAnimeBotSupport]
 
 ## How to setup/deploy.
 
