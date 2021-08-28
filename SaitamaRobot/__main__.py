@@ -53,7 +53,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hey There!` [👩‍💼](https://telegra.ph/file/f40ed0b74e2b73016c887.jpg) `My name is` *Emilia*
+`Hey There!` [👩‍💼](https://telegra.ph/file/ecbbd41d6a85e944de587.jpg) `My name is` *CtzXRobot*
 `I am an Anime Themed group management bot.
 Managed by Izumi for Your Telegram Group , I specialize in managing anime and similar themed groups.
 You can find my list of available commands with! Hit` *🔐Commands*   
@@ -62,7 +62,7 @@ You can find my list of available commands with! Hit` *🔐Commands*
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD EMILIA TO YOUR GROUP ➕️",url="t.me/EmiliaAnimeBot?startgroup=true"),
+            text="➕️ ADD CtzXRobot TO YOUR GROUP ➕️",url="t.me/CtzXRobot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
@@ -71,33 +71,33 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="📮 Update Channel", url="https://t.me/EmiliaBotUpdates"),
+            text="📮 Main Channel", url="https://t.me/CartooNtamilzha"),
     ],
     [
         InlineKeyboardButton(
-            text="📑 Loges", url="https://t.me/emiliabotlogs"),
+            text="📑 Bot log", url="https://t.me/CtzXRobotlogs"),
           
 
 
 InlineKeyboardButton(
-            text="🐱 SUPPORT", url="https://t.me/EmiliaAnimeBotSupport"
+            text="🐱 SUPPORT Group", url="https://t.me/ctzchatting"
         ),
 
     ],
     [
         InlineKeyboardButton(
-                    text="🍀Anime Group🍀", url="https://t.me/animehubby"
+                    text="SHINEI-ANIMATION", url="https://t.me/ShinEi_Animation"
         ),
     ],
 ]
 
 
 HELP_STRINGS = """
-`Hey there! My name is` [Emilia]("https://telegra.ph/file/83909a7bd542f97edcbb3.jpg") 
+`Hey there! My name is` [CtzXRobot]("https://telegra.ph/file/ecbbd41d6a85e944de587.jpg") 
 I'm a Half Elf and help admins manage their groups with Some Powerful Features! `Have a look at the following for an idea of some of the things I can help you with.`"""
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paytm](#) or by contacting @izumibotifficial\
+ You can support the project via [Paytm](#) or by contacting @Ctzfamily\
  Supporting isnt always financial! \
  Those who cannot provide monetary support are welcome to help us develop the bot at ."""
 
@@ -377,8 +377,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..👩‍💼 I'm *Emilia*
-                 \nHere is the [Our Anime Group](https://t.me/animehubby) .""",
+            text=""" Hi..👩‍💼 I'm *CtzXRobot*
+                 \nHere is the [Group](https://t.me/Ctzchatting) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -430,7 +430,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         InlineKeyboardButton(
                             text="Help",
-                            url="t.me/{}?start=help".format(context.bot.username),
+                            url="t.me/{}?start=help".format(context.bot.Username),
                         )
                     ]
                 ]
