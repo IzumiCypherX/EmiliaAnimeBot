@@ -54,8 +54,8 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 `Hey There!` [🚶](https://telegra.ph/file/13962c328d63d0cf7c952.jpg) `My name is` *Henry*
-`I am an Anime Themed group management bot.
-Managed by Izumi for Your Telegram Group , I specialize in managing anime and similar themed groups.
+`I am an Cartoon Themed group management bot.
+Managed by Kai for Your Telegram Group , I specialize in managing cartoon and anime similar themed groups.
 You can find my list of available commands with! Hit` *🔐Commands*   
 """
 
@@ -675,7 +675,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I'm online now! 👩‍💼")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I'm online now! 🚶")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
