@@ -171,7 +171,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "EmiliaAnimeBot/SaitamaRobot/resources/PicsArt_08-14-02.44.34.jpg",
+                    Image.open('./EmiliaAnimeBot/SaitamaRobot/resources/PicsArt_08-14-02.44.34.jpg",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
