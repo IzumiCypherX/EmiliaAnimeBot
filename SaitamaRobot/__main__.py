@@ -53,53 +53,53 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hey There!` [👩‍💼](https://telegra.ph/file/f40ed0b74e2b73016c887.jpg) `My name is` *Emilia*
+`Hey There!` [👩‍💼](https://telegra.ph/file/c766d686089a43e0ff33a.jpg) `My name is` *Emilia*
 `I am an Anime Themed group management bot.
-Managed by Izumi for Your Telegram Group , I specialize in managing anime and similar themed groups.
-You can find my list of available commands with! Hit` *🔐Commands*   
+I specialize in managing anime and similar themed groups.
+You can find my list of available commands with` *🔐Commands*   
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD EMILIA TO YOUR GROUP ➕️",url="t.me/EmiliaAnimeBot?startgroup=true"),
+            text="➕️ ADD EMILIA TO YOUR GROUP ➕️",url="t.me/EmiliaAnimeRoBot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
-              text="🔐 Command & Help", callback_data="help_back"),
+              text="🔐 Commands", callback_data="help_back"),
      
     ],
     [
         InlineKeyboardButton(
-            text="📮 Update Channel", url="https://t.me/EmiliaBotUpdates"),
+            text="📮 Updates Channel", url="https://t.me/TangentXOfficial"),
     ],
     [
         InlineKeyboardButton(
-            text="📑 Loges", url="https://t.me/emiliabotlogs"),
+            text="📑 Logs", url="https://t.me/tangentlogger"),
           
 
 
 InlineKeyboardButton(
-            text="🐱 SUPPORT", url="https://t.me/EmiliaAnimeBotSupport"
+            text="🐱 Support", url="https://t.me/TangentChats"
         ),
 
     ],
     [
         InlineKeyboardButton(
-                    text="🍀Anime Group🍀", url="https://t.me/animehubby"
+                    text="✒ Source", callback_data=""
         ),
     ],
 ]
 
 
 HELP_STRINGS = """
-`Hey there! My name is` [Emilia]("https://telegra.ph/file/83909a7bd542f97edcbb3.jpg") 
+`Hey there! My name is` [Emilia!]("https://telegra.ph/file/e5fc94ada18369f89c832.jpg") 
 I'm a Half Elf and help admins manage their groups with Some Powerful Features! `Have a look at the following for an idea of some of the things I can help you with.`"""
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paytm](#) or by contacting @izumibotifficial\
- Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+ I'd Like you to Donate that Money to Some Charity. 
+ Thanks!
+"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -378,7 +378,7 @@ def Source_about_callback(update, context):
     if query.data == "source_":
         query.message.edit_text(
             text=""" Hi..👩‍💼 I'm *Emilia*
-                 \nHere is the [Our Anime Group](https://t.me/animehubby) .""",
+                 \nMy Source Code Can be Found at Github at this [Link](https://github.com/IzumiCypherX/EmiliaAnimeBot""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
