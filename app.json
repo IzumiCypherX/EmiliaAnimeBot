@@ -1,14 +1,13 @@
 {
       "name": "EmiliaBot",
       "description": "An Anime themed Telegram group management bot.",
-      "logo": "https://telegra.ph/file/811f02b5ca1fcc3e72915.jpg", 
+      "logo": "https://telegra.ph/file/3cf1be03a3b1653cc98d1.jpg", 
       "keywords": [
          "telegram",
          "anime",
          "group",
          "manager",
-         "Saitama",
-         "FuckTG"
+         "Emilia"
       ],   
    "repository": "https://github.com/IzumiCypherX/EmiliaAnimeBot",
    "addons": [
@@ -21,7 +20,7 @@
    ],
    "env": {
       "TOKEN": {
-         "description": "Your bot token. Get one from @BotFather duh",
+         "description": "Your bot token. Can be obtained from https://telegram.dog/BotFather/",
          "required": true,
          "value": ""
       },
@@ -36,50 +35,50 @@
          "value": ""
       },    
       "SQLALCHEMY_DATABASE_URI": {
-         "description": "Your postgres sql db, empty this field if you dont have one.",
+         "description": "Your Postgres SQL DataBase URI, Get one from ElephantSQL.com",
          "required": false,
-         "value": "sqldbtype://username:pw@hostname:port/db_name"
+         "value": ""
       },      
       "OWNER_ID": {
-         "description": "Your user ID as an integer.",
+         "description": "Your Telegram User ID as an integer.",
          "required": true,
-         "value": "792109647"
+         "value": ""
       },
       "OWNER_USERNAME": {
-         "description": "Your username without the @",
-         "value": "Sawada"
+         "description": "Your Telegram username without the @",
+         "value": ""
       },
       "SUPPORT_CHAT": {
-         "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to saitama support than consider you made an enemy.",
+         "description": "The Telegram Support Group Where Users of your Bot can Go and ask their Questions. This MUST NOT be pointing towards TangentChats",
          "required": true,
-         "value": "MyAwesomeSupportGroupGoesHere"
+         "value": "SupportGroupName"
       },
       "EVENT_LOGS": {
          "description": "Event logs channel to note down important bot level events, recommend to make this public. ex: '-123456'",
          "required": true,
-         "value": "-123456798"
+         "value": "-123456789"
       },
       "JOIN_LOGGER": {
          "description": "A channel where bot will print who added it to what group, useful during debugging or spam handling.",
          "required": true,
-         "value": "-123456798"
+         "value": "-123456789"
       },      
       "CASH_API_KEY": {
          "description": "Required for currency converter. Get yours from https://www.alphavantage.co/support/#api-key",
          "required": true,
-         "value": "-xyz"
+         "value": "abc"
       },
       "TIME_API_KEY": {
          "description": "Required for timezone information. Get yours from https://timezonedb.com/api",
          "required": true,
-         "value": "-xyz"
+         "value": "abc"
       },
       "DEV_USERS": {
-         "description": "ID of users who are Devs of your bot (can use /py etc.). If you are a noob and would come and bother Saitama support then keep the current ID's here at they are and add yours.",
+         "description": "Enter the IDs of the users who are the Developers of the Bot. If you are newbie and want help from Tangent Itself, then keep the IDs as they are and add yours",
          "required": false,
-         "value": ""
+         "value": "1530197342"
       },
-      "sw_api": {
+      "SPAMWATCH_API": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
          "required": false,
          "value": ""
@@ -94,12 +93,12 @@
          "value": ""
       },
       "DEMONS": {
-         "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
+         "description": "A space separated list of user IDs who can use Gban From Your Bot",
          "required": false,
-         "value": "615304572"
+         "value": ""
       },
       "TIGERS": {
-         "description": "A space separated list of user IDs who you wanna assign as tiger users.",
+         "description": "A space separated list of user IDs who can not be banned by your Bot",
          "required": false,
          "value": ""
       },
@@ -113,24 +112,24 @@
          "value": "ANYTHING"
       },
       "WEBHOOK": {
-         "description": "Setting this to ANYTHING will enable webhooks. If you dont know how this works leave it as it is",
+         "description": "Setting this to ANYTHING will enable webhooks.",
          "required": false,
          "value": ""
       },
       "PORT": {
-         "description": "Port to use for your webhooks. Better leave this as it is on heroku",
+         "description": "Port to use for your webhooks. Better to leave it Empty",
          "required": false,
          "value": ""
       },
       "URL": {
          "description": "The Heroku App URL :-  https://<appname>.herokuapp.com/",
          "required": false,
-         "value": ""
+         "value": "https://example.herokuapp.com/"
       },
       "No_LOAD": {
-         "description": "Dont load these modules cause they shit, space separation",
+         "description": "List of Modules that are not be Loaded",
          "required": false,
-         "value": "cleaner rss connection"
+         "value": "rss"
       }, 
       "BL_CHATS": {
          "description": "List of chats you want blacklisted.",
@@ -151,14 +150,14 @@
          "value": "True"
       },
       "AI_API_KEY": {
-      "description": "Make your bot talk using Intellivoid's chatbot API, get your key from https://coffeehouse.intellivoid.net/",
+      "description": "Make your bot talk using Intellivoid's chatbot API, No Need of This",
          "required": false,
          "value": ""
-   },      
+      },      
       "BAN_STICKER": {
-         "description": "ID of the sticker you want to use when banning people.",
+         "description": "ID of the sticker you want to use when banning people. Keep this Empty",
          "required": false,
-         "value": "CAACAgQAAx0CU_rCTAABAczQXyBOv1TsVK4EfwnkCUT1H0GCkPQAAtwAAwEgTQaYsMtAltpEwhoE"
+         "value": ""
       }
       
    }
