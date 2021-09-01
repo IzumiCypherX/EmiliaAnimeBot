@@ -8,8 +8,7 @@ from typing import Optional
 from SaitamaRobot import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
                           OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK,
                           dispatcher, StartTime, telethn, updater, pgram)
-# needed to dynamically load modules
-# NOTE: Module order is not guaranteed, specify that in the config file!
+
 from SaitamaRobot.modules import ALL_MODULES
 from SaitamaRobot.modules.helper_funcs.chat_status import is_user_admin
 from SaitamaRobot.modules.helper_funcs.misc import paginate_modules
@@ -21,6 +20,8 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           Filters, MessageHandler)
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
+
+EMILIA_IMG = "https://telegra.ph/file/b37cec509d121c8c63518.jpg"
 
 
 def get_readable_time(seconds: int) -> str:
@@ -53,9 +54,10 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hey There!` [👩‍💼](https://telegra.ph/file/c766d686089a43e0ff33a.jpg) `My name is` *Emilia*
-`I am an Anime Themed group management bot.
-I specialize in managing anime and similar themed groups.
+`Hey There!` [👩‍💼](https://telegra.ph/file/c766d686089a43e0ff33a.jpg) 
+`My name is` *Emilia*`
+`I am an Anime Themed group management bot.`
+`
 You can find my list of available commands with` *🔐Commands*   
 """
 
@@ -71,14 +73,14 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text="📮 Updates Channel", url="https://t.me/TangentXOfficial"),
-    ],
-    [
+            text="📮 Updates", url="https://t.me/TangentXOfficial"),
+    
         InlineKeyboardButton(
             text="📑 Logs", url="https://t.me/tangentlogger"),
+     ],
           
 
-
+   [
 InlineKeyboardButton(
             text="🐱 Support", url="https://t.me/TangentChats"
         ),
@@ -86,7 +88,7 @@ InlineKeyboardButton(
     ],
     [
         InlineKeyboardButton(
-                    text="✒ Source", callback_data=""
+                    text="✒ Source", callback_data="source_"
         ),
     ],
 ]
@@ -208,13 +210,22 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+        update.effective_message.reply_photo(
+            EMILIA_IMG, caption= "`Emilia is Here For You❤\nI am Awake Since:` <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [
+                  InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://telegram.dog/TangentChats")
+                  ],
+                  [
+                  InlineKeyboardButton(text="Sᴏᴜʀᴄᴇ", url="https://github.com/IzumiCypherX/EmiliaAnimeBot")
+                  ]
+                ]
+            ),
         )
-
 
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
@@ -675,7 +686,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I'm online now! 👩‍💼")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Emilia is Back Online💼")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
