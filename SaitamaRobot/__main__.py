@@ -97,11 +97,12 @@ buttons = [
 
 HELP_STRINGS = """
 `Hey there! My name is` [Emilia!]("https://telegra.ph/file/e5fc94ada18369f89c832.jpg") 
-I'm a Half Elf and help admins manage their groups with Some Powerful Features! `Have a look at the following for an idea of some of the things I can help you with.`"""
+I'm a Half Elf and help admins manage their groups with Some Powerful Features! \n`Have a look at the following for an idea of some of the things I can help you with.`"""
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
- I'd Like you to Donate that Money to Some Charity. 
- Thanks!
+DONATE_STRING = """
+Heya, glad to hear you want to donate!
+I'd Like you to Donate that Money to Some Charity. 
+Thanks!
 """
 
 IMPORTED = {}
@@ -166,7 +167,7 @@ def send_help(chat_id, text, keyboard=None):
 @run_async
 def test(update: Update, context: CallbackContext):
     # pprint(eval(str(update)))
-    # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
     update.effective_message.reply_text("This person edited a message")
     print(update.effective_message)
 
@@ -240,7 +241,7 @@ def error_handler(update, context):
     )
     tb = "".join(tb_list)
 
-    # Build the message with some markup and additional information about what happened.
+
     message = (
         "An exception was raised while handling an update\n"
         "<pre>update = {}</pre>\n\n"
@@ -252,7 +253,7 @@ def error_handler(update, context):
 
     if len(message) >= 4096:
         message = message[:4096]
-    # Finally, send the message
+
     context.bot.send_message(chat_id=OWNER_ID, text=message, parse_mode=ParseMode.HTML)
 
 
@@ -462,7 +463,10 @@ def get_help(update: Update, context: CallbackContext):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="Back", callback_data="help_back"),
+                                InlineKeyboardButton(
+                                    text="Support", url="https://telegram.dog/TangentChats"
+                                )]]
             ),
         )
 
@@ -710,12 +714,13 @@ def main():
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
-    # dispatcher.add_handler(test_handler)
+    dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
+    dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)

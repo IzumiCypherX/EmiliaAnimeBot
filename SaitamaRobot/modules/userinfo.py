@@ -271,27 +271,24 @@ def info(update: Update, context: CallbackContext):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nThis person you see here is Otsutsuki, They are the GOD OF CHAKRA!"
+        text += "\n\nThe Ranking of The Person is Owner of Emilia"
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nThis user is a Hokage, The GOD OF SHINOBI!"
+        text += "\n\nThis Person is a Developer of Emilia"
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe person here is one of the Shadow Hokage, Their Ranking is UCHIHA GHOST."
+        text += "\n\nThis Person is a Sudo-User of Emilia"
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThis person here is one of the Assassination Squad, Namely, ANBU."
+        text += "\n\nThis Person is a Support User of Emilia"
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThis user is one of those JONIN, Their Group is called the Deadly Trio."
+        text += "\n\nThis User is Immune to all Restrictions over Emilia"
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nThis user is one of the CHUNINs, The Three Way DEADLOCK"
+        text += "\n\nThis User is Immune to Automated Restrictions"
         disaster_level_present = True
 
-    if disaster_level_present:
-        text += ' [<a href="https://t.me/EmiliaBotUpdates/4">?</a>]'.format(
-            bot.username)
 
     try:
         user_member = chat.get_member(user.id)
@@ -433,7 +430,7 @@ def about_bio(update: Update, context: CallbackContext):
         )
     else:
         update.effective_message.reply_text(
-            "You haven't had a bio set about yourself yet!")
+            "There's No Bio Set for the User!")
 
 
 @run_async
@@ -448,7 +445,7 @@ def set_about_bio(update: Update, context: CallbackContext):
 
         if user_id == message.from_user.id:
             message.reply_text(
-                "Ha, you can't set your own bio! You're at the mercy of others here..."
+                "Users Can't set their own Bio, Ask Someone Else!"
             )
             return
 
