@@ -57,39 +57,40 @@ PM_START_TEXT = """
 `Hey There!` [👩‍💼](https://telegra.ph/file/c766d686089a43e0ff33a.jpg) 
 `My name is` *Emilia*`
 `I am an Anime Themed group management bot.`
-`
 You can find my list of available commands with` *🔐Commands*   
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD EMILIA TO YOUR GROUP ➕️",url="t.me/EmiliaAnimeRoBot?startgroup=true"),
+            text="➕️ ADD EMILIA TO YOUR GROUP ➕️",url="t.me/EmiliaAnimeRoBot?startgroup=true"
+        ),
     ],
     [
         InlineKeyboardButton(
-              text="🔐 Commands", callback_data="help_back"),
+          text="🔐 Commands", callback_data="help_back"
+        ),
+    ],
+    [
+        InlineKeyboardButton(
+          text="📮 Updates", url="https://t.me/TangentXOfficial"
+        ),
+      
+        InlineKeyboardButton(
+          text="📑 Logs", url="https://t.me/tangentlogger"
+        ),
+    ],
+         
+    [
+       InlineKeyboardButton(
+           text="🐱 Support", url="https://t.me/TangentChats"
+         ),
+    ],
+    [
+        InlineKeyboardButton(
+          text="✒ Source", callback_data="source_"
+        ),
      
-    ],
-    [
-        InlineKeyboardButton(
-            text="📮 Updates", url="https://t.me/TangentXOfficial"),
-    
-        InlineKeyboardButton(
-            text="📑 Logs", url="https://t.me/tangentlogger"),
-     ],
-          
-
-   [
-InlineKeyboardButton(
-            text="🐱 Support", url="https://t.me/TangentChats"
-        ),
-
-    ],
-    [
-        InlineKeyboardButton(
-                    text="✒ Source", callback_data="source_"
-        ),
     ],
 ]
 
