@@ -158,6 +158,7 @@ def gban(update: Update, context: CallbackContext):
         f"<b>Banned User:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
         f"<b>Banned User ID:</b> <code>{user_chat.id}</code>\n"
         f"<b>Event Stamp:</b> <code>{current_time}</code>")
+        
 
     if reason:
         if chat.type == chat.SUPERGROUP and chat.username:

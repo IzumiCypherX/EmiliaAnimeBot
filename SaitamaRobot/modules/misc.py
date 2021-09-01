@@ -82,10 +82,10 @@ __help__ = """
  • `/markdownhelp`*:* quick summary of how markdown works in telegram - can only be called in private chats
 *Paste:*
  • `/paste`*:* Saves replied content to `nekobin.com` and replies with a url
-*React:*
- • `/react`*:* Reacts with a random reaction 
 *Urban Dictonary:*
  • `/ud <word>`*:* Type the word or expression you want to search use
+*Reverse:*
+ • '/reverse' *:* Does a reverse image search of the media which it was replied to.
 *Wikipedia:*
  • `/wiki <query>`*:* wikipedia your query
 *Currency converter:* 
@@ -95,6 +95,8 @@ Example:
       _OR_
  `/cash 1 usd inr`
 Output: `1.0 USD = 75.505 INR`
+
+Reports bugs at @TangentChats
 """
 
 ECHO_HANDLER = DisableAbleCommandHandler("echo", echo, filters=Filters.group)
