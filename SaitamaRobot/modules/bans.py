@@ -349,7 +349,7 @@ def kick(update: Update, context: CallbackContext) -> str:
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("I doubt that's a user.")
+        message.reply_text("Error While Getiing the User ID")
         return log_message
 
     try:
@@ -362,16 +362,16 @@ def kick(update: Update, context: CallbackContext) -> str:
             raise
 
     if user_id == bot.id:
-        message.reply_text("Yeahhh I'm not gonna do that.")
+        message.reply_text("I've been taught: Never Hurt Yourself")
         return log_message
 
     if is_user_ban_protected(chat, user_id):
-        message.reply_text("I really wish I could kick this user....")
+        message.reply_text("The User is Ban-Protected smh..")
         return log_message
 
     res = chat.unban_member(user_id)  # unban on current user = kick
     if res:
-        # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
+
         bot.sendMessage(
             chat.id,
             f"User Kicked Woops! {mention_html(member.user.id, html.escape(member.user.first_name))}.",
@@ -448,15 +448,15 @@ def kickme(update: Update, context: CallbackContext):
     user_id = update.effective_message.from_user.id
     if is_user_admin(update.effective_chat, user_id):
         update.effective_message.reply_text(
-            "I wish I could... but you're an admin.")
+            "Surrender your adminship and try again!")
         return
 
     res = update.effective_chat.unban_member(
         user_id)  # unban on current user = kick
     if res:
-        update.effective_message.reply_text("*kicks you out of the group*")
+        update.effective_message.reply_text("Ara Ara! Sayonara!")
     else:
-        update.effective_message.reply_text("Huh? I can't :/")
+        update.effective_message.reply_text("The Holy Scriptures make me refrain from doing so...")
 
 
 @run_async
