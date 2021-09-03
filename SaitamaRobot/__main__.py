@@ -54,16 +54,16 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hey There!` [👩‍💼](https://telegra.ph/file/c766d686089a43e0ff33a.jpg) 
-`My name is` *Emilia*`
-`I am an Anime Themed group management bot.`
+`Hey There!` [🐶](https://telegra.ph/file/0d8387ebda7a590227bfd.jpg)
+`My name is` *Courage*`
+`I am an Cartoon Themed group management bot.`
 You can find my list of available commands with` *🔐Commands*   
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD EMILIA TO YOUR GROUP ➕️",url="t.me/EmiliaAnimeRoBot?startgroup=true"
+            text="➕️ ADD Courage TO YOUR GROUP ➕️",url="http://t.me/Courage_The_dog_Bot?startgroup=true"
         ),
     ],
     [
@@ -73,17 +73,14 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-          text="📮 Updates", url="https://t.me/TangentXOfficial"
+          text="📮 Updates", url="https://t.me/ToonTamilKing"
         ),
       
-        InlineKeyboardButton(
-          text="📑 Logs", url="https://t.me/tangentlogger"
-        ),
-    ],
+        
          
     [
        InlineKeyboardButton(
-           text="🐱 Support", url="https://t.me/TangentChats"
+           text="🐶 Support", url="https://youtube.com/channel/UCFZvWvjHunD14Eh4N1g45Hw"
          ),
     ],
     [
@@ -96,7 +93,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-`Hey there! My name is` [Emilia!]("https://telegra.ph/file/e5fc94ada18369f89c832.jpg") 
+`Hey there! My name is` [Courage!]("https://telegra.ph/file/986316d24e513201d176d.jpg") 
 I'm a Half Elf and help admins manage their groups with Some Powerful Features! \n`Have a look at the following for an idea of some of the things I can help you with.`"""
 
 DONATE_STRING = """
@@ -390,7 +387,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..👩‍💼 I'm *Emilia*
+            text=""" Hi.. ✨I'm *Courage*
                  \nMy Source Code Can be Found at Github at this [Link](https://github.com/IzumiCypherX/EmiliaAnimeBot""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -691,7 +688,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Emilia is Back Online💼")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Courage is Back Online💥")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
