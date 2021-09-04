@@ -71,28 +71,14 @@ buttons = [
           text="🔐 Commands", callback_data="help_back"
         ),
     ],
-    [
-        InlineKeyboardButton(
-          text="📮 Updates", url="https://t.me/PigasusUpdates"
-        ),
-      
-        InlineKeyboardButton(
-          text="📑 Logs", url="https://t.me/PigasusLogs"
-        ),
-    ],
+   
          
     [
        InlineKeyboardButton(
            text="🐱 Support", url="https://t.me/PigasusSupport"
          ),
     ],
-    [
-        InlineKeyboardButton(
-          text="✒ Source", callback_data="source_"
-        ),
-     
-    ],
-]
+    
 
 
 HELP_STRINGS = """
