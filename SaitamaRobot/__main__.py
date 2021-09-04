@@ -78,7 +78,11 @@ buttons = [
            text="🐱 Support", url="https://t.me/PigasusSupport"
          ),
     ],
-    
+        [
+       InlineKeyboardButton(
+           text="My semxy Owner", url="https://t.me/Me_Iz_Mad_Boi"
+         ),
+    ],
     ]
 
 HELP_STRINGS = """
