@@ -82,8 +82,10 @@ buttons = [
        InlineKeyboardButton(
            text="MY OWNER 🔥", url="https://t.me/Me_Iz_Mad_Boi"
          ),
-    ],
-    ]
+        
+       [ InlineKeyboardButton(
+          text="📮 Updates", url="https://t.me/TangentXOfficial"
+        ),
 
 HELP_STRINGS = """
 `Hey there! My name is` [YUUKI!]("https://telegra.ph/file/9b31ee9276eb2090dd118.jpg") 
