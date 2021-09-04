@@ -82,8 +82,9 @@ buttons = [
        InlineKeyboardButton(
            text="MY OWNER 🔥", url="https://t.me/Me_Iz_Mad_Boi"
          ),
-        
-       [ InlineKeyboardButton(
+     ],
+     [
+        InlineKeyboardButton(
           text="📮 Updates", url="https://t.me/PigasusUpdates"
         ),
        
