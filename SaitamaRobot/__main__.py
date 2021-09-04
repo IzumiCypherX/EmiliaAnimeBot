@@ -84,7 +84,7 @@ buttons = [
          ),
         
        [ InlineKeyboardButton(
-          text="📮 Updates", url="https://t.me/TangentXOfficial"
+          text="📮 Updates", url="https://t.me/PigasusUpdates"
         ),
 
 HELP_STRINGS = """
