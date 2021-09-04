@@ -86,6 +86,9 @@ buttons = [
        [ InlineKeyboardButton(
           text="📮 Updates", url="https://t.me/PigasusUpdates"
         ),
+       
+     ],
+]
 
 HELP_STRINGS = """
 `Hey there! My name is` [YUUKI!]("https://telegra.ph/file/9b31ee9276eb2090dd118.jpg") 
