@@ -80,7 +80,7 @@ buttons = [
     ],
         [
        InlineKeyboardButton(
-           text="My semxy Owner", url="https://t.me/Me_Iz_Mad_Boi"
+           text="MY OWNER 🔥", url="https://t.me/Me_Iz_Mad_Boi"
          ),
     ],
     ]
