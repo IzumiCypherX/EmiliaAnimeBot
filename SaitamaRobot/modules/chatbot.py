@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from Python_ARQ import ARQ
 
 from SaitamaRobot import pgram as app
-from SaitamaRobot import eor
+from SaitamaRobot import edit_or_reply as eor
 from SaitamaRobot.pyrogramee.errors import capture_err
 from SaitamaRobot.utils.filter_groups import chatbot_group
 
