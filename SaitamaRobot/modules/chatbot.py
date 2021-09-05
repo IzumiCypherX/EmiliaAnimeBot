@@ -1,282 +1,88 @@
-import asyncio
-import aiohttp
-import emoji
-import requests
-import re
-from SaitamaRobot import pgram as LYCIA
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from pyrogram import Client, filters
-from google_trans_new import google_translator
-url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
+from asyncio import gather, sleep
 
-translator = google_translator()
+from pyrogram import filters
+from pyrogram.types import Message
 
-BOT_ID = 1975581385
+from Python_ARQ import ARQ
 
-def extract_emojis(s):
-    return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
+from SaitamaRobot import pgram as app
+from SaitamaRobot import eor
+from SaitamaRobot.pyrogramee.errors import capture_err
+from SaitamaRobot.utils.filter_groups import chatbot_group
 
-#Chatbot Modules By  @InukaAsith
 
-en_chats = []
 
-@LYCIA.on_message(
-    filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
-    group=2,
-)
-async def lycia(client, message):
-    if message.reply_to_message.from_user.id != BOT_ID:
-        message.continue_propagation()
-    msg = message.text
+__mod_name__ = "ChatBot"
+__help__ = """
+/chatbot [ENABLE|DISABLE] To Enable Or Disable ChatBot In Your Chat.
+"""
+
+active_chats_bot = []
+
+async def chat_bot_toggle(db, message: Message):
+    status = message.text.split(None, 1)[1].lower()
     chat_id = message.chat.id
-    if msg.startswith("/") or msg.startswith("@"):
-        message.continue_propagation()
-    if chat_id in en_chats:
-        aura = msg
-        aura = aura.replace("lycia", "Aco")
-        aura = aura.replace("Lycia", "Aco")
-        querystring = {
-            "bid": "178",
-            "key": "sX5A2PcYZbsN5EY6",
-            "uid": "mashape",
-            "msg": {aura},
-        }
-        headers = {
-            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
-            "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-        }
-        response = requests.request("GET", url, headers=headers, params=querystring)
-        result = response.text
-        result = result.replace('{"cnt":"', "")
-        result = result.replace('"}', "")
-        result = result.replace("Aco", "Emcee")
-        result = result.replace("Eliza", "Emcee")
-        result = result.replace("Hi~", "Hello Friend I Am @rikudo_senin_bot")
-        result = result.replace("My dear great botmaster, Lyciabot Team.", "Made By @Emcee_Devs")
-        result = result.replace("Have the control right.", "My Father Is @Emcee_Devs")
-        result = result.replace("I was created by Lyciabot Team.", "I was created by @Emcee_Devs Team.")
-        result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
-        red = result
-        try:
-            await LYCIA.send_chat_action(message.chat.id, "typing")
-            await message.reply_text(red)
-        except CFError as e:
-            print(e)
+    if status == "enable":
+        if chat_id not in db:
+            db.append(chat_id)
+            text = "Chatbot Enabled!"
+            return await eor(message, text=text)
+        await eor(message, text="ChatBot Is Already Enabled.")
+    elif status == "disable":
+        if chat_id in db:
+            db.remove(chat_id)
+            return await eor(message, text="Chatbot Disabled!")
+        await eor(message, text="ChatBot Is Already Disabled.")
     else:
-        u = msg.split()
-        emj = extract_emojis(msg)
-        msg = msg.replace(emj, "")
-        if (
-            [(k) for k in u if k.startswith("@")]
-            and [(k) for k in u if k.startswith("#")]
-            and [(k) for k in u if k.startswith("/")]
-            and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
-        ):
-
-            h = " ".join(filter(lambda x: x[0] != "@", u))
-            km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
-            tm = km.split()
-            jm = " ".join(filter(lambda x: x[0] != "#", tm))
-            hm = jm.split()
-            rm = " ".join(filter(lambda x: x[0] != "/", hm))
-        elif [(k) for k in u if k.startswith("@")]:
-
-            rm = " ".join(filter(lambda x: x[0] != "@", u))
-        elif [(k) for k in u if k.startswith("#")]:
-            rm = " ".join(filter(lambda x: x[0] != "#", u))
-        elif [(k) for k in u if k.startswith("/")]:
-            rm = " ".join(filter(lambda x: x[0] != "/", u))
-        elif re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []:
-            rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
-        else:
-            rm = msg
-            lan = translator.detect(rm)
-        aura = rm
-        if not "en" in lan and not lan == "":
-            aura = translator.translate(aura, lang_tgt="en")
-
-        aura = aura.replace("lycia", "Aco")
-        aura = aura.replace("Lycia", "Aco")
-        querystring = {
-            "bid": "178",
-            "key": "sX5A2PcYZbsN5EY6",
-            "uid": "mashape",
-            "msg": {aura},
-        }
-        headers = {
-            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
-            "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-        }
-        response = requests.request("GET", url, headers=headers, params=querystring)
-        result = response.text
-        result = result.replace('{"cnt":"', "")
-        result = result.replace('"}', "")
-        result = result.replace("Aco", "yato")
-        result = result.replace("Eliza", "@yato")
-        result = result.replace("Hi~", "Hello Friend I Am yato")
-        result = result.replace("My dear great botmaster, Lyciabot Team.", "Made By @Emcee_Devs")
-        result = result.replace("Have the control right.", "My Father Is @Emcee_Devs")
-        result = result.replace("I was created by Lyciabot Team.", "I was created by @Emcee_Devs Team.")
-        result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
-        red = result
-        if not "en" in lan and not lan == "":
-            red = translator.translate(red, lang_tgt=lan[0])
-        try:
-            await LYCIA.send_chat_action(message.chat.id, "typing")
-            await message.reply_text(red)
-        except CFError as e:
-            print(e)
+        await eor(
+            message, text="**Usage:**\n/chatbot [ENABLE|DISABLE]"
+        )
 
 
-
-@LYCIA.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
-async def redaura(client, message):
-    msg = message.text
-    if msg.startswith("/") or msg.startswith("@"):
-        message.continue_propagation()
-    u = msg.split()
-    emj = extract_emojis(msg)
-    msg = msg.replace(emj, "")
-    if (
-        [(k) for k in u if k.startswith("@")]
-        and [(k) for k in u if k.startswith("#")]
-        and [(k) for k in u if k.startswith("/")]
-        and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
-    ):
-
-        h = " ".join(filter(lambda x: x[0] != "@", u))
-        km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
-        tm = km.split()
-        jm = " ".join(filter(lambda x: x[0] != "#", tm))
-        hm = jm.split()
-        rm = " ".join(filter(lambda x: x[0] != "/", hm))
-    elif [(k) for k in u if k.startswith("@")]:
-
-        rm = " ".join(filter(lambda x: x[0] != "@", u))
-    elif [(k) for k in u if k.startswith("#")]:
-        rm = " ".join(filter(lambda x: x[0] != "#", u))
-    elif [(k) for k in u if k.startswith("/")]:
-        rm = " ".join(filter(lambda x: x[0] != "/", u))
-    elif re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []:
-        rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
-    else:
-        rm = msg
-        lan = translator.detect(rm)
-    aura = rm
-    if not "en" in lan and not lan == "":
-        aura = translator.translate(aura, lang_tgt="en")
+# Enabled | Disable Chatbot
 
 
-    aura = aura.replace("lycia", "Aco")
-    aura = aura.replace("Lycia", "Aco")
-    querystring = {
-        "bid": "178",
-        "key": "sX5A2PcYZbsN5EY6",
-        "uid": "mashape",
-        "msg": {aura},
-    }
-    headers = {
-        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
-        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-    }
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    result = response.text
-    result = result.replace('{"cnt":"', "")
-    result = result.replace('"}', "")
-    result = result.replace("Aco", "Emcee")
-    result = result.replace("Eliza", "@Emcee_Bot")
-    result = result.replace("Hi~", "Hello Friend I Am @Emcee_Bot")
-    result = result.replace("My dear great botmaster, Lyciabot Team.", "Made By @Emcee_Devs")
-    result = result.replace("Have the control right.", "My Father Is @Emcee_Devs")
-    result = result.replace("I was created by Lyciabot Team.", "I was created by @Emcee_Devs Team.")
-    result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
-    red = result
-    if not "en" in lan and not lan == "":
-        red = translator.translate(red, lang_tgt=lan[0])
-    try:
-        await LYCIA.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(red)
-    except CFError as e:
-        print(e)
+@app.on_message(filters.command("chatbot") & ~filters.edited)
+@capture_err
+async def chatbot_status(_, message: Message):
+    if len(message.command) != 2:
+        return await eor(
+            message, text="**Usage:**\n/chatbot [ENABLE|DISABLE]"
+        )
+    await chat_bot_toggle(active_chats_bot, message)
 
 
-@LYCIA.on_message(
-    filters.regex("Emcee|emcee|EMCEE")
+async def lunaQuery(query: str, user_id: int):
+    luna = await arq.luna(query, user_id)
+    return luna.result
+
+
+async def type_and_send(message: Message):
+    chat_id = message.chat.id
+    user_id = message.from_user.id if message.from_user else 0
+    query = message.text.strip()
+    await message._client.send_chat_action(chat_id, "typing")
+    response, _ = await gather(lunaQuery(query, user_id), sleep(3))
+    await message.reply_text(response)
+    await message._client.send_chat_action(chat_id, "cancel")
+
+
+@app.on_message(
+    filters.text
+    & filters.reply
     & ~filters.bot
     & ~filters.via_bot
-    & ~filters.forwarded
-    & ~filters.reply
-    & ~filters.channel
+    & ~filters.forwarded,
+    group=chatbot_group,
 )
-async def redaura(client, message):
-    msg = message.text
-    if msg.startswith("/") or msg.startswith("@"):
-        message.continue_propagation()
-    u = msg.split()
-    emj = extract_emojis(msg)
-    msg = msg.replace(emj, "")
-    if (
-        [(k) for k in u if k.startswith("@")]
-        and [(k) for k in u if k.startswith("#")]
-        and [(k) for k in u if k.startswith("/")]
-        and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
-    ):
-
-        h = " ".join(filter(lambda x: x[0] != "@", u))
-        km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
-        tm = km.split()
-        jm = " ".join(filter(lambda x: x[0] != "#", tm))
-        hm = jm.split()
-        rm = " ".join(filter(lambda x: x[0] != "/", hm))
-    elif [(k) for k in u if k.startswith("@")]:
-
-        rm = " ".join(filter(lambda x: x[0] != "@", u))
-    elif [(k) for k in u if k.startswith("#")]:
-        rm = " ".join(filter(lambda x: x[0] != "#", u))
-    elif [(k) for k in u if k.startswith("/")]:
-        rm = " ".join(filter(lambda x: x[0] != "/", u))
-    elif re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []:
-        rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
-    else:
-        rm = msg
-        lan = translator.detect(rm)
-    aura = rm
-    if not "en" in lan and not lan == "":
-        aura = translator.translate(aura, lang_tgt="en")
-
-
-    aura = aura.replace("lycia", "Aco")
-    aura = aura.replace("Lycia", "Aco")
-    querystring = {
-        "bid": "178",
-        "key": "sX5A2PcYZbsN5EY6",
-        "uid": "mashape",
-        "msg": {aura},
-    }
-    headers = {
-        "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
-        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-    }
-    response = requests.request("GET", url, headers=headers, params=querystring)
-    result = response.text
-    result = result.replace('{"cnt":"', "")
-    result = result.replace('"}', "")
-    result = result.replace("Aco", "Emcee")
-    result = result.replace("Eliza", "@Emcee_Bot")
-    result = result.replace("Hi~", "Hello Friend I Am @rikudo_senin_bot")
-    result = result.replace("My dear great botmaster, Daisybot Team.", "Made By @Emcee_Devs")
-    result = result.replace("Have the control right.", "My Father Is @Emcee_Devs")
-    result = result.replace("I was created by Lyciabot Team.", "I was created by @Emcee_Devs Team.")
-    result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
-    red = result
-    if not "en" in lan and not lan == "":
-        red = translator.translate(red, lang_tgt=lan[0])
-    try:
-        await LYCIA.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(red)
-    except CFError as e:
-        print(e)
+@capture_err
+async def chatbot_talk(_, message: Message):
+    if message.chat.id not in active_chats_bot:
+        return
+    if not message.reply_to_message:
+        return
+    if not message.reply_to_message.from_user:
+        return
+    if message.reply_to_message.from_user.id != BOT_ID:
+        return
+    await type_and_send(message)
