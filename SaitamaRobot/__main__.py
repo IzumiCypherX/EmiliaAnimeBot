@@ -93,7 +93,7 @@ InlineKeyboardButton(
 
 
 HELP_STRINGS = """
-`Hey there! My name is` [Noby Dayan]("https://telegra.ph/file/0f6d8a77752620aa3c615.jpg") 
+`Hey there! My name is` [Noby Dayan]("https://telegra.ph/file/c010efe057fb570c8a341.mp4") 
 I'm a Noby bot and help admins manage their groups with Some Powerful Features! `Have a look at the following for an idea of some of the things I can help you with.`"""
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
