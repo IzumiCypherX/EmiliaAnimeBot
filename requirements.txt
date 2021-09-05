@@ -68,3 +68,4 @@ youtube-search-python
 secureme
 pytube
 python-arq
+heroku3
