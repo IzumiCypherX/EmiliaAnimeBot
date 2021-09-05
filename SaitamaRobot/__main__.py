@@ -220,7 +220,7 @@ def start(update: Update, context: CallbackContext):
                   InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/PigasusSupport")
                   ],
                   [
-                  InlineKeyboardButton(text="Sᴏᴜʀᴄᴇ", url="https://github.com/IzumiCypherX/EmiliaAnimeBot")
+                  InlineKeyboardButton(text="OWNER🔥", url="https://t.me/Me_Iz_Mad_Boi")
                   ]
                 ]
             ),
