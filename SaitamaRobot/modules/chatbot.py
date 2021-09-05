@@ -2,15 +2,19 @@ from asyncio import gather, sleep
 
 from pyrogram import filters
 from pyrogram.types import Message
-
-from Python_ARQ import ARQ
+from aiohttp import ClientSession
 
 from SaitamaRobot import pgram as app
 from SaitamaRobot import edit_or_reply as eor
 from SaitamaRobot.pyrogramee.errors import capture_err
 from SaitamaRobot.utils.filter_groups import chatbot_group
 
+ARQ_API_URL="https://thearq.tech"
+ARQ_API_KEY="MTXJXE-ELSWXE-UDRXJC-JCJQXN-ARQ"
+# My Own API_KEY Don't Fuck
+aiohttpsession = ClientSession()
 
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 __mod_name__ = "ChatBot"
 __help__ = """
