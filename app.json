@@ -159,6 +159,10 @@
          "required": false,
          "value": ""
       }
-      
+      "MONGO_DB_URI": {
+         "description": "Your Mongo DB URI",
+         "required": true,
+         "value": ""
+      }
    }
 }
