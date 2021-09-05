@@ -158,7 +158,7 @@
          "description": "ID of the sticker you want to use when banning people. Keep this Empty",
          "required": false,
          "value": ""
-      }
+      },
       "MONGO_DB_URI": {
          "description": "Your Mongo DB URI",
          "required": true,
