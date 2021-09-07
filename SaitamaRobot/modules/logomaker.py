@@ -33,7 +33,7 @@ async def lego(event):
     draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(155, 155, 155))
     x = (image_widthz-w)/2
     y= ((image_heightz-h)/2+6)
-    draw.text((x, y), text, font=font, fill="black", stroke_width=15, stroke_fill="pink")
+    draw.text((x, y), text, font=font, fill="black", stroke_width=15, stroke_fill="green")
     fname2 = "LogoByYone.png"
     img.save(fname2, "png")
     await tbot.send_file(event.chat_id, fname2, caption="Made By @nobydayaninfo")
@@ -66,7 +66,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "white"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./SaitamaRobot/resources/Sisterhood.ttf", 100)
+    font = ImageFont.truetype("./SaitamaRobot/resources/Vampire Wars.ttf", 100)
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
