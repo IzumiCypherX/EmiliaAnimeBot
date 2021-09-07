@@ -9,12 +9,12 @@
 
 ### Status
 
-+ [x]Maintained
-+ [x]Support Group Included
-+ [x]Free
-+ [x]OpenSourced
-+ [x]Working Instance Available
-+ [x]Clean Code
++ [x] Maintained
++ [x] Support Group Included
++ [x] Free
++ [x] OpenSourced
++ [x] Working Instance Available
++ [x] Clean Code
 
 #### Creator Info/Credits
 
@@ -65,7 +65,6 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 Edit Config.py with your own Values
 
 Start with ```python -m SaitamaRobot```
-
 
 </details>    
 
