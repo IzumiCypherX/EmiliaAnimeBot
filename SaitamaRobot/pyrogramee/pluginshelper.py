@@ -7,12 +7,13 @@ import traceback
 from functools import wraps
 from typing import Callable, Coroutine, Dict, List, Tuple, Union
 
+import aiohttp
 from PIL import Image
 from pyrogram import Client
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Chat, Message, User
 
-from SaitamaRobot  import OWNER_ID, SUPPORT_CHAT
+from SaitamaRobot import OWNER_ID, SUPPORT_CHAT
 from SaitamaRobot import pgram
 
 
@@ -189,7 +190,7 @@ async def edit_or_reply(message, text, parse_mode="md"):
 
 
 async def runcmd(cmd: str) -> Tuple[str, str, int, int]:
-    """ run command in terminal """
+    """run command in terminal"""
     args = shlex.split(cmd)
     process = await asyncio.create_subprocess_exec(
         *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
@@ -328,7 +329,7 @@ def capture_err(func):
     return capture
 
 
-# Special credits to TheHamkerCat
+# Ported from https://github.com/TheHamkerCat/WilliamButcherBot
 
 
 async def member_permissions(chat_id, user_id):
@@ -351,3 +352,104 @@ async def member_permissions(chat_id, user_id):
     if member.can_pin_messages:
         perms.append("can_pin_messages")
     return perms
+
+
+async def current_chat_permissions(chat_id):
+    perms = []
+    perm = (await pbot.get_chat(chat_id)).permissions
+    if perm.can_send_messages:
+        perms.append("can_send_messages")
+    if perm.can_send_media_messages:
+        perms.append("can_send_media_messages")
+    if perm.can_send_stickers:
+        perms.append("can_send_stickers")
+    if perm.can_send_animations:
+        perms.append("can_send_animations")
+    if perm.can_send_games:
+        perms.append("can_send_games")
+    if perm.can_use_inline_bots:
+        perms.append("can_use_inline_bots")
+    if perm.can_add_web_page_previews:
+        perms.append("can_add_web_page_previews")
+    if perm.can_send_polls:
+        perms.append("can_send_polls")
+    if perm.can_change_info:
+        perms.append("can_change_info")
+    if perm.can_invite_users:
+        perms.append("can_invite_users")
+    if perm.can_pin_messages:
+        perms.append("can_pin_messages")
+
+    return perms
+
+
+# URL LOCK
+
+
+def get_url(message_1: Message) -> Union[str, None]:
+    messages = [message_1]
+
+    if message_1.reply_to_message:
+        messages.append(message_1.reply_to_message)
+
+    text = ""
+    offset = None
+    length = None
+
+    for message in messages:
+        if offset:
+            break
+
+        if message.entities:
+            for entity in message.entities:
+                if entity.type == "url":
+                    text = message.text or message.caption
+                    offset, length = entity.offset, entity.length
+                    break
+
+    if offset in (None,):
+        return None
+
+    return text[offset : offset + length]
+
+
+async def fetch(url):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as resp:
+            try:
+                data = await resp.json()
+            except Exception:
+                data = await resp.text()
+    return data
+
+
+async def convert_seconds_to_minutes(seconds: int):
+    seconds = int(seconds)
+    seconds = seconds % (24 * 3600)
+    seconds %= 3600
+    minutes = seconds // 60
+    seconds %= 60
+    return "%02d:%02d" % (minutes, seconds)
+
+
+async def json_object_prettify(objecc):
+    dicc = objecc.__dict__
+    output = ""
+    for key, value in dicc.items():
+        if key == "pinned_message" or key == "photo" or key == "_" or key == "_client":
+            continue
+        output += f"**{key}:** `{value}`\n"
+    return output
+
+
+async def json_prettify(data):
+    output = ""
+    try:
+        for key, value in data.items():
+            output += f"**{key}:** `{value}`\n"
+    except Exception:
+        for datas in data:
+            for key, value in datas.items():
+                output += f"**{key}:** `{value}`\n"
+            output += "------------------------\n"
+    return output
