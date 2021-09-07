@@ -46,10 +46,11 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 </h1>
 
 </details> 
+
 <details>
     <summary>More Deploy Options</summary>
     <br>
-    <p align="left">
+    <p align="center">
 
     Deploying on Local Machine
 
@@ -59,8 +60,8 @@ The Easiest Way to Deploy This Bot is Via Heroku.
     IzumiCypherx@arch:~$ cp sample_config.py config.py
     ```
 
-    Edit Config.py with your own Values
-    Start with ```python -m SaitamaRobot```
+Edit Config.py with your own Values
+Start with ```python -m SaitamaRobot```
 
 
 </p>
