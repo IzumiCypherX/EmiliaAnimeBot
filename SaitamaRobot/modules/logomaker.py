@@ -20,13 +20,13 @@ async def lego(event):
  await event.reply('Creating your logo...wait!')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./SaitamaRobot/resources/images (28).jpeg')
+    img = Image.open('./SaitamaRobot/resources/PicsArt_09-07-02.05.12.jpg')
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
     fillcolor = "gold"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./SaitamaRobot/resources/KaushanScript-Regular.otf", 100)
+    font = ImageFont.truetype("./SaitamaRobot/resources/Vampire Wars.ttf", 100)
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
