@@ -194,33 +194,6 @@ async def google_search_func(answers, text):
     return answers
 
 
-async def wall_func(answers, text):
-    results = await arq.wall(text)
-    if not results.ok:
-        answers.append(
-            InlineQueryResultArticle(
-                title="Error",
-                description=results.result,
-                input_message_content=InputTextMessageContent(results.result),
-            )
-        )
-        return answers
-    limit = 0
-    results = results.result
-    for i in results:
-        if limit > 48:
-            break
-        limit += 1
-        answers.append(
-            InlineQueryResultPhoto(
-                photo_url=i.url_image,
-                thumb_url=i.url_thumb,
-                caption=f"[Source]({i.url_image})",
-            )
-        )
-    return answers
-
-
 async def saavn_func(answers, text):
     buttons_list = []
     results = await arq.saavn(text)
