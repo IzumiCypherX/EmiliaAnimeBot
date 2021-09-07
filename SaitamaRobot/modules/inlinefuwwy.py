@@ -963,4 +963,4 @@ def generate_time(to_find: str, findtype: List[str]) -> str:
         result = None
 
     return result
-`
+
