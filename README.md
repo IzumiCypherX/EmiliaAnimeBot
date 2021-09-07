@@ -50,9 +50,11 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 <details>
     <summary>More Deploy Options</summary>
     <br>
-    <p align="center">
+    <h2 align="center">
 
     Deploying on Local Machine
+
+<h2>
 
 ```console
     IzumiCypherx@arch:~$ git clone https://github.com/IzumiCypherX/EmiliaAnimeBot
@@ -65,7 +67,6 @@ Edit Config.py with your own Values
 Start with ```python -m SaitamaRobot```
 
 
-</p>
 </details>    
 
 <details>
