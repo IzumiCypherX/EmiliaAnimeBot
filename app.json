@@ -126,7 +126,7 @@
          "required": false,
          "value": "https://example.herokuapp.com/"
       },
-      "No_LOAD": {
+      "NO_LOAD": {
          "description": "List of Modules that are not be Loaded",
          "required": false,
          "value": "rss"
@@ -161,6 +161,11 @@
       },
       "MONGO_DB_URI": {
          "description": "Your Mongo DB URI",
+         "required": true,
+         "value": ""
+      },
+      "ARQ_API_KEY": {
+         "description": "Get one @ARQRobot on Telegram",
          "required": true,
          "value": ""
       }
