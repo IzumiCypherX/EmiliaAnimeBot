@@ -50,7 +50,6 @@ The Easiest Way to Deploy This Bot is Via Heroku.
     <summary>More Deploy Options</summary>
     <br>
     <p align="left">
-    <b>
 
     Deploying on Local Machine
 
@@ -63,7 +62,7 @@ The Easiest Way to Deploy This Bot is Via Heroku.
     Edit Config.py with your own Values
     Start with ```python -m SaitamaRobot```
 
- </b>
+
 </p>
 </details>    
 
