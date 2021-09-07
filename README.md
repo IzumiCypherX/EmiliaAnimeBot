@@ -7,9 +7,23 @@
 
 ### Can be found on telegram as [Emilia](https://t.me/EmiliaAnimeRoBot).
 
+### Status
+
++ [x]Maintained
++ [x]Support Group Included
++ [x]Free
++ [x]OpenSourced
++ [x]Working Instance Available
++ [x]Clean Code
+
 #### Creator Info/Credits
+
 ```
-If the Creation of the Base Code is Taken in Consideration, I'd Like to 
+Thanks To:
+> @AnimeKaizoku
+
+> @PaulSonofLars
+
 ```
 
 
@@ -21,7 +35,7 @@ The Support group can be reached out to at [Tangent](https://t.me/TangentChats),
 	<br>
 	<b>
 The Easiest Way to Deploy This Bot is Via Heroku.
-		In Order To deply, You Just Have Fill The Necessary Environment Variables and Done!</b>
+		In Order To deploy, You Just Have Fill The Necessary Environment Variables and Done!</b>
 	
   <h1>
     <p align="center">
@@ -36,6 +50,31 @@ The Easiest Way to Deploy This Bot is Via Heroku.
     <summary>More Deploy Options</summary>
     <br>
     <p align="left">
-    More Options to Deploy Will be Available Soon!
-    </p>
+    <b>
+
+    Deploying on Local Machine
+
+    ```console
+    IzumiCypherx@arch:~$ git clone https://github.com/IzumiCypherX/EmiliaAnimeBot
+    IzumiCypherx@arch:~$ cd SaitamaRobot
+    IzumiCypherx@arch:~$ cp sample_config.py config.py
+    ```
+
+    Edit Config.py with your own Values
+    Start with ```python -m SaitamaRobot```
+
+ </b>
+</p>
 </details>    
+
+<details>
+     <summary>Deploying On IDE VMs Like Repl.it</summary>
+       <br>
+         <p align="left">
+            <b> 
+
+            Refer to Deploying On Local Machine
+
+ </b>
+</p>
+</details>
