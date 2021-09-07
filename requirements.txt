@@ -69,5 +69,4 @@ secureme
 pytube
 python-arq
 heroku3
-aiohttp
 aiofiles
