@@ -8,11 +8,6 @@ import telegram.ext as tg
 from telethon import TelegramClient
 from pyrogram import Client, errors
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
-from aiohttp import ClientSesion
-from Python_ARQ import ARQ
-
-ARQ_API_KEY = "thearq.tech"
-aiohttpsession = ClientSession()
 
 StartTime = time.time()
 # enable logging
@@ -80,7 +75,7 @@ if ENV:
     DB_URI = os.environ.get('DATABASE_URL')
     DONATION_LINK = os.environ.get('DONATION_LINK')
     LOAD = os.environ.get("LOAD", "").split()
-    NO_LOAD = os.environ.get("NO_LOAD", "rss").split()
+    NO_LOAD = os.environ.get("NO_LOAD", "translation").split()
     DEL_CMDS = bool(os.environ.get('DEL_CMDS', False))
     STRICT_GBAN = bool(os.environ.get('STRICT_GBAN', False))
     WORKERS = int(os.environ.get('WORKERS', 8))
@@ -93,7 +88,6 @@ if ENV:
     WALL_API = os.environ.get('WALL_API', None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
-    ARQ_API_KEY = os.environ.get('ARQ_API_KEY', None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get('SPAMWATCH_SUPPORT_CHAT', None)
     SPAMWATCH_API = os.environ.get('SPAMWATCH_API', None)
     BOT_ID = 1642345892
@@ -162,7 +156,6 @@ else:
     CASH_API_KEY = Config.CASH_API_KEY
     TIME_API_KEY = Config.TIME_API_KEY
     AI_API_KEY = Config.AI_API_KEY
-    ARQ_API_KEY = Config.ARQ_API_KEY
     WALL_API = Config.WALL_API
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
@@ -185,18 +178,11 @@ else:
     sw = spamwatch.Client(SPAMWATCH_API)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("emiliaami", API_ID, API_HASH)
-pgram = Client("Emilia", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+telethn = TelegramClient("saitama", API_ID, API_HASH)
+pgram = Client("JarvisPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 mongo_client = MongoClient(MONGO_DB_URI)
 db = mongo_client.SaitamaRobot
 dispatcher = updater.dispatcher
-x = pgram.get_me()
-BOT_ID = x.id
-BOT_NAME = x.first_name + (x.last_name or "")
-BOT_USERNAME = x.username
-BOT_MENTION = x.mention
-BOT_DC_ID = x.dc_id
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)

@@ -4,8 +4,17 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 from SaitamaRobot import pgram as app
-from SaitamaRobot import arq
 from SaitamaRobot.pyrogramee.errors import capture_err
+
+from Python_ARQ import ARQ
+from aiohttp import ClientSession
+
+aiohttpsession = ClientSession()
+
+ARQ_API_URL="https://thearq.tech"
+ARQ_API_KEY= "MTXJXE-ELSWXE-UDRXJC-JCJQXN-ARQ"
+
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 
 async def quotify(messages: list):
@@ -108,6 +117,6 @@ async def quotly_func(client, message: Message):
 __mod_name__ = "Quotly"
 
 __help__ = """
- - `/q` : create a quote from a message
+ - `/q` : Create a quote from a message
 
 """
