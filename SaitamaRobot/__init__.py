@@ -72,6 +72,7 @@ if ENV:
     CERT_PATH = os.environ.get("CERT_PATH")
     API_ID = os.environ.get('API_ID', None)
     API_HASH = os.environ.get('API_HASH', None)
+    ARQ_API_KEY = os.envron.get('ARQ_API_KEY', None)
     DB_URI = os.environ.get('DATABASE_URL')
     DONATION_LINK = os.environ.get('DONATION_LINK')
     LOAD = os.environ.get("LOAD", "").split()
@@ -84,7 +85,6 @@ if ENV:
     ALLOW_EXCL = os.environ.get('ALLOW_EXCL', False)
     CASH_API_KEY = os.environ.get('CASH_API_KEY', None)
     TIME_API_KEY = os.environ.get('TIME_API_KEY', None)
-    AI_API_KEY = os.environ.get('AI_API_KEY', None)
     WALL_API = os.environ.get('WALL_API', None)
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
@@ -155,7 +155,7 @@ else:
     ALLOW_EXCL = Config.ALLOW_EXCL
     CASH_API_KEY = Config.CASH_API_KEY
     TIME_API_KEY = Config.TIME_API_KEY
-    AI_API_KEY = Config.AI_API_KEY
+    ARQ_API_KEY = Config.ARQ_API_KEY
     WALL_API = Config.WALL_API
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
@@ -178,8 +178,8 @@ else:
     sw = spamwatch.Client(SPAMWATCH_API)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("saitama", API_ID, API_HASH)
-pgram = Client("JarvisPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+telethn = TelegramClient("emilia", API_ID, API_HASH)
+pgram = Client("EmiPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 mongo_client = MongoClient(MONGO_DB_URI)
 db = mongo_client.SaitamaRobot
 dispatcher = updater.dispatcher
