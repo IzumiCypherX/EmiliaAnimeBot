@@ -211,7 +211,7 @@ GIFS = [
     'CgACAgQAAxkBAAN5X7oiMA8mY1BZGp5I4VdfoDg-oH8AAksCAAIstI1SCcfAOJunTIEeBA'
 ]
 
-SLAP_Emilia_TEMPLATES = (
+SLAP_EMILIA_TEMPLATES = (
     "Slap me one more time and I'll mute you.",
     "Stop slapping me. REEEEEEEEEEEEEE.",
     [
