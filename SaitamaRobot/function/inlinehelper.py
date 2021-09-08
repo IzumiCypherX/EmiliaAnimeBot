@@ -25,7 +25,7 @@ from SaitamaRobot.pyrogramee.pluginshelper import fetch
 from SaitamaRobot import pgram as pbot
 
 ARQ_API = 'MTXJXE-ELSWXE-UDRXJC-JCJQXN-ARQ'
-BOT_USERNAME = "EmiliaAnimeRobot"
+BOT_USERNAME = "EmiliaAnimeRoBot"
 ARQ_API_KEY = ARQ_API
 SUDOERS = OWNER_ID
 ARQ_API_URL = "https://thearq.tech"
