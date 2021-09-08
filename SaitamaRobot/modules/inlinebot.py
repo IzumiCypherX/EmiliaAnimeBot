@@ -152,7 +152,7 @@ async def inline_query_handler(client, query):
         text = query.query.lower()
         answers = []
         if text.strip() == "":
-            answerss = await inline_help_func(__HELP__)
+            answerss = await inline_help_func(__help__)
             await client.answer_inline_query(query.id, results=answerss, cache_time=10)
             return
         elif text.split()[0] == "alive":
