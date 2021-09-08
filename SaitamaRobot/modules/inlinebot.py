@@ -27,10 +27,9 @@ from youtubesearchpython import VideosSearch
 
 from SaitamaRobot import TIME_API_KEY
 from SaitamaRobot.function.inlinehelper import *
-from SaitamaRobot.pyrogramee.pluginhelpers import fetch, json_prettify
+from SaitamaRobot.pyrogramee.pluginshelper import fetch, json_prettify
 from SaitamaRobot import pgram as app
 
-OPENWEATHERMAP_ID = get_str_key("OPENWEATHERMAP_ID", "")
 TIME_API_KEY = TIME_API_KEY
 
 dictionary = PyDictionary()
