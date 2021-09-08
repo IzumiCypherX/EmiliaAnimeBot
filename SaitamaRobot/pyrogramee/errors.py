@@ -2,8 +2,7 @@
 import sys
 import traceback
 from functools import wraps
-from SaitamaRobot import SUPPORT_CHAT
-from SaitamaRobot import pgram
+from SaitamaRobot import SUPPORT_CHAT, pgram
 
 def split_limits(text):
     if len(text) < 2048:
