@@ -92,7 +92,7 @@ if ENV:
     SPAMWATCH_API = os.environ.get('SPAMWATCH_API', None)
     BOT_ID = 1975581385
 
-    LOG_GROUP_ID = -1001595626208
+    LOG_GROUP_ID = -1001506202638
     try:
         BL_CHATS = set(int(x) for x in os.environ.get('BL_CHATS', "").split())
     except ValueError:
