@@ -24,6 +24,10 @@ Thanks To:
 
 > @PaulSonofLars
 
+> @sudo_nautilus
+
+> @kanekiken44
+
 ```
 
 
