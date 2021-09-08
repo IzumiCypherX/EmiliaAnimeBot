@@ -20,8 +20,8 @@ from Python_ARQ import ARQ
 from search_engine_parser import GoogleSearch
 
 from SaitamaRobot import OWNER_ID
-from SaitamaRobot.pyrogramee.pluginhelpers import convert_seconds_to_minutes as time_convert
-from SaitamaRobot.pyrogramee.pluginhelpers import fetch
+from SaitamaRobot.pyrogramee.pluginshelper import convert_seconds_to_minutes as time_convert
+from SaitamaRobot.pyrogramee.pluginshelper import fetch
 from SaitamaRobot import pgram as pbot
 
 ARQ_API = 'MTXJXE-ELSWXE-UDRXJC-JCJQXN-ARQ'
