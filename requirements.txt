@@ -1,6 +1,7 @@
 future
 countryinfo
 emoji
+pykeyboard
 lxml
 beautifulsoup4
 requests
