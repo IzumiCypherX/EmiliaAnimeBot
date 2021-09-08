@@ -14,6 +14,7 @@ ARQ_API_URL="https://thearq.tech"
 ARQ_API_KEY="MTXJXE-ELSWXE-UDRXJC-JCJQXN-ARQ"
 # My Own API_KEY Don't Fuck
 aiohttpsession = ClientSession()
+BOT_ID = 1975581385
 
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
