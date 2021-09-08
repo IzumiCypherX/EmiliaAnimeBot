@@ -1,7 +1,7 @@
-SaitamaRobot/config.py
-SaitamaRobot/*.session
-SaitamaRobot/*.session-journal
-SaitamaRobot/config.ini
+EmiliaAnimeBot/config.py
+EmiliaAnimeBot/*.session
+EmiliaAnimeBot/*.session-journal
+EmiliaAnimeBot/config.ini
 log.txt
 *.pyc
 .idea/
@@ -9,8 +9,8 @@ log.txt
 .pydevproject
 .directory
 .vscode
-SaitamaRobot/modules/helper_funcs/temp.txt
-SaitamaRobot/elevated_users.json
+EmiliaAnimeBot/modules/helper_funcs/temp.txt
+EmiliaAnimeBot/elevated_users.json
 start-3.6.bat
 *.session
 kangsticker.png
