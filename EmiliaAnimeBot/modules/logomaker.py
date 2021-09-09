@@ -1,3 +1,4 @@
+"""
 from SaitamaRobot.events import register
 from SaitamaRobot import OWNER_ID
 from SaitamaRobot import telethn as tbot
@@ -91,3 +92,4 @@ __help__ = """
  ❍ /logo text :  Create your logo with your name
  """
 __mod_name__ = "Logo"
+"""
