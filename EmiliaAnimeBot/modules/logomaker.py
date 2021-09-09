@@ -7,16 +7,25 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 logopics = [
+ 
  "./EmiliaAnimeBot/resources/logopics/LogoFile1.jpg",
+	
  "./EmiliaAnimeBot/resources/logopics/LogoFile2.jpg",
+	
  "./EmiliaAnimeBot/resources/logopics/LogoFile3.jpg",
+	
  "./EmiliaAnimeBot/resources/logopics/LogoFile4.jpg"
+ 
 ]
 
 logofonts = [
+ 
  "./EmiliaAnimeBot/resources/logofonts/RemachineScriptPersonalUseOnly-yZL3.ttf",
+	
  "./EmiliaAnimeBot/resources/logofonts/beyond-wonderland.regular.ttf",
+	
  "./EmiliaAnimeBot/resources/logofonts/Respective-VP6y.ttf"
+ 
 ]
 
 pic_choice = random.choice(logopics)
@@ -54,7 +63,7 @@ async def lego(event):
     draw.text((x, y), text, font=font, fill="black", stroke_width=25, stroke_fill="yellow")
     fname2 = "Logo.png"
     img.save(fname2, "png")
-    await tbot.send_file(event.chat_id, fname2, caption="Made By @EmiliaAnimeRobBot")
+    await tbot.send_file(event.chat_id, fname2, caption="Made By @EmiliaAnimeRoBot")
     if os.path.exists(fname2):
             os.remove(fname2)
  except Exception as e:
