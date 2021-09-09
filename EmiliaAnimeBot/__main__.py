@@ -293,7 +293,7 @@ def help_button(update, context):
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
     next_match = re.match(r"help_next\((.+?)\)", query.data)
-    back_match = re.match(r"help_back\((.+?)\)", query.data)
+    back_match = re.match(r"help_back", query.data)
 
     print(query.message.chat.id)
 
