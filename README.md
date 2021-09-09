@@ -4,6 +4,8 @@
 [![Support Group!](https://img.shields.io/badge/Join%20Group-↗-green)](https://t.me/TangentXOfficial)
 
 
+> If There's no Trace of This Repo in your Bot, We will be pushing a gban on you from our systems.
+
 
 ### Can be found on telegram as [Emilia](https://t.me/EmiliaAnimeRoBot).
 
