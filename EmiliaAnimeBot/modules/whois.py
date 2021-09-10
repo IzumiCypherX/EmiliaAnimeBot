@@ -5,6 +5,8 @@ from pyrogram.types import User, Message
 from pyrogram.raw import functions
 from pyrogram.errors import PeerIdInvalid
 from EmiliaAnimeBot import telethn
+from EmiliaAnimeBot import dispatcher
+from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
 
 
 def ReplyCheck(message: Message):
@@ -84,3 +86,7 @@ async def whois(client, message):
         ),
         disable_web_page_preview=True,
     )
+
+
+WHOIS_HANDLER = DisableAbleCommandHandler("whois", whois)
+dispatcher.add_handler(WHOIS_HANDLER)

@@ -28,9 +28,6 @@ logofonts = [
  
 ]
 
-pic_choice = random.choice(logopics)
-font_choice = random.choice(logofonts)
-
 
 @register(pattern="^/logo ?(.*)")
 async def lego(event):
@@ -47,20 +44,20 @@ async def lego(event):
  await event.reply('Creating your logo...wait!')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open(pic_choice)
+    img = Image.open(random.choice(logopics))
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
     fillcolor = "gold"
     shadowcolor = "blue"
-    font = ImageFont.truetype(font_choice , 330)
+    font = ImageFont.truetype(random.choice(logofonts) , 250)
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
     draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(255, 255, 255))
     x = (image_widthz-w)/2
     y= ((image_heightz-h)/2+6)
-    draw.text((x, y), text, font=font, fill="black", stroke_width=25, stroke_fill="yellow")
+    draw.text((x, y), text, font=font, fill="yellow", stroke_width=25, stroke_fill="black")
     fname2 = "Logo.png"
     img.save(fname2, "png")
     await tbot.send_file(event.chat_id, fname2, caption="Made By @EmiliaAnimeRoBot")
@@ -79,7 +76,7 @@ __mod_name__ = "Logos"
 
 __help__ = """
 
-`/logo`*:* Create a logo with text!
+`/logo` *:* Create a logo with text!
 
 """
 

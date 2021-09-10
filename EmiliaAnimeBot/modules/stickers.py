@@ -33,7 +33,7 @@ def stickerid(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             "Hello "
             + f"{mention_html(msg.from_user.id, msg.from_user.first_name)}"
-            + ", Please reply to sticker message to get id sticker",
+            + ", Please reply to sticker message to get id",
             parse_mode=ParseMode.HTML,
         )
 
@@ -130,7 +130,7 @@ def kang(update: Update, context: CallbackContext):
         elif msg.reply_to_message.sticker and msg.reply_to_message.sticker.emoji:
             sticker_emoji = msg.reply_to_message.sticker.emoji
         else:
-            sticker_emoji = "👿"
+            sticker_emoji = "🐱"
 
         if not is_animated:
             try:
@@ -162,13 +162,13 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
-                    + f"\nEmoji is: {sticker_emoji}",
+                    f"This Sticker was Kanged Sucessfully\nThe Sticker Pack Can be Located [Here](t.me/addstickers/{packname})"
+                    + f"\nThe Destined Emoji is: {sticker_emoji}",
                     parse_mode=ParseMode.MARKDOWN,
                 )
 
             except OSError as e:
-                msg.reply_text("I can only kang images m8.")
+                msg.reply_text("Only Images/Other stickers can be Kanged")
                 print(e)
                 return
 

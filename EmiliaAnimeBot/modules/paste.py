@@ -5,6 +5,9 @@ from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
 
+PASTED_IMG = "https://telegra.ph/file/94ab47d1fb4c2c3dc9109.jpg"
+
+
 @run_async
 def paste(update: Update, context: CallbackContext):
     args = context.args
@@ -27,12 +30,18 @@ def paste(update: Update, context: CallbackContext):
 
     url = f'https://nekobin.com/{key}'
 
-    reply_text = f'Nekofied to *Nekobin* : {url}'
+    reply_text = f'Pasted to NekoBin!'
 
-    message.reply_text(
-        reply_text,
+
+    message.reply_photo(
+        PASTED_IMG, caption=reply_text,
         parse_mode=ParseMode.MARKDOWN,
-        disable_web_page_preview=True)
+        reply_markup = InlineKeyboardMarkup(
+            [
+                InlineKeyboardButton(text="Link", url={url})
+            ]
+        )
+        )
 
 
 PASTE_HANDLER = DisableAbleCommandHandler("paste", paste)
