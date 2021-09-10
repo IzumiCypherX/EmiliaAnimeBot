@@ -177,17 +177,17 @@ def new_member(update: Update, context: CallbackContext):
                 update.effective_message.reply_photo(
                     OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
                      ),
-                  parse_mode=ParseMode.HTML,
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
+                     parse_mode=ParseMode.HTML,
+                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
                 continue
 
             # Welcoming my Alt(for tests Lol)
-            if new_mem.id == OWNER_ID:
+            if new_mem.id == 1947860028:
                 update.effective_message.reply_photo(
                     OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
                      ),
-                  parse_mode=ParseMode.HTML,
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
+                     parse_mode=ParseMode.HTML,
+                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
   
                 continue
 
