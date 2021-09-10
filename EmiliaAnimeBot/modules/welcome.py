@@ -184,8 +184,8 @@ def new_member(update: Update, context: CallbackContext):
                   InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
                   ]
                 ]
-            ),
             )
+            
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
                                f"Bot Owner just joined the chat")
