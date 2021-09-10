@@ -175,39 +175,20 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo(
-            OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
-            ),
-            parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                  [
-                  InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-                  ]
-                ]
-            )
-            
-                welcome_log = (f"{html.escape(chat.title)}\n"
-                               f"#USER_JOINED\n"
-                               f"Bot Owner just joined the chat")
+                    OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
+                     ),
+                  parse_mode=ParseMode.HTML,
+                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
                 continue
 
             # Welcoming my Alt(for tests Lol)
-           if new_mem.id == OWNER_ID:
+            if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo(
-            OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
-            ),
-            parse_mode=ParseMode.HTML,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                  [
-                  InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-                  ]
-                ]
-            ),
-            )
-                welcome_log = (f"{html.escape(chat.title)}\n"
-                               f"#USER_JOINED\n"
-                               f"Bot Owner just joined the chat")
+                    OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
+                     ),
+                  parse_mode=ParseMode.HTML,
+                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
+  
                 continue
 
             # Welcome Sudos
