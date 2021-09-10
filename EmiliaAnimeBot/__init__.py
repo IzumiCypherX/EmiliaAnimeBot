@@ -189,13 +189,14 @@ DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
 DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
-'''
 
-botinfo = pgram.get_me()
+x = pgram.get_me()
 
-BOT_ID = botinfo.id()
-BOT_NAME = 
-'''
+BOT_ID = x.id
+BOT_NAME = x.first_name + (x.last_name or "")
+BOT_USERNAME = x.username
+BOT_MENTION = x.mention
+BOT_DC_ID = x.dc_id
 
 # Load at end to ensure all prev variables have been set
 from EmiliaAnimeBot.modules.helper_funcs.handlers import (CustomCommandHandler,
