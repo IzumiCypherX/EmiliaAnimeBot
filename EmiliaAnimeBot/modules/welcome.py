@@ -172,6 +172,7 @@ def new_member(update: Update, context: CallbackContext):
                     pass
                 reply = False
 
+                """
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo(
@@ -189,6 +190,14 @@ def new_member(update: Update, context: CallbackContext):
                      parse_mode=ParseMode.HTML,
                      reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
   
+                continue
+                """
+             # Welcome Owner
+            elif new_mem.id == OWNER_ID:
+                update.effective_message.reply_text(
+                    "A Member of the Sudo Team Just Joined",
+                    reply_to_message_id=reply,
+                )
                 continue
 
             # Welcome Sudos
