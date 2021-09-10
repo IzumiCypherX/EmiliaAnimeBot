@@ -30,7 +30,7 @@ def __list_all_modules():
             to_load = all_modules
 
         if NO_LOAD:
-            LOGGER.info("Not loading: {}".format(NO_LOAD))
+            LOGGER.info("Modules Not to Load: {}".format(NO_LOAD))
             return [item for item in to_load if item not in NO_LOAD]
 
         return to_load
@@ -39,5 +39,5 @@ def __list_all_modules():
 
 
 ALL_MODULES = __list_all_modules()
-LOGGER.info("Modules to load: %s", str(ALL_MODULES))
+LOGGER.info("Modules To be Loaded: %s", str(ALL_MODULES))
 __all__ = ALL_MODULES + ["ALL_MODULES"]
