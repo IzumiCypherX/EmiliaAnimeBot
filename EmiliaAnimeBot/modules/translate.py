@@ -50,10 +50,10 @@ async def _(event):
     except Exception as exc:
         print(exc)
         await event.reply("**Server Error !**\nTry Again.")
+        """
 
-help = """
-- /tr [List of Language Codes](t.me/fateunionupdates/32) :- as reply to a long message.
-"""
-__mod_name__= "Translator"
+# help = """
+#- /tr [List of Language Codes](t.me/fateunionupdates/32) :- as reply to a long message.
+#"""
+#__mod_name__= "Translator"
 
-"""
