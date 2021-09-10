@@ -175,29 +175,39 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo(
-                    OWNER_WELCOME_IMG, caption = "The Izumi Just Entered The Chat"
-                    reply_to_message_id=reply)
+            OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
+            ),
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [
+                  InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+                  ]
+                ]
+            ),
+            )
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
                                f"Bot Owner just joined the chat")
                 continue
 
             # Welcoming my Alt(for tests Lol)
-            elif new_mem.id == 1947860028:
+           if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo(
-                    OWNER_WELCOME_IMG, caption = "The Izumi Just Entered The Chat"
-                    reply_to_message_id=reply)
+            OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
+            ),
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [
+                  InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+                  ]
+                ]
+            ),
+            )
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
                                f"Bot Owner just joined the chat")
-                continue
-            
-            # Welcome Devs
-            elif new_mem.id in DEV_USERS:
-                update.effective_message.reply_text(
-                    "A member of the Dev Team Just Joined",
-                    reply_to_message_id=reply,
-                )
                 continue
 
             # Welcome Sudos
