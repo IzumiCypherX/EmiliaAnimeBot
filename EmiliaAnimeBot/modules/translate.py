@@ -1,3 +1,4 @@
+"""
 from mtranslate import translate
 from EmiliaAnimeBot import telethn
 import json
@@ -54,3 +55,5 @@ help = """
 - /tr [List of Language Codes](t.me/fateunionupdates/32) :- as reply to a long message.
 """
 __mod_name__= "Translator"
+
+"""

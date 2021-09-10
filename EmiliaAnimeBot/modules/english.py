@@ -89,4 +89,4 @@ __help__ = """
  ❍ /antonyms <word>*:* Find the antonyms of a word
 """
 
-__mod_name__= "ENGLISH"
+__mod_name__= "English"

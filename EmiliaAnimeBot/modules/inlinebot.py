@@ -60,84 +60,153 @@ __help__ = """
  <b> INLINE BOT SERVICE OF EMILIA</b> 
  
 <i> I'm more efficient when added as group admin. By the way these commands can be used by anyone in a group via inline.</i>
+
 <b>Syntax</b>
    @EmiliaAnimeRobot [command] [query]
+
 <b> Commands Available</b>
 - alive - Check Bot's Stats.
+
 - yt [query] - Youtube Search.
-- tr [LANGUAGE_CODE] [QUERY]** - Translate Text.
+
+- tr [langcode] [query] - Translate Text.
+
 - modapk [name] - Give you direct link of mod apk.
-- ud [QUERY] - Urban Dictionary Query
-- google [QUERY] - Google Search.
+
+- ud [query] - Urban Dictionary query
+
+- google [query] - Google Search.
+
 - webss [URL] - Take Screenshot Of A Website.
+
 - bitly [URL] - Shorten A Link.
-- wall [Query] - Find Wallpapers.
-- pic [Query] - Find pictures.
-- saavn [SONG_NAME] - Get Songs From Saavn.
-- deezer [SONG_NAME] - Get Songs From Deezer.
-- torrent [QUERY] - Torrent Search.
-- reddit [QUERY] - Get memes from reddit.
-- imdb [QUERY] - Search movies on imdb.
+
+- wall [query] - Find Wallpapers.
+
+- pic [query] - Find pictures.
+
+- saavn [name] - Get Songs From Saavn.
+
+- deezer [name] - Get Songs From Deezer.
+
+- torrent [query] - Torrent Search.
+
+- reddit [query] - Get memes from reddit.
+
+- imdb [query] - Search movies on imdb.
+
 - spaminfo [ID] - Get spam info of the user.
-- lyrics [QUERY] - Get lyrics of the song.
-- paste [TEXT] - Paste text on pastebin.
-- define [WORD] - Get definition from Dictionary.
-- synonyms [WORD] - Get synonyms from Dictionary.
-- antonyms [WORD] - Get antonyms from Dictionary.
-- country [QUERY] - Get Information about given country.
+
+- lyrics [query] - Get lyrics of the song.
+
+- paste [text] - Paste text on pastebin.
+
+- define [word] - Get definition from Dictionary.
+
+- synonyms [word] - Get synonyms from Dictionary.
+
+- antonyms [word] - Get antonyms from Dictionary.
+
+- country [query] - Get Information about given country.
+
 - cs - Gathers Cricket info (Globally).
-- covid [COUNTRY] - Get covid updates of given country.
+
+- covid [country] - Get covid updates of given country.
+
 - fakegen - Gathers fake information.
-- weather [QUERY] - Get weather information.
-- datetime [QUERY] - Get Date & time information of given country/region.
-- app [QUERY] - Search for apps in playstore.
-- gh [QUERY] - Search github.
-- so [QUERY] - Search stack overflow.
-- wiki [QUERY] - Search wikipedia.
+
+- weather [query] - Get weather information.
+
+- datetime [query] - Get Date & time information of given country/region.
+
+- app [query] - Search for apps in playstore.
+
+- gh [query] - Search github.
+
+- so [query] - Search stack overflow.
+
+- wiki [query] - Search wikipedia.
+
 - ping - Check ping rate.
-- pokedex [TEXT]: Pokemon Search
+
+- pokedex [text]: Pokemon Search
+
 """
 
 __mod_name__ = "Inline"
 __help__ = """
- ==>> **INLINE BOT SERVICE OF EMILIA** <<==
-`I'm more efficient when added as group admin. These commands can be used by anyone in a group via inline.`
-   >> Syntax <<
-@EmiliaAnimeRobot [command] [query]
-   >> Commands Available <<
-- **alive** - __Check Bot's Stats.__
-- **yt [query]** - __Youtube Search.__
-- **tr [LANGUAGE_CODE] [QUERY]** - __Translate Text.__
-- **ud [QUERY]** - __Urban Dictionary Query.__
-- **google [QUERY]** - __Google Search.__
-- **modapk [name]** - __Give you direct link of mod apk__
-- **webss [URL]** - __Take Screenshot Of A Website.__
-- **bitly [URL]** - __Shorten A Link.__
-- **wall [Query]** - __Find Wallpapers.__
-- **pic [Query]** - __Find pictures.__
-- **saavn [SONG_NAME]** - __Get Songs From Saavn.__
-- **deezer [SONG_NAME]** - __Get Songs From Deezer.__
-- **torrent [QUERY]** - __Torrent Search.__
-- **reddit [QUERY]** - __Get memes from redit.__
-- **imdb [QUERY]** - __Search movies on imdb.__
-- **spaminfo [id]** - __Get spam info of the user.__
-- **lyrics [QUERY]** - __Get lyrics of given song.__
-- **paste [TEXT]** - __Paste text on pastebin.__
-- **define [WORD]** - __Get definition from Dictionary.__
-- **synonyms [WORD]** - __Get synonyms from Dictionary.__
-- **antonyms [WORD]** - __Get antonyms from Dictionary.__
-- **country [QUERY]** - __Get Information about given country.__
-- **cs** - __Gathers Cricket info (Globally).__
-- **covid [COUNTRY]** - __Get covid updates of given country.__
-- **fakegen** - __Gathers fake information.__
-- **weather [QUERY]** - __Get weather information.__
-- **datetime [QUERY]** - __Get Date & time information of given country/region.__
-- **app [QUERY]** - __Search for apps on playstore.
-- **gh [QUERY]** - __Search github.__
-- **so [QUERY]** - __Search stack overfolw.__
-- **wiki [QUERY]** - __Search wikipedia.__
-- **ping** - __Check ping rate.__
-- **pokedex [TEXT]** - __Pokemon Search.__
+ <b> INLINE BOT SERVICE OF EMILIA</b> 
+ 
+<i> I'm more efficient when added as group admin. By the way these commands can be used by anyone in a group via inline.</i>
+
+<b>Syntax</b>
+   @EmiliaAnimeRobot [command] [query]
+
+<b> Commands Available</b>
+- alive - Check Bot's Stats.
+
+- yt [query] - Youtube Search.
+
+- tr [langcode] [query] - Translate Text.
+
+- modapk [name] - Give you direct link of mod apk.
+
+- ud [query] - Urban Dictionary query
+
+- google [query] - Google Search.
+
+- webss [URL] - Take Screenshot Of A Website.
+
+- bitly [URL] - Shorten A Link.
+
+- wall [query] - Find Wallpapers.
+
+- pic [query] - Find pictures.
+
+- saavn [name] - Get Songs From Saavn.
+
+- deezer [name] - Get Songs From Deezer.
+
+- torrent [query] - Torrent Search.
+
+- reddit [query] - Get memes from reddit.
+
+- imdb [query] - Search movies on imdb.
+
+- spaminfo [ID] - Get spam info of the user.
+
+- lyrics [query] - Get lyrics of the song.
+
+- paste [text] - Paste text on pastebin.
+
+- define [word] - Get definition from Dictionary.
+
+- synonyms [word] - Get synonyms from Dictionary.
+- antonyms [word] - Get antonyms from Dictionary.
+
+- country [query] - Get Information about given country.
+
+- cs - Gathers Cricket info (Globally).
+
+- covid [country] - Get covid updates of given country.
+
+- fakegen - Gathers fake information.
+
+- weather [query] - Get weather information.
+
+- datetime [query] - Get Date & time information of given country/region.
+
+- app [query] - Search for apps in playstore.
+
+- gh [query] - Search github.
+
+- so [query] - Search stack overflow.
+
+- wiki [query] - Search wikipedia.
+
+- ping - Check ping rate.
+
+- pokedex [text]: Pokemon Search
 """
 
 
