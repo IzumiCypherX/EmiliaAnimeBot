@@ -49,3 +49,8 @@ dispatcher.add_handler(PASTE_HANDLER)
 
 __command_list__ = ["paste"]
 __handlers__ = [PASTE_HANDLER]
+__help__ = """
+ • `/paste` *:* Saves replied content to `nekobin.com` and replies with a url
+*Urban Dictonary:*
+"""
+__mod_name__ = "paste"
