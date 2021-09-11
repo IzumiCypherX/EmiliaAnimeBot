@@ -1,3 +1,4 @@
+"""
 import requests
 from EmiliaAnimeBot import dispatcher
 from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
@@ -46,3 +47,6 @@ dispatcher.add_handler(PASTE_HANDLER)
 
 __command_list__ = ["paste"]
 __handlers__ = [PASTE_HANDLER]
+
+"""
+
