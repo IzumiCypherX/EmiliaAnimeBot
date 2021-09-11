@@ -14,21 +14,18 @@ def paste(update: Update, context: CallbackContext):
     message = update.effective_message
 
     if message.reply_to_message:
-        data = message.reply_to_message.text
+        txt = message.reply_to_message.text
 
     elif len(args) >= 1:
-        data = message.text.split(None, 1)[1]
+        txt = message.text.split(None, 1)[1]
 
     else:
         message.reply_text("What am I supposed to do with this?")
         return
 
-    key = requests.post(
-        'https://nekobin.com/api/documents', json={
-            "content": data
-        }).json().get('result').get('key')
-
-    url = f'https://nekobin.com/{key}'
+    npaste = requests.post(post, data={"content": txt})
+   
+    url = f'www.nekobin.com/{npaste.json()['result']['key']}'
 
     reply_text = f'Pasted to NekoBin!'
 
@@ -49,7 +46,3 @@ dispatcher.add_handler(PASTE_HANDLER)
 
 __command_list__ = ["paste"]
 __handlers__ = [PASTE_HANDLER]
-__help__ = """
- • `/paste` *:* Saves replied content to `nekobin.com` and replies with a url
-"""
-__mod_name__ = "Paste"
