@@ -9,6 +9,7 @@ sqlalchemy==1.3.20
 python-telegram-bot==12.8
 envparse
 faker
+ffmpeg-python
 psycopg2-binary
 feedparser
 pynewtonmath
