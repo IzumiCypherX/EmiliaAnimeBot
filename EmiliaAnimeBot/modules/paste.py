@@ -1,46 +1,57 @@
-import requests
-from EmiliaAnimeBot import dispatcher
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
-from telegram import ParseMode, Update
-from telegram.ext import CallbackContext, run_async
+# Credits to @TheHamkerCat
+
+import os
+import re
+
+import aiofiles
+from pyrogram import filters
+
+from EmiliaAnimeBot import pgram as app
+from EmiliaAnimeBot.pyroerror import capture_err
+from EmiliaAnimeBot.utils.keyboard import ikb
+from EmiliaAnimeBot.utils.pastebin import paste
+
+__mod_name__ = "Paste"
+__help__ = "/paste - To Paste Replied Text Or Document To A Pastebin"
+pattern = re.compile(
+    r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$"
+)
 
 
-@run_async
-def paste(update: Update, context: CallbackContext):
-    args = context.args
-    message = update.effective_message
+@app.on_message(filters.command("paste") & ~filters.edited)
+@capture_err
+async def paste_func(_, message):
+    if not message.reply_to_message:
+        return await message.reply("Reply To A Message With /paste")
+    r = message.reply_to_message
 
-    if message.reply_to_message:
-        data = message.reply_to_message.text
+    if not r.text and not r.document:
+        return await message.reply(
+            "Only text and documents are supported."
+        )
 
-    elif len(args) >= 1:
-        data = message.text.split(None, 1)[1]
+    m = await message.reply("Pasting...")
 
-    else:
-        message.reply_text("What am I supposed to do with this?")
-        return
+    if r.text:
+        content = str(r.text)
+    elif r.document:
+        if r.document.file_size > 40000:
+            return await m.edit(
+                "You can only paste files smaller than 40KB."
+            )
+        if not pattern.search(r.document.mime_type):
+            return await m.edit("Only text files can be pasted.")
+        doc = await message.reply_to_message.download()
+        async with aiofiles.open(doc, mode="r") as f:
+            content = await f.read()
+        os.remove(doc)
 
-    key = (
-        requests.post("https://nekobin.com/api/documents", json={"content": data})
-        .json()
-        .get("result")
-        .get("key")
-    )
-
-    url = f"https://nekobin.com/{key}"
-
-    reply_text = f"Nekofied to *Nekobin* : {url}"
-
-    message.reply_text(
-        reply_text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
-    )
-
-
-PASTE_HANDLER = DisableAbleCommandHandler("paste", paste)
-dispatcher.add_handler(PASTE_HANDLER)
-
-__command_list__ = ["paste"]
-__handlers__ = [PASTE_HANDLER]
-
-
-
+    link = await paste(content)
+    kb = ikb({"Paste Link": link})
+    try:
+        await message.reply_photo(
+            photo=link, quote=False, reply_markup=kb
+        )
+    except Exception:
+        await message.reply("Here's your paste", reply_markup=kb)
+    await m.delete()
