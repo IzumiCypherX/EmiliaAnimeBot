@@ -3,7 +3,7 @@ from pyrogram.types import Message
 
 from EmiliaAnimeBot.extrastuff import SUDOERS
 from EmiliaAnimeBot import pgram as app
-from wbb.core.sections import section
+from EmiliaAnimeBot.core.sections import section
 
 
 async def get_user_info(user, already=False):
