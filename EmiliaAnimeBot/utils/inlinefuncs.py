@@ -64,7 +64,7 @@ keywords_list = [
 ]
 
 
-async def inline_help_func(__HELP__):
+async def inline_help_func(__help__):
     buttons = InlineKeyboard(row_width=4)
     buttons.add(
         *[
@@ -102,7 +102,6 @@ async def inline_help_func(__HELP__):
 async def alive_function(answers):
     buttons = InlineKeyboard(row_width=2)
     bot_state = "Dead" if not await app.get_me() else "Alive"
-    ubot_state = "Dead" if not await app2.get_me() else "Alive"
     buttons.add(
         InlineKeyboardButton("Stats", callback_data="stats_callback"),
         InlineKeyboardButton(
