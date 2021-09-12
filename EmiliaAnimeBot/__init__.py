@@ -200,3 +200,13 @@ from EmiliaAnimeBot.modules.helper_funcs.handlers import (CustomCommandHandler,
 tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
+
+
+pgram.start()
+
+china = pgram.get_me()
+
+BOT_ID = china.id
+BOT_USERNAME = china.username
+BOT_NAME = china.first_name
+BOT_MENTION = china.mention
