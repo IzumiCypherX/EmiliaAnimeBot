@@ -1,32 +1,29 @@
+
+"""
 import codecs
 import pickle
 from typing import Dict, List, Union
 
 from EmiliaAnimeBot.mongo import db
 
-coupledb = db.couple
-
-async def _get_lovers(chat_id: int):
-    lovers = await coupledb.find_one({"chat_id": chat_id})
-    if not lovers:
-        return {}
-    return lovers["couple"]
 
 
-async def get_couple(chat_id: int, date: str):
-    lovers = await _get_lovers(chat_id)
-    if date in lovers:
-        return lovers[date]
-    return False
+async def user_global_karma(user_id) -> int:
+    chats = karmadb.find({"chat_id": {"$lt": 0}})
+    if not chats:
+        return 0
+    total_karma = 0
+    for chat in await chats.to_list(length=1000000):
+        karma = await get_karma(
+            chat["chat_id"], await int_to_alpha(user_id)
+        )
+        if karma and (int(karma["karma"]) > 0):
+            total_karma += int(karma["karma"])
+    return total_karma
 
-
-async def save_couple(chat_id: int, date: str, couple: dict):
-    lovers = await _get_lovers(chat_id)
-    lovers[date] = couple
-    await coupledb.update_one(
-        {"chat_id": chat_id},
-        {"$set": {"couple": lovers}},
-        upsert=True,
-    )
-
-
+async def is_gbanned_user(user_id: int) -> bool:
+    user = await gbansdb.find_one({"user_id": user_id})
+    if not user:
+        return False
+    return True
+"""
