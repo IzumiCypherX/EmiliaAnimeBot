@@ -4,10 +4,13 @@ from time import time
 from pyrogram import filters
 from pyrogram.types import Message
 
-from EmiliaAnimeBot.pyroinfo import BOT_ID
+from EmiliaAnimeBot import pgram
 from EmiliaAnimeBot.extrastuff import SUDOERS
 from EmiliaAnimeBot.core.sections import bold, section, w
 
+
+meow = pgram.get_me()
+BOT_ID = meow.id
 tasks = {}
 TASKS_LOCK = Lock()
 arrow = lambda x: (x.text if x else "") + "\n`→`"
