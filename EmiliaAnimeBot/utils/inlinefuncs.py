@@ -26,7 +26,6 @@ from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             InputTextMessageContent)
 from search_engine_parser import GoogleSearch
 
-from EmiliaAnimeBot.pyroinfo import BOT_USERNAME
 from EmiliaAnimeBot.extrastuff import SUDOERS
 from EmiliaAnimeBot import LOG_GROUP_ID
 from EmiliaAnimeBot import pgram as app 
@@ -41,6 +40,9 @@ from EmiliaAnimeBot.utils.pastebin import paste
 
 MESSAGE_DUMP_CHAT = LOG_GROUP_ID
 
+meow = app.get_me()
+
+BOT_USERNAME = meow.username
 keywords_list = [
     "image",
     "wall",
