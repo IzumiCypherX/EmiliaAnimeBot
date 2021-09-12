@@ -13,7 +13,7 @@ import speedtest
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from pyrogram.types import Message
 
-from EmiliaAnimeBot import aiohttpsession as aiosession
+from EmiliaAnimeBot.arqclient import aiohttpsession as aiosession
 from EmiliaAnimeBot.utils.http import get, post
 
 
