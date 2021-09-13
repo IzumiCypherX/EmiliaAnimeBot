@@ -11,5 +11,3 @@ from EmiliaAnimeBot import USERBOT_PREFIX, DEV_USERS, emiliaub
     filters.command("meowtest", prefixes=USERBOT_PREFIX)
     & filters.user(DEV_USERS)
 )
-
-__mod_name__ = "userbottests"
