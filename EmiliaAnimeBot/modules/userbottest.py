@@ -10,4 +10,5 @@ from EmiliaAnimeBot import USERBOT_PREFIX, DEV_USERS, emiliaub
 @emiliaub.on_message(
     filters.command("meowtest", prefixes=USERBOT_PREFIX)
     & filters.user(DEV_USERS)
+       await message.reply_text("I'm already up!!")
 )
