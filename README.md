@@ -9,6 +9,8 @@
 
 ### Can be found on telegram as [Emilia](https://t.me/EmiliaAnimeRoBot).
 
+##### For Session String, Run stringgen.py locally
+
 ### Status
 
 + [x] Maintained

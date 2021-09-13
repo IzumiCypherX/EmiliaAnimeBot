@@ -168,6 +168,21 @@
          "description": "Get one @ARQRobot on Telegram",
          "required": true,
          "value": ""
+      },
+      "SESSION_STRING": {
+         "description": "Your Pyrogram String Session. Get one by following The Link Given in README.md",
+         "required": true,
+         "value":""
+      },
+      "LOG_GROUP_ID": {
+         "description": "The ID of the Group where the bot will spam with shitty errors and techy stuff",
+         "required": true,
+         "value": ""
+      },
+      "USERBOT_PREFIX": {
+         "description": "The Prefix of the Userbot!",
+         "required": true,
+         "value":"."
       }
    }
 }

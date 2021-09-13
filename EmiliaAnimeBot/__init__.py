@@ -90,9 +90,10 @@ if ENV:
     SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get('SPAMWATCH_SUPPORT_CHAT', None)
     SPAMWATCH_API = os.environ.get('SPAMWATCH_API', None)
-    BOT_ID = 1975581385
+    SESSION_STRING = os.environ.get('SESSION_STRING', None)
+    LOG_GROUP_ID = os.environ.get('LOG_GROUP_ID', None)
+    USERBOT_PREFIX = os.environ.get('USERBOT_PREFIX', '.')
 
-    LOG_GROUP_ID = -1001506202638
     try:
         BL_CHATS = set(int(x) for x in os.environ.get('BL_CHATS', "").split())
     except ValueError:
@@ -143,7 +144,9 @@ else:
     CERT_PATH = Config.CERT_PATH
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
-
+    SESSION_STRING = Config.SESSION_STRING
+    LOG_GROUP_ID = Config.LOG_GROUP_ID
+    USERBOT_PREFIX + Config.USERBOT_PREFIX
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
@@ -173,16 +176,18 @@ DEV_USERS.add(OWNER_ID)
 
 if not SPAMWATCH_API:
     sw = None
-    LOGGER.warning("SpamWatch API key missing! recheck your config.")
+    LOGGER.warning("SPAMWATCH_API not found! Recheck!")
 else:
     sw = spamwatch.Client(SPAMWATCH_API)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("emilia", API_ID, API_HASH)
 pgram = Client("EmiPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+emiliaub = Client(SESSION_STRING, api_id=API_ID, api_hash=API_HASH)
 mongo_client = MongoClient(MONGO_DB_URI)
 db = mongo_client.EmiliaAnimeBot
 dispatcher = updater.dispatcher
+
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
@@ -201,8 +206,11 @@ tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
 
-
+print("Starting Pyrogram Clients")
 pgram.start()
+usermeow.start()
+
+print("Aquiring BOT Client Info")
 
 china = pgram.get_me()
 
@@ -210,3 +218,21 @@ BOT_ID = china.id
 BOT_USERNAME = china.username
 BOT_NAME = china.first_name
 BOT_MENTION = china.mention
+
+
+print("Aquiring USERBOT Client Info")
+
+izumi = emiliaub.get_me()
+
+USERBOT_ID = izumi.id
+USERBOT_NAME = izumi.first_name
+USERBOT_USERNAME = izumi.username
+USERBOT_MENTION = izumi.mention
+
+
+end_credits = """
+INFO GATHERED!
+Client: Emilia Pyro
+Copyright: (c) 2021 EmiliaAnimeBot
+"""
+print(end_credits)
