@@ -9,16 +9,8 @@ from EmiliaAnimeBot import pgram as app
 from EmiliaAnimeBot.pyrogramee.pluginshelper import edit_or_reply as eor
 from EmiliaAnimeBot.pyrogramee.errors import capture_err
 from EmiliaAnimeBot.utils.filter_groups import chatbot_group
-
-ARQ_API_URL = "https://thearq.tech"
-ARQ_API_KEY = 'MTXJXE-ELSWXE-UDRXJC-JCJQXN-ARQ'
-# My Own API_KEY Don't Fuck
-aiohttpsession = ClientSession()
-
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-
-
-BOT_ID = 1975581385
+from EmiliaAnimeBot.arqclient import arq
+from EmiliaAnimeBot import BOT_ID
 
 __mod_name__ = "ChatBot"
 __help__ = """
