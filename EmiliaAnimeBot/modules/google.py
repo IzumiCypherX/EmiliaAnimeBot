@@ -9,7 +9,6 @@ import aiohttp
 import urllib.request
 from urllib.parse import urlencode
 import requests
-from bs4 import BeautifulSoup
 from PIL import Image
 from search_engine_parser import GoogleSearch
 
