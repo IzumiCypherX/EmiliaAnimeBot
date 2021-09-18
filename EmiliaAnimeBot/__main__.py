@@ -23,6 +23,16 @@ from telegram.utils.helpers import escape_markdown
 
 EMILIA_IMG = "https://telegra.ph/file/b37cec509d121c8c63518.jpg"
 
+EMILIA_USAGE_TEXT = """
+Basic Usage Help For Emilia
+
+🔳Add me To your Group
+🔳Make Me Admin With Full Rights.
+🔳Now I'm Good to Go!
+🔳For Any help, just do /help and get help!
+
+"""
+
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -54,21 +64,21 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-`Hey There!` [👩‍💼](https://telegra.ph/file/c766d686089a43e0ff33a.jpg) 
-`My name is` *Emilia*`
-`I am an Anime Themed group management bot.`
-You can find my list of available commands with` *🔐Commands*   
+This is Emilia.
+
+A Diverse Systematic Bot Written in Python.
+You can Add Me In Your Group for Knowing my True Power.
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD EMILIA TO YOUR GROUP ➕️",url="t.me/EmiliaAnimeRoBot?startgroup=true"
+            text="🏹Summon ME🏹",url="t.me/EmiliaAnimeRoBot?startgroup=true"
         ),
     ],
     [
         InlineKeyboardButton(
-          text="🔐 Commands", callback_data="help_back"
+          text="Commands", callback_data="help_back"
         ),
     ],
     [
@@ -77,7 +87,7 @@ buttons = [
         ),
       
         InlineKeyboardButton(
-          text="📑 Logs", url="https://t.me/tangentlogger"
+          text="Usage Guide", callback_data="usage_"
         ),
     ],
          
@@ -353,37 +363,29 @@ def help_button(update, context):
 
 
 @run_async
-def gabi_about_callback(update, context):
-    query = update.callback_query
-    if query.data == "gabi_":
-        query.message.edit_text(
-            text=""" ℹ️ I'm *Emilia*, a powerful group management bot built to help you manage your group easily.
-                 \n❍ I can restrict users.
-                 \n❍ I can greet users with customizable welcome messages and even set a group's rules.
-                 \n❍ I have an advanced anti-flood system.
-                 \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n❍ I check for admins' permissions before executing any command and more stuffs
-                 \n\nIf you have any question about *Emilia*, let us know at .""",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="Back", callback_data="asuna_back")
-                 ]
-                ]
-            ),
-        )
-    elif query.data == "asuna_back":
-        query.message.edit_text(
-                PM_START_TEXT,
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=False,
-        )
-
+def Basic_usage_callback(update, context):
+  query = update.callback_query
+  if query.data == "usage_":
+    query.message.edit_text(
+      text = EMILIA_USAGE_TEXT,
+      parse_mode = ParseMode.MARKDOWN,
+      disable_web_page_preview = True,
+      reply_markup = InlineKeyboardMarkup(
+        [
+          [
+            InlineKeyboardButton(text="Go Back", callback_data="emilia_back")
+          ]
+        ]
+      ),
+    )
+    elif query.data == "emilia_back":
+       query.message.edit_text(
+               PM_START_TEXT,
+               reply_markup=InlineKeyboardMarkup(buttons),
+               parse_mode=ParseMode.MARKDOWN,
+               timeout=60,
+               disable_web_page_preview=False,
+       )
 
 @run_async
 def Source_about_callback(update, context):
@@ -708,7 +710,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(gabi_about_callback, pattern=r"gabi_")
+    about_callback_handler = CallbackQueryHandler(Basic_usage_callback, pattern=r"usage_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
