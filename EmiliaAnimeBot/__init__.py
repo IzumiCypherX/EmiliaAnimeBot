@@ -206,12 +206,12 @@ pgram.start()
 
 print("Aquiring BOT Client Info")
 
-china = pgram.get_me()
+bottie = pgram.get_me()
 
-BOT_ID = china.id
-BOT_USERNAME = china.username
-BOT_NAME = china.first_name
-BOT_MENTION = china.mention
+BOT_ID = bottie.id
+BOT_USERNAME = bottie.username
+BOT_NAME = bottie.first_name
+BOT_MENTION = bottie.mention
 
 
 
