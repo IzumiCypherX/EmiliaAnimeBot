@@ -399,12 +399,12 @@ def Source_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Go Back", callback_data="asuna_back")
+                    InlineKeyboardButton(text="Go Back", callback_data="emilia_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "asuna_back":
+    elif query.data == "emilia_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
