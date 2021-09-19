@@ -90,9 +90,7 @@ if ENV:
     SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get('SPAMWATCH_SUPPORT_CHAT', None)
     SPAMWATCH_API = os.environ.get('SPAMWATCH_API', None)
-    SESSION_STRING = os.environ.get('SESSION_STRING', None)
     LOG_GROUP_ID = os.environ.get('LOG_GROUP_ID', None)
-    USERBOT_PREFIX = os.environ.get('USERBOT_PREFIX', '.')
 
     try:
         BL_CHATS = set(int(x) for x in os.environ.get('BL_CHATS', "").split())
@@ -144,9 +142,7 @@ else:
     CERT_PATH = Config.CERT_PATH
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
-    SESSION_STRING = Config.SESSION_STRING
     LOG_GROUP_ID = Config.LOG_GROUP_ID
-    USERBOT_PREFIX + Config.USERBOT_PREFIX
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
@@ -183,7 +179,6 @@ else:
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("emilia", API_ID, API_HASH)
 pgram = Client("EmiPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
-emiliaub = Client(SESSION_STRING, api_id=API_ID, api_hash=API_HASH)
 mongo_client = MongoClient(MONGO_DB_URI)
 db = mongo_client.EmiliaAnimeBot
 dispatcher = updater.dispatcher
@@ -208,7 +203,6 @@ tg.MessageHandler = CustomMessageHandler
 
 print("Starting Pyrogram Clients")
 pgram.start()
-emiliaub.start()
 
 print("Aquiring BOT Client Info")
 
@@ -219,15 +213,6 @@ BOT_USERNAME = china.username
 BOT_NAME = china.first_name
 BOT_MENTION = china.mention
 
-
-print("Aquiring USERBOT Client Info")
-
-izumi = emiliaub.get_me()
-
-USERBOT_ID = izumi.id
-USERBOT_NAME = izumi.first_name
-USERBOT_USERNAME = izumi.username
-USERBOT_MENTION = izumi.mention
 
 
 end_credits = """
