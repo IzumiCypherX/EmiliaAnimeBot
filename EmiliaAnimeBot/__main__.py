@@ -710,7 +710,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(Basic_usage_callback, pattern=r"usage_")
+    basic_callback_handler = CallbackQueryHandler(Basic_usage_callback, pattern=r"usage_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
@@ -722,6 +722,7 @@ def main():
     dispatcher.add_handler(about_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
+    dispacther.add_handler(basic_callback_handler)
     dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
