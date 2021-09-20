@@ -106,7 +106,7 @@ buttons = [
 
 
 HELP_STRINGS = """
-RAIDEN_IMG, caption= [Baal Raiden!](https://telegra.ph/file/a8d701644903e2e37a30c.jpg) 
+`Hey there! My name is` [Baal Raiden!](https://telegra.ph/file/a8d701644903e2e37a30c.jpg)  
 I'm a Half Elf and help admins manage their groups with Some Powerful Features! \n`Have a look at the following for an idea of some of the things I can help you with.`"""
 
 DONATE_STRING = """
