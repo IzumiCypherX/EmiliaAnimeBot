@@ -19,7 +19,8 @@
 + [x] OpenSourced
 + [x] Working Instance Available
 + [x] Clean Code
-+ [ ] Heroku Deploy
++ [x] Heroku Deploy
++ [x] Docker/Local Machine
 
 #### Creator Info/Credits
 
