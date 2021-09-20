@@ -21,10 +21,10 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
 from telegram.ext.dispatcher import DispatcherHandlerStop, run_async
 from telegram.utils.helpers import escape_markdown
 
-EMILIA_IMG = "https://telegra.ph/file/b37cec509d121c8c63518.jpg"
+RAIDEN_IMG = "https://telegra.ph/file/f50478c6df52ce2e61cb3.jpg"
 
-EMILIA_USAGE_TEXT = """
-Basic Usage Help For Emilia
+RAIDEN_USAGE_TEXT = """
+Basic Usage Help For Baal Raiden
 
 🔳Add me To your Group
 🔳Make Me Admin With Full Rights.
@@ -64,7 +64,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-This is Emilia[.](https://telegra.ph/file/65fb4fdec1bd9787f01a0.jpg)
+This is Baal Raiden[.](https://telegra.ph/file/65fb4fdec1bd9787f01a0.jpg)
 
 A Diverse Systematic Bot Written in Python.
 You can Add Me In Your Group for Knowing my True Power.
@@ -73,7 +73,7 @@ You can Add Me In Your Group for Knowing my True Power.
 buttons = [
     [
         InlineKeyboardButton(
-            text="🏹Summon ME🏹",url="t.me/EmiliaAnimeRoBot?startgroup=true"
+             text="➕ Add me in your group",url="t.me/Raiden2op_bot?startgroup=true"
         ),
     ],
     [
@@ -87,13 +87,13 @@ buttons = [
         ),
       
         InlineKeyboardButton(
-          text="Usage Guide", callback_data="usage_"
+          text="🔰 Usage Guide", callback_data="usage_"
         ),
     ],
          
     [
        InlineKeyboardButton(
-           text="🐱 Support", url="https://t.me/TangentChats"
+           text="🤖 Support", url="https://t.me/Raidenbot_support"
          ),
     ],
     [
@@ -106,12 +106,12 @@ buttons = [
 
 
 HELP_STRINGS = """
-`Hey there! My name is` [Emilia!](https://telegra.ph/file/e5fc94ada18369f89c832.jpg) 
+`Hey there! My name is` [Baal Raiden!](https://telegra.ph/file/a8d701644903e2e37a30c.jpg) 
 I'm a Half Elf and help admins manage their groups with Some Powerful Features! \n`Have a look at the following for an idea of some of the things I can help you with.`"""
 
 DONATE_STRING = """
 Heya, glad to hear you want to donate!
-I'd Like you to Donate that Money to Some Charity. 
+I'd Like you to Donate that Money to My Master. 
 Thanks!
 """
 
@@ -223,17 +223,17 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            EMILIA_IMG, caption= "<code>Emilia is Here For You❤\nI am Awake Since</code>: <code>{}</code>".format(
+            RAIDEN_IMG, caption= "<code>Baal Raiden is Here For You\nI am Awake Since</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://telegram.dog/TangentChats")
+                  InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://telegram.dog/Raidenbot_support")
                   ],
                   [
-                  InlineKeyboardButton(text="Sᴏᴜʀᴄᴇ", url="https://github.com/IzumiCypherX/EmiliaAnimeBot")
+                  InlineKeyboardButton(text="Sᴏᴜʀᴄᴇ", url="https://www.tomorrowtides.com/suzuya-source.html")
                   ]
                 ]
             ),
@@ -392,7 +392,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..👩‍💼 I'm *Emilia*
+            text=""" Hi..👩‍💼 I'm *Baal Raiden*
                  \nMy Source Code Can be Found at Github at this [Link](https://github.com/IzumiCypherX/EmiliaAnimeBot""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -467,7 +467,7 @@ def get_help(update: Update, context: CallbackContext):
             InlineKeyboardMarkup(
                 [[InlineKeyboardButton(text="Back", callback_data="help_back"),
                                 InlineKeyboardButton(
-                                    text="Support", url="https://telegram.dog/TangentChats"
+                                    text="Support", url="https://telegram.dog/Raidenbot_support"
                                 )]]
             ),
         )
@@ -693,7 +693,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Emilia is Back Online💼")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Baal Raiden is Back Online")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
