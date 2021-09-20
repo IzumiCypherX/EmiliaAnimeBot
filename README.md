@@ -62,11 +62,11 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 <details>
     <summary>More Deploy Options</summary>
     <br>
-    <h2 align="center">
+    <p align="center">
 
     Deploying on Local Machine
 
-<h2>
+</p>
 
 ```console
     IzumiCypherx@arch:~$ git clone https://github.com/IzumiCypherX/EmiliaAnimeBot
