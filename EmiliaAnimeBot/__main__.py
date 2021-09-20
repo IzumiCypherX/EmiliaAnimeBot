@@ -64,9 +64,9 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-This is Baal Raiden[.](https://telegra.ph/file/65fb4fdec1bd9787f01a0.jpg)
+This is Baal Raiden[.](https://telegra.ph/file/e5eae1b63dca030982210.jpg)
 
-A Diverse Systematic Bot Written in Python.
+Reality is the stillness buried deep beneath the illusion.
 You can Add Me In Your Group for Knowing my True Power.
 """
 
@@ -223,7 +223,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            RAIDEN_IMG, caption= "<code>Baal Raiden is Here For You\nI am Awake Since</code>: <code>{}</code>".format(
+            RAIDEN_IMG, caption= "<code>Baal Raiden is Here For You\nInazuma shines eterna Since</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
