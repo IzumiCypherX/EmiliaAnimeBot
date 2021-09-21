@@ -6,19 +6,19 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-import EmiliaAnimeBot.modules.sql.blacklist_sql as sql
-from EmiliaAnimeBot.modules.sql.approve_sql import is_approved
-from EmiliaAnimeBot import dispatcher, LOGGER
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from EmiliaAnimeBot.modules.helper_funcs.extraction import extract_text
-from EmiliaAnimeBot.modules.helper_funcs.misc import split_message
-from EmiliaAnimeBot.modules.log_channel import loggable
-from EmiliaAnimeBot.modules.warns import warn
-from EmiliaAnimeBot.modules.helper_funcs.string_handling import extract_time
-from EmiliaAnimeBot.modules.connection import connected
+import RaidenShogunBot.modules.sql.blacklist_sql as sql
+from RaidenShogunBot.modules.sql.approve_sql import is_approved
+from RaidenShogunBot import dispatcher, LOGGER
+from RaidenShogunBot.modules.disable import DisableAbleCommandHandler
+from RaidenShogunBot.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from RaidenShogunBot.modules.helper_funcs.extraction import extract_text
+from RaidenShogunBot.modules.helper_funcs.misc import split_message
+from RaidenShogunBot.modules.log_channel import loggable
+from RaidenShogunBot.modules.warns import warn
+from RaidenShogunBot.modules.helper_funcs.string_handling import extract_time
+from RaidenShogunBot.modules.connection import connected
 
-from EmiliaAnimeBot.modules.helper_funcs.alternate import send_message, typing_action
+from RaidenShogunBot.modules.helper_funcs.alternate import send_message, typing_action
 
 BLACKLIST_GROUP = 11
 

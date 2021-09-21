@@ -7,10 +7,10 @@ from telegram.ext import CallbackContext, run_async
 from telegram.error import BadRequest
 
 import EmiliaAnimeBot.modules.animequotes_strings as animequotes_strings
-from EmiliaAnimeBot import dispatcher
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import (is_user_admin)
-from EmiliaAnimeBot.modules.helper_funcs.extraction import extract_user
+from RaidenShogunBot import dispatcher
+from RaidenShogunBot.modules.disable import DisableAbleCommandHandler
+from RaidenShogunBot.modules.helper_funcs.chat_status import (is_user_admin)
+from RaidenShogunBot.modules.helper_funcs.extraction import extract_user
 
 @run_async
 def animequotes(update: Update, context: CallbackContext):

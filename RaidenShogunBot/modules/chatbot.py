@@ -5,12 +5,12 @@ from pyrogram.types import Message
 from aiohttp import ClientSession
 from Python_ARQ import ARQ
 
-from EmiliaAnimeBot import pgram as app
-from EmiliaAnimeBot.pyrogramee.pluginshelper import edit_or_reply as eor
-from EmiliaAnimeBot.pyrogramee.errors import capture_err
-from EmiliaAnimeBot.utils.filter_groups import chatbot_group
-from EmiliaAnimeBot.arqclient import arq
-from EmiliaAnimeBot import BOT_ID
+from RaidenShogunBot import pgram as app
+from RaidenShogunBot.pyrogramee.pluginshelper import edit_or_reply as eor
+from RaidenShogunBot.pyrogramee.errors import capture_err
+from RaidenShogunBot.utils.filter_groups import chatbot_group
+from RaidenShogunBot.arqclient import arq
+from RaidenShogunBot import BOT_ID
 
 __mod_name__ = "ChatBot"
 __help__ = """

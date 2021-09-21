@@ -1,11 +1,11 @@
 import html
 
-from EmiliaAnimeBot import ALLOW_EXCL, CustomCommandHandler, dispatcher
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import (bot_can_delete,
+from RaidenShogunBot import ALLOW_EXCL, CustomCommandHandler, dispatcher
+from RaidenShogunBot.modules.disable import DisableAbleCommandHandler
+from RaidenShogunBot.modules.helper_funcs.chat_status import (bot_can_delete,
                                                            connection_status,
                                                            dev_plus, user_admin)
-from EmiliaAnimeBot.modules.sql import cleaner_sql as sql
+from RaidenShogunBot.modules.sql import cleaner_sql as sql
 from telegram import ParseMode, Update
 from telegram.ext import (CallbackContext, CommandHandler, Filters,
                           MessageHandler, run_async)

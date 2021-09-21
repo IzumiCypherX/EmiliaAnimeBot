@@ -5,10 +5,10 @@ from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Upda
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CommandHandler, CallbackQueryHandler, run_async, CallbackContext
 
-import EmiliaAnimeBot.modules.sql.connection_sql as sql
-from EmiliaAnimeBot import dispatcher, DRAGONS, DEV_USERS
-from EmiliaAnimeBot.modules.helper_funcs import chat_status
-from EmiliaAnimeBot.modules.helper_funcs.alternate import send_message, typing_action
+import RaidenShogunBot.modules.sql.connection_sql as sql
+from RaidenShogunBot import dispatcher, DRAGONS, DEV_USERS
+from RaidenShogunBot.modules.helper_funcs import chat_status
+from RaidenShogunBot.modules.helper_funcs.alternate import send_message, typing_action
 
 user_admin = chat_status.user_admin
 

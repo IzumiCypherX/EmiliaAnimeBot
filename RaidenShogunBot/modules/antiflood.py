@@ -3,19 +3,19 @@ from typing import Optional, List
 
 from telegram import Message, Chat, Update, Bot, User, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, ChatPermissions
 
-from EmiliaAnimeBot import TIGERS, WOLVES, dispatcher
-from EmiliaAnimeBot.modules.sql.approve_sql import is_approved
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import (
+from RaidenShogunBot import TIGERS, WOLVES, dispatcher
+from RaidenShogunBot.modules.sql.approve_sql import is_approved
+from RaidenShogunBot.modules.helper_funcs.chat_status import (
     bot_admin, can_restrict, connection_status, is_user_admin, user_admin,
     user_admin_no_reply)
-from EmiliaAnimeBot.modules.log_channel import loggable
-from EmiliaAnimeBot.modules.sql import antiflood_sql as sql
+from RaidenShogunBot.modules.log_channel import loggable
+from RaidenShogunBot.modules.sql import antiflood_sql as sql
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, Filters, MessageHandler, run_async
 from telegram.utils.helpers import mention_html, escape_markdown
-from EmiliaAnimeBot.modules.helper_funcs.string_handling import extract_time
-from EmiliaAnimeBot.modules.connection import connected
-from EmiliaAnimeBot.modules.helper_funcs.alternate import send_message
+from RaidenShogunBot.modules.helper_funcs.string_handling import extract_time
+from RaidenShogunBot.modules.connection import connected
+from RaidenShogunBot.modules.helper_funcs.alternate import send_message
 FLOOD_GROUP = 3
 
 

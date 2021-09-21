@@ -5,16 +5,16 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
-from EmiliaAnimeBot import DRAGONS, dispatcher
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import (bot_admin, can_pin,
+from RaidenShogunBot import DRAGONS, dispatcher
+from RaidenShogunBot.modules.disable import DisableAbleCommandHandler
+from RaidenShogunBot.modules.helper_funcs.chat_status import (bot_admin, can_pin,
                                                            can_promote,
                                                            connection_status,
                                                            user_admin)
-from EmiliaAnimeBot.modules.helper_funcs.extraction import (extract_user,
+from RaidenShogunBot.modules.helper_funcs.extraction import (extract_user,
                                                           extract_user_and_text)
-from EmiliaAnimeBot.modules.log_channel import loggable
-from EmiliaAnimeBot.modules.helper_funcs.alternate import send_message
+from RaidenShogunBot.modules.log_channel import loggable
+from RaidenShogunBot.modules.helper_funcs.alternate import send_message
 
 
 @run_async

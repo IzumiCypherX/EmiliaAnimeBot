@@ -1,18 +1,18 @@
 import html
 from typing import Optional
 
-import EmiliaAnimeBot.modules.sql.blsticker_sql as sql
-from EmiliaAnimeBot import LOGGER, dispatcher
-from EmiliaAnimeBot.modules.connection import connected
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
-from EmiliaAnimeBot.modules.helper_funcs.alternate import send_message
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import (user_admin,
+import RaidenShogunBot.modules.sql.blsticker_sql as sql
+from RaidenShogunBot import LOGGER, dispatcher
+from RaidenShogunBot.modules.connection import connected
+from RaidenShogunBot.modules.disable import DisableAbleCommandHandler
+from RaidenShogunBot.modules.helper_funcs.alternate import send_message
+from RaidenShogunBot.modules.helper_funcs.chat_status import (user_admin,
                                                            user_not_admin)
-from EmiliaAnimeBot.modules.helper_funcs.misc import split_message
-from EmiliaAnimeBot.modules.helper_funcs.string_handling import extract_time
+from RaidenShogunBot.modules.helper_funcs.misc import split_message
+from RaidenShogunBot.modules.helper_funcs.string_handling import extract_time
 
-from EmiliaAnimeBot.modules.log_channel import loggable
-from EmiliaAnimeBot.modules.warns import warn
+from RaidenShogunBot.modules.log_channel import loggable
+from RaidenShogunBot.modules.warns import warn
 from telegram import (Chat, Message, ParseMode, Update, User, ChatPermissions)
 from telegram.error import BadRequest
 from telegram.ext import (CallbackContext, CommandHandler, Filters,

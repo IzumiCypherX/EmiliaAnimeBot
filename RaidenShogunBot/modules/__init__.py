@@ -1,4 +1,4 @@
-from EmiliaAnimeBot import LOAD, LOGGER, NO_LOAD
+from RaidenShogunBot import LOAD, LOGGER, NO_LOAD
 
 
 def __list_all_modules():
