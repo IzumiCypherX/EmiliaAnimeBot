@@ -2,18 +2,18 @@ import html
 import time
 from datetime import datetime
 from io import BytesIO
-from EmiliaAnimeBot.modules.sql.users_sql import get_user_com_chats
-import EmiliaAnimeBot.modules.sql.global_bans_sql as sql
-from EmiliaAnimeBot import (DEV_USERS, EVENT_LOGS, OWNER_ID, STRICT_GBAN, DRAGONS,
+from RaidenShogunBot.modules.sql.users_sql import get_user_com_chats
+import RaidenShogunBot.modules.sql.global_bans_sql as sql
+from RaidenShogunBot import (DEV_USERS, EVENT_LOGS, OWNER_ID, STRICT_GBAN, DRAGONS,
                           SUPPORT_CHAT, SPAMWATCH_SUPPORT_CHAT, DEMONS, TIGERS,
                           WOLVES, sw, dispatcher)
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import (is_user_admin,
+from RaidenShogunBot.modules.helper_funcs.chat_status import (is_user_admin,
                                                            support_plus,
                                                            user_admin)
-from EmiliaAnimeBot.modules.helper_funcs.extraction import (extract_user,
+from RaidenShogunBot.modules.helper_funcs.extraction import (extract_user,
                                                           extract_user_and_text)
-from EmiliaAnimeBot.modules.helper_funcs.misc import send_to_list
-from EmiliaAnimeBot.modules.sql.users_sql import get_all_chats
+from RaidenShogunBot.modules.helper_funcs.misc import send_to_list
+from RaidenShogunBot.modules.sql.users_sql import get_all_chats
 from telegram import ParseMode, Update
 from telegram.error import BadRequest, TelegramError
 from telegram.ext import (CallbackContext, CommandHandler, Filters,

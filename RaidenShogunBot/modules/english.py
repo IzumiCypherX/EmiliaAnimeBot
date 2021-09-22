@@ -1,7 +1,7 @@
-from EmiliaAnimeBot import telethn as tbot
+from RaidenShogunBot import telethn as tbot
 import json
 import requests
-from EmiliaAnimeBot.events import register
+from RaidenShogunBot.events import register
 from telethon import *
 from telethon.tl import functions
 import os

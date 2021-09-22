@@ -1,6 +1,6 @@
-from EmiliaAnimeBot import telethn as tbot
+from RaidenShogunBot import telethn as tbot
 import os
-from EmiliaAnimeBot.events import register
+from RaidenShogunBot.events import register
 import secureme
 
 @register(pattern="^/encrypt ?(.*)")

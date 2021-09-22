@@ -11,16 +11,16 @@ import uuid
 from io import BytesIO
 import html
 
-import EmiliaAnimeBot.modules.sql.feds_sql as sql
-from EmiliaAnimeBot import (EVENT_LOGS, LOGGER, OWNER_ID, DRAGONS, TIGERS, WOLVES,
+import RaidenShogunBot.modules.sql.feds_sql as sql
+from RaidenShogunBot import (EVENT_LOGS, LOGGER, OWNER_ID, DRAGONS, TIGERS, WOLVES,
                           dispatcher)
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
-from EmiliaAnimeBot.modules.helper_funcs.alternate import send_message
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import is_user_admin
-from EmiliaAnimeBot.modules.helper_funcs.extraction import (extract_unt_fedban,
+from RaidenShogunBot.modules.disable import DisableAbleCommandHandler
+from RaidenShogunBot.modules.helper_funcs.alternate import send_message
+from RaidenShogunBot.modules.helper_funcs.chat_status import is_user_admin
+from RaidenShogunBot.modules.helper_funcs.extraction import (extract_unt_fedban,
                                                           extract_user,
                                                           extract_user_fban)
-from EmiliaAnimeBot.modules.helper_funcs.string_handling import markdown_parser
+from RaidenShogunBot.modules.helper_funcs.string_handling import markdown_parser
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, MessageEntity,
                       ParseMode, Update)
 from telegram.error import BadRequest, TelegramError, Unauthorized
