@@ -9,6 +9,7 @@ from EmiliaAnimeBot import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
                           OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK,
                           dispatcher, StartTime, telethn, updater, pgram)
 
+from EmiliaAnimeBot.resources,imagefiles import EMILIA_START_IMG, EMILIA_HELP_IMG, EMILIA_IMG
 from EmiliaAnimeBot.modules import ALL_MODULES
 from EmiliaAnimeBot.modules.helper_funcs.chat_status import is_user_admin
 from EmiliaAnimeBot.modules.helper_funcs.misc import paginate_modules
@@ -64,10 +65,12 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-This is Emilia[.](https://telegra.ph/file/65fb4fdec1bd9787f01a0.jpg)
+This is Emilia[.]({EMILIA_START_IMG})
 
 A Diverse Systematic Bot Written in Python.
 You can Add Me In Your Group for Knowing my True Power.
+
+You can either use /help or the Commands Button Given Below!
 """
 
 buttons = [
@@ -106,8 +109,8 @@ buttons = [
 
 
 HELP_STRINGS = """
-`Hey there! My name is` [Emilia!](https://telegra.ph/file/e5fc94ada18369f89c832.jpg) 
-I'm a Half Elf and help admins manage their groups with Some Powerful Features! \n`Have a look at the following for an idea of some of the things I can help you with.`"""
+`Hey there! My name is` [Emilia!]({EMILIA_HELP_IMG}) 
+I have Quite a Few Features, Go Ahead and Check out!"""
 
 DONATE_STRING = """
 Heya, glad to hear you want to donate!
@@ -303,7 +306,7 @@ def help_button(update, context):
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
     next_match = re.match(r"help_next\((.+?)\)", query.data)
-    back_match = re.match(r"help_back", query.data)
+    back_match = re.match(r"help_back\((.+?)\)", query.data)
 
     print(query.message.chat.id)
 
@@ -364,27 +367,25 @@ def help_button(update, context):
 
 @run_async
 def Basic_usage_callback(update, context):
-  query = update.callback_query
-  if query.data == "usage_":
-    query.message.edit_text(
-      text = EMILIA_USAGE_TEXT,
-      parse_mode = ParseMode.MARKDOWN,
-      disable_web_page_preview = True,
-      reply_markup = InlineKeyboardMarkup(
-        [
-          [
-            InlineKeyboardButton(text="Go Back", callback_data="emilia_back")
-          ]
-        ]
-      ),
+    query = update.callback_query
+    if query.data == "usage_":
+        query.message.edit_text(
+        text = EMILIA_USAGE_TEXT,
+        parse_mode = ParseMode.MARKDOWN,
+        disable_web_page_preview = True,
+        reply_markup= InlineKeyboardMarkup(
+            [
+                InlineKeyboardButton(text= "Return", callback_data= "emilia_back")
+            ]
+        ),
     )
-  elif query.data == "emilia_back":
-       query.message.edit_text(
-               PM_START_TEXT,
-               reply_markup=InlineKeyboardMarkup(buttons),
-               parse_mode=ParseMode.MARKDOWN,
-               timeout=60,
-               disable_web_page_preview=False,
+    elif query.data == "emilia_back":
+         query.message.edit_text(
+            PM_START_TEXT,
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+            disable_web_page_preview=False,
        )
 
 @run_async

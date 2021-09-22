@@ -172,32 +172,27 @@ def new_member(update: Update, context: CallbackContext):
                     pass
                 reply = False
 
-                """
+
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo(
-                    OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
-                     ),
-                     parse_mode=ParseMode.HTML,
-                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
+                    OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>", 
+                    reply_to_message_id=reply,
+                    ),
+                    parse_mode=ParseMode.HTML,
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
                 continue
 
             # Welcoming my Alt(for tests Lol)
-            if new_mem.id == 1947860028:
+            elif new_mem.id == 1947860028:
                 update.effective_message.reply_photo(
-                    OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>"
-                     ),
-                     parse_mode=ParseMode.HTML,
-                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
-  
-                continue
-                """
-             # Welcome Owner
-            elif new_mem.id == OWNER_ID:
-                update.effective_message.reply_text(
-                    "A Member of the Sudo Team Just Joined",
+                    OWNER_WELCOME_IMG, 
+                    caption= "<code>Izumi Entered The Chat</code>"
                     reply_to_message_id=reply,
-                )
+                    ),
+                    parse_mode=ParseMode.HTML,
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
+  
                 continue
 
             # Welcome Sudos
@@ -369,10 +364,10 @@ def new_member(update: Update, context: CallbackContext):
                         })
                     new_join_mem = f"[{escape_markdown(new_mem.first_name)}](tg://user?id={user.id})"
                     message = msg.reply_text(
-                        f"{new_join_mem}, click the button below to prove you're human.\nYou have 120 seconds.",
+                        f"{new_join_mem}, You're required to click the Button Below to Start Chatting.\nYou have 120 seconds to do so",
                         reply_markup=InlineKeyboardMarkup([{
                             InlineKeyboardButton(
-                                text="Yes, I'm human.",
+                                text="Validate, Me!",
                                 callback_data=f"user_join_({new_mem.id})",
                             )
                         }]),
@@ -426,8 +421,8 @@ def new_member(update: Update, context: CallbackContext):
             return welcome_log
 
         return (f"{html.escape(chat.title)}\n"
-                f"#USER_JOINED\n"
-                f"<b>User</b>: {mention_html(user.id, user.first_name)}\n"
+                f"#Arrival\n"
+                f"<b>Name:</b>: {mention_html(user.id, user.first_name)}\n"
                 f"<b>ID</b>: <code>{user.id}</code>")
 
     return ""
@@ -445,7 +440,7 @@ def check_not_bot(member, chat_id, message_id, context):
 
         try:
             bot.edit_message_text(
-                "*kicks user*\nThey can always rejoin and try.",
+                "The User has been kicked, They Can Rejoin manually again.",
                 chat_id=chat_id,
                 message_id=message_id,
             )
@@ -495,13 +490,13 @@ def left_member(update: Update, context: CallbackContext):
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Oi! Genos! He left..", reply_to_message_id=reply)
+                    "The Izumi Seems to Have Left us", reply_to_message_id=reply)
                 return
 
             # Give the devs a special goodbye
             elif left_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "See you later at the SOLO•GUILD ADIOUS!",
+                    "Bye Bye! Developer-kun",
                     reply_to_message_id=reply,
                 )
                 return
@@ -610,16 +605,16 @@ def welcome(update: Update, context: CallbackContext):
         if args[0].lower() in ("on", "yes"):
             sql.set_welc_preference(str(chat.id), True)
             update.effective_message.reply_text(
-                "Okay! I'll greet members when they join.")
+                "Welcoming has now been Set To True.")
 
         elif args[0].lower() in ("off", "no"):
             sql.set_welc_preference(str(chat.id), False)
             update.effective_message.reply_text(
-                "I'll go loaf around and not welcome anyone then.")
+                "Welcoming has been set to False")
 
         else:
             update.effective_message.reply_text(
-                "I understand 'on/yes' or 'off/no' only!")
+                "on/off or yes/no are only recognised by me")
 
 
 @run_async
@@ -669,7 +664,7 @@ def goodbye(update: Update, context: CallbackContext):
         else:
             # idek what you're writing, say yes or no
             update.effective_message.reply_text(
-                "I understand 'on/yes' or 'off/no' only!")
+                "on/off or yes/no are only recognised by me")
 
 
 @run_async
@@ -683,11 +678,11 @@ def set_welcome(update: Update, context: CallbackContext) -> str:
     text, data_type, content, buttons = get_welcome_type(msg)
 
     if data_type is None:
-        msg.reply_text("You didn't specify what to reply with!")
+        msg.reply_text("No Info Provided.")
         return ""
 
     sql.set_custom_welcome(chat.id, content, text, data_type, buttons)
-    msg.reply_text("Successfully set custom welcome message!")
+    msg.reply_text("New Welcome has been Set")
 
     return (f"<b>{html.escape(chat.title)}:</b>\n"
             f"#SET_WELCOME\n"

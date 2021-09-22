@@ -16,6 +16,88 @@ from EmiliaAnimeBot.modules.helper_funcs.string_handling import extract_time
 from EmiliaAnimeBot.modules.log_channel import gloggable, loggable
 
 @run_async
+@user_admin_no_reply
+@bot_admin
+@loggable
+def button(update: Update, context: CallbackContext) -> str:
+    query: Optional[CallbackQuery] = update.callback_query
+    user: Optional[User] = update.effective_user
+    chat = update.effective_chat
+    match = re.match(r"rm_ban\((.+?)\)", query.data)
+    user_id = match.group(1)
+    if match:
+        try:
+            member = chat.get_member(user_id)
+            chat.unban_member(user_id)
+        except BadRequest as excp:
+            if excp.message == "User not found":
+                message.reply_text("I can't seem to find this user.")
+            else:
+                raise
+        res = (user_id, chat.id)
+        if res:
+            update.effective_message.edit_text(
+                "Unbanned By : {}.".format(
+                    mention_html(user.id, user.first_name)),
+                parse_mode=ParseMode.HTML)
+            user_member = chat.get_member(user_id)
+            return (
+                f"<b>{html.escape(chat.title)}:</b>\n"
+                f"#UNBANNED\n"
+                f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
+                f"<b>User:</b> {mention_html(user_member.user.id, user_member.user.first_name)}"
+            )
+        else:
+            update.effective_message.edit_text(
+                "User is not banned", parse_mode=ParseMode.HTML)
+
+    return ""
+
+"""
+    message = update.effective_message
+    user = update.effective_user
+    chat = update.effective_chat
+    log_message = ""
+    bot, args = context.bot, context.args
+    user_id, reason = extract_user_and_text(message, args)
+
+    if not user_id:
+        message.reply_text("I doubt that's a user.")
+        return log_message
+
+    try:
+        member = chat.get_member(user_id)
+    except BadRequest as excp:
+        if excp.message == "User not found":
+            message.reply_text("I can't seem to find this user.")
+            return log_message
+        else:
+            raise
+
+    if user_id == bot.id:
+        message.reply_text("How would I unban myself if I wasn't here...?")
+        return log_message
+
+    if is_user_in_chat(chat, user_id):
+        message.reply_text("Isn't this person already here??")
+        return log_message
+
+    chat.unban_member(user_id)
+    message.reply_text("Yep, this user can join!")
+
+    log = (
+        f"<b>{html.escape(chat.title)}:</b>\n"
+        f"#UNBANNED\n"
+        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+    )
+    if reason:
+        log += f"\n<b>Reason:</b> {reason}"
+
+    return log
+"""
+
+@run_async
 @connection_status
 @bot_admin
 @can_restrict
@@ -575,6 +657,7 @@ _NOTE:_
 BAN_HANDLER = CommandHandler("ban", ban)
 TEMPBAN_HANDLER = CommandHandler(["tban"], temp_ban)
 STEMPBAN_HANDLER = CommandHandler(["stban"], stemp_ban)
+CALLBACK_QUERY_HANDLER = CallbackQueryHandler(button, pattern=r"rm_ban")
 KICK_HANDLER = CommandHandler("kick", kick)
 SKICK_HANDLER = CommandHandler("skick", skick)
 UNBAN_HANDLER = CommandHandler("unban", unban)
@@ -587,6 +670,7 @@ dispatcher.add_handler(BAN_HANDLER)
 dispatcher.add_handler(TEMPBAN_HANDLER)
 dispatcher.add_handler(STEMPBAN_HANDLER)
 dispatcher.add_handler(KICK_HANDLER)
+dispatcher.add_handler(CALLBACK_QUERY_HANDLER)
 dispatcher.add_handler(SKICK_HANDLER)
 dispatcher.add_handler(UNBAN_HANDLER)
 dispatcher.add_handler(ROAR_HANDLER)
@@ -596,5 +680,5 @@ dispatcher.add_handler(SBAN_HANDLER)
 __mod_name__ = "Bans"
 __handlers__ = [
     BAN_HANDLER, TEMPBAN_HANDLER, STEMPBAN_HANDLER, KICK_HANDLER, SKICK_HANDLER, UNBAN_HANDLER, ROAR_HANDLER,
-    KICKME_HANDLER, SBAN_HANDLER
+    KICKME_HANDLER, SBAN_HANDLER, CALLBACK_QUERY_HANDLER
 ]
