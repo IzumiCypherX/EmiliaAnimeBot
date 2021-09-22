@@ -5,9 +5,9 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from EmiliaAnimeBot import StartTime, dispatcher
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import sudo_plus
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
+from RaidenShogunBot import StartTime, dispatcher
+from RaidenShogunBot.modules.helper_funcs.chat_status import sudo_plus
+from RaidenShogunBot.modules.disable import DisableAbleCommandHandler
 
 sites_list = {
     "Telegram": "https://api.telegram.org",
