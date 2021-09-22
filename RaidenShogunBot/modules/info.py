@@ -1,9 +1,9 @@
 from pyrogram import filters
 from pyrogram.types import Message
 
-from EmiliaAnimeBot.extrastuff import SUDOERS
-from EmiliaAnimeBot import pgram as app
-from EmiliaAnimeBot.core.sections import section
+from RaidenShogunBot.extrastuff import SUDOERS
+from RaidenShogunBot import pgram as app
+from RaidenShogunBot.core.sections import section
 
 
 async def get_user_info(user, already=False):
