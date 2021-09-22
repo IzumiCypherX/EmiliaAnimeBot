@@ -3,8 +3,8 @@ from google_trans_new import LANGUAGES, google_translator
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from EmiliaAnimeBot import dispatcher
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
+from RaidenShogunBot import dispatcher
+from RaidenShogunBot.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
