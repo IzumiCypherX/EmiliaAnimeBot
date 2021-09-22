@@ -1,6 +1,6 @@
-from EmiliaAnimeBot.modules.helper_funcs.telethn.chatstatus import (
+from RaidenShogunBot.modules.helper_funcs.telethn.chatstatus import (
     can_delete_messages, user_is_admin)
-from EmiliaAnimeBot import telethn
+from RaidenShogunBot import telethn
 import time
 from telethon import events
 
