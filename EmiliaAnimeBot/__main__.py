@@ -9,7 +9,7 @@ from EmiliaAnimeBot import (ALLOW_EXCL, CERT_PATH, DONATION_LINK, LOGGER,
                           OWNER_ID, PORT, SUPPORT_CHAT, TOKEN, URL, WEBHOOK,
                           dispatcher, StartTime, telethn, updater, pgram)
 
-from EmiliaAnimeBot.resources,imagefiles import EMILIA_START_IMG, EMILIA_HELP_IMG, EMILIA_IMG
+from EmiliaAnimeBot.resources.imagefiles import EMILIA_START_IMG, EMILIA_HELP_IMG, EMILIA_IMG
 from EmiliaAnimeBot.modules import ALL_MODULES
 from EmiliaAnimeBot.modules.helper_funcs.chat_status import is_user_admin
 from EmiliaAnimeBot.modules.helper_funcs.misc import paginate_modules
@@ -64,7 +64,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 
-PM_START_TEXT = """
+PM_START_TEXT = f"""
 This is Emilia[.]({EMILIA_START_IMG})
 
 A Diverse Systematic Bot Written in Python.
@@ -108,7 +108,7 @@ buttons = [
 ]
 
 
-HELP_STRINGS = """
+HELP_STRINGS = f"""
 `Hey there! My name is` [Emilia!]({EMILIA_HELP_IMG}) 
 I have Quite a Few Features, Go Ahead and Check out!"""
 
