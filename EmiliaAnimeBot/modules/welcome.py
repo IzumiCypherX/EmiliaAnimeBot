@@ -178,9 +178,17 @@ def new_member(update: Update, context: CallbackContext):
                 update.effective_message.reply_photo(
                     OWNER_WELCOME_IMG, caption= "<code>Izumi Entered The Chat</code>", 
                     reply_to_message_id=reply,
-                    ),
                     parse_mode=ParseMode.HTML,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
+                    reply_markup=InlineKeyboardMarkup(
+                      [
+                        [
+                          InlineKeyboardButton(
+                            text="Surprise!", 
+                            url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                          ),
+                        ]
+                      ]
+                    )
                 continue
 
             # Welcoming my Alt(for tests Lol)
@@ -191,7 +199,16 @@ def new_member(update: Update, context: CallbackContext):
                     reply_to_message_id=reply,
                     ),
                     parse_mode=ParseMode.HTML,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Surprise!", url="https://www.youtube.com/watch?v=dQw4w9WgXcQ")]])
+                    reply_markup=InlineKeyboardMarkup(
+                      [
+                        [
+                          InlineKeyboardButton(
+                            text="Surprise!", 
+                            url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                          ),
+                        ]
+                      ]
+                    )
   
                 continue
 
