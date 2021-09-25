@@ -189,7 +189,8 @@ def new_member(update: Update, context: CallbackContext):
                         ]
                       ]
                     )
-                continue
+                  
+            continue
 
             # Welcoming my Alt(for tests Lol)
             elif new_mem.id == 1947860028:
@@ -210,7 +211,7 @@ def new_member(update: Update, context: CallbackContext):
                       ]
                     )
   
-                continue
+            continue
 
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
@@ -218,7 +219,7 @@ def new_member(update: Update, context: CallbackContext):
                     "A Member of the Sudo Team Just Joined",
                     reply_to_message_id=reply,
                 )
-                continue
+            continue
 
             # Welcome Support
             elif new_mem.id in DEMONS:
@@ -226,21 +227,21 @@ def new_member(update: Update, context: CallbackContext):
                     "A Part of Gban Management Team Just Arrived.",
                     reply_to_message_id=reply,
                 )
-                continue
+            continue
 
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
                     "A Whitelisted user joined a chat",
                     reply_to_message_id=reply)
-                continue
+            continue
 
             # Welcome Tigers
             elif new_mem.id in WOLVES:
                 update.effective_message.reply_text(
                     "Nvm, I present to you- A Ranked User!",
                     reply_to_message_id=reply)
-                continue
+            continue
 
             # Welcome yourself
             elif new_mem.id == bot.id:
