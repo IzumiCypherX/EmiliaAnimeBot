@@ -1,4 +1,5 @@
 from EmiliaAnimeBot import LOAD, LOGGER, NO_LOAD
+import sys
 
 
 def __list_all_modules():
@@ -21,7 +22,7 @@ def __list_all_modules():
                         for module_name in all_modules)
                     for mod in to_load):
                 LOGGER.error("Invalid loadorder names. Quitting.")
-                quit(1)
+                sys.exit(1)
 
             all_modules = sorted(set(all_modules) - set(to_load))
             to_load = list(all_modules) + to_load
