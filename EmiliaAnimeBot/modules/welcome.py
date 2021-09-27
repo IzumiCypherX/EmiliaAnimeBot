@@ -6,9 +6,8 @@ from functools import partial
 from contextlib import suppress
 from typing import Tuple, Optional
 from telethon import events
-import Cutiepii_Robot.modules.sql.welcome_sql as sql
-import Cutiepii_Robot
-from Cutiepii_Robot import (
+import EmiliaAnimeBot.modules.sql.welcome_sql as sql
+from EmiliaAnimeBot import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -22,18 +21,18 @@ from Cutiepii_Robot import (
     telethn,
     BL_CHATS,
 )
-from Cutiepii_Robot.modules.helper_funcs.chat_status import (
+from EmiliaAnimeBot.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from Cutiepii_Robot.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from Cutiepii_Robot.modules.helper_funcs.msg_types import get_welcome_type
-from Cutiepii_Robot.modules.helper_funcs.string_handling import (
+from EmiliaAnimeBot.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from EmiliaAnimeBot.modules.helper_funcs.msg_types import get_welcome_type
+from EmiliaAnimeBot.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from Cutiepii_Robot.modules.log_channel import loggable
-from Cutiepii_Robot.modules.sql.global_bans_sql import is_user_gbanned
+from EmiliaAnimeBot.modules.log_channel import loggable
+from EmiliaAnimeBot.modules.sql.global_bans_sql import is_user_gbanned
 from telegram import (
     ChatPermissions,
     InlineKeyboardButton,
@@ -231,7 +230,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 bot.send_message(chat.id,
-                               text=f"OwO My Darling Just Joind This Sexy Chat!",
+                               text=f"The IzumiCypher Just Joindd!",
                                reply_to_message_id=reply,
                                )
                 welcome_log = (
@@ -243,7 +242,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 bot.send_message(chat.id,
-                               text=f"Oh My, Heart Doctor Joind This Group.",
+                               text=f"Oh My, A Dev Joind This Group.",
                                reply_to_message_id=reply,
                                )
                 welcome_log = (
@@ -267,7 +266,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 bot.send_message(chat.id,
-                                text=f"Somone With Royal Blood Jisy Joined the group! Stay Alert!! ",
+                                text=f"A Support User Joined the group! Stay Alert!! ",
                                 reply_to_message_id=reply,
                                )
                 welcome_log = (
@@ -280,7 +279,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Whitelisted
             elif new_mem.id in WOLVES:
                 bot.send_message(chat.id,
-                                text=f"Oof! A Demons just joined the group",
+                                text=f"Oof! A Ranked User just joined the group",
                                 reply_to_message_id=reply,
                                )
                 welcome_log = (
@@ -293,7 +292,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Tigers
             elif new_mem.id in TIGERS:
                 bot.send_message(chat.id,
-                               text=f"Shinzou Sasageyo! A Tigers just joined the group!",
+                               text=f"Shinzou Sasageyo! A Ranked User!!",
                                reply_to_message_id=reply,
                                )
                 welcome_log = (
