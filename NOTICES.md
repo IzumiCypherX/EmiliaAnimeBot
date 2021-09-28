@@ -14,9 +14,10 @@
   
   <h3 align=left>Deploying Status
   </h3>
-  Railway<br>
-  Heroku<br>
-  Docker<br>
-  VPS/Local<br>
+  
+  + [x] Railway<br>
+  + [x] Heroku<br>
+  + [x] Docker<br>
+  + [x] VPS/Local<br>
   
  
