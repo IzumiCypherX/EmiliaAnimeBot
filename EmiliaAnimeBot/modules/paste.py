@@ -12,7 +12,7 @@ from EmiliaAnimeBot.utils.keyboard import ikb
 from EmiliaAnimeBot.utils.pastebin import paste
 
 __mod_name__ = "Paste"
-__help__ = "/paste - To Paste Replied Text Or Document To A Pastebin"
+__help__ = "❍`/paste` *:* To Paste Replied Text Or Document To A Pastebin"
 pattern = re.compile(
     r"^text/|json$|yaml$|xml$|toml$|x-sh$|x-shellscript$"
 )

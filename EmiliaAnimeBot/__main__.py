@@ -24,17 +24,6 @@ from telegram.utils.helpers import escape_markdown
 
 EMILIA_IMG = "https://telegra.ph/file/b37cec509d121c8c63518.jpg"
 
-EMILIA_USAGE_TEXT = """
-Basic Usage Help For Emilia
-
-🔳Add me To your Group
-🔳Make Me Admin With Full Rights.
-🔳Now I'm Good to Go!
-🔳For Any help, just do /help and get help!
-
-"""
-
-
 def get_readable_time(seconds: int) -> str:
     count = 0
     ping_time = ""
@@ -88,10 +77,6 @@ buttons = [
         InlineKeyboardButton(
           text="📮 Updates", url="https://t.me/TangentXOfficial"
         ),
-      
-        InlineKeyboardButton(
-          text="Usage Guide", callback_data="usage_"
-        ),
     ],
          
     [
@@ -101,7 +86,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-          text="✒ Source", callback_data="source_"
+          text="✒ Source", url="https://github.com/IzumiCypherX/EmiliaAnimeBot"
         ),
      
     ],
@@ -363,56 +348,6 @@ def help_button(update, context):
 
     except BadRequest:
         pass
-
-
-@run_async
-def Basic_usage_callback(update, context):
-    query = update.callback_query
-    if query.data == "usage_":
-        query.message.edit_text(
-        text = EMILIA_USAGE_TEXT,
-        parse_mode = ParseMode.MARKDOWN,
-        disable_web_page_preview = True,
-        reply_markup= InlineKeyboardMarkup(
-            [
-                InlineKeyboardButton(text= "Return", callback_data= "emilia_back")
-            ]
-        ),
-    )
-    elif query.data == "emilia_back":
-         query.message.edit_text(
-            PM_START_TEXT,
-            reply_markup=InlineKeyboardMarkup(buttons),
-            parse_mode=ParseMode.MARKDOWN,
-            timeout=60,
-            disable_web_page_preview=False,
-       )
-
-@run_async
-def Source_about_callback(update, context):
-    query = update.callback_query
-    if query.data == "source_":
-        query.message.edit_text(
-            text=""" Hi..👩‍💼 I'm *Emilia*
-                 \nMy Source Code Can be Found at Github at this [Link](https://github.com/IzumiCypherX/EmiliaAnimeBot""",
-            parse_mode=ParseMode.MARKDOWN,
-            disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                 [
-                    InlineKeyboardButton(text="Go Back", callback_data="emilia_back")
-                 ]
-                ]
-            ),
-        )
-    elif query.data == "emilia_back":
-        query.message.edit_text(
-                PM_START_TEXT,
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=False,
-        )
 
 @run_async
 def get_help(update: Update, context: CallbackContext):
@@ -711,9 +646,6 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    basic_callback_handler = CallbackQueryHandler(Basic_usage_callback, pattern=r"usage_")
-    source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
-
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
@@ -723,8 +655,6 @@ def main():
 
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
-    dispatcher.add_handler(basic_callback_handler)
-    dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
     dispatcher.add_handler(donate_handler)

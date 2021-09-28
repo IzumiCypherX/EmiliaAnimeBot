@@ -16,11 +16,20 @@ from EmiliaAnimeBot import pgram as app
 from EmiliaAnimeBot.pyroerror import capture_err
 from EmiliaAnimeBot.utils.pastebin import paste
 
-__mod_name__ = "Music"
+__mod_name__ = "Media"
 __help__ = """
-`/ytmusic` *:* To Download Music From Various Websites Including Youtube.
-`/saavn` *:* To Download Music From Saavn.
-`/lyrics` *:* To Get Lyrics Of A Song.
+
+*AUDIO*
+
+❍`/song` *:* To download the required song from YouTube (via name)
+❍`/ytmusic` *:* To Download Music from Youtube (via link)
+❍`/saavn` *:* To Download Music From Saavn.
+
+
+*LYRICS*
+
+❍`/lyrics` *:* To Get Lyrics Of a Song.
+
 """
 
 is_downloading = False

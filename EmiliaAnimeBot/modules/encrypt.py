@@ -28,7 +28,3 @@ async def hmm(event):
 
 __mod_name__ = "Encryprion"
 
-__help__ = """
- •`/encrypt`*:* Encrypts The Given Text
- •`/decrypt`*:* Decrypts Previously Ecrypted Text
-"""
