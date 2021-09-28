@@ -34,7 +34,7 @@ from EmiliaAnimeBot.utils.keyboard import ikb
 from EmiliaAnimeBot.core.tasks import _get_tasks_text, all_tasks, rm_task
 from EmiliaAnimeBot.core.types import InlineQueryResultCachedDocument
 from EmiliaAnimeBot.modules.info import get_chat_info, get_user_info
-from EmiliaAnimeBot.modules.music import download_youtube_audio
+from EmiliaAnimeBot.modules.media import download_youtube_audio
 from EmiliaAnimeBot.utils.functions import test_speedtest
 from EmiliaAnimeBot.utils.pastebin import paste
 
