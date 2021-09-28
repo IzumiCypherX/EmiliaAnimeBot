@@ -1,6 +1,8 @@
 from EmiliaAnimeBot import pgram
 from EmiliaAnimeBot.arqclient import arq
 
+from pyrogram import filters
+
 
 @pgram.on_message(filters.command("tr") & ~filters.edited)
 @capture_err
