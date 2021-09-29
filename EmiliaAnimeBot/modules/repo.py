@@ -29,7 +29,6 @@ def repo(update: Update, context: CallbackContext):
         GIT_PIC,
         caption = GIT_TEXT,
         parse_mode=ParseMode.MARKDOWN
-        disable_web_page_preview=True
         )
 
 REPO_HANDLER = CommandHandler("repo", repo)
