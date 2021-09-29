@@ -56,4 +56,8 @@ __help__ = """
 
 ❍`/webss`*:* Take a ScreenShot of the Given Website
 
+*Github*
+
+❍`/github`*:* Search a Github Profile
+
 """

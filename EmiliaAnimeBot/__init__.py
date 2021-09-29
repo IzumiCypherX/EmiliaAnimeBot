@@ -201,7 +201,7 @@ tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
 
-print("Starting Pyrogram Clients")
+print("Starting Pyrogram Client")
 pgram.start()
 
 print("Aquiring BOT Client Info")
