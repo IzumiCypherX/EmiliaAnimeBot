@@ -1,5 +1,6 @@
 from EmiliaAnimeBot import pgram
 from EmiliaAnimeBot.arqclient import arq
+from EmiliaAnimeBot.pyrogramee.errors import capture_err
 
 from pyrogram import filters
 
