@@ -4,12 +4,20 @@
 [![Support Group!](https://img.shields.io/badge/Join%20Group-↗-green)](https://t.me/TangentXOfficial)
 
 
-> If There's no Trace of This Repo in your Bot, We will be pushing a gban on you from our systems.
+### Support Info
 
+
+The Support group can be reached out to at [Tangent](https://t.me/TangentChats), where you can ask for help about [Emilia](https://t.me/EmiliaAnimeRobot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. <br>
+
+
+These are the Things that Tangent Can Help You With:
+
++ [x] Forks
++ [x] Main Repo Erros/Guidance
++ [ ] Kangs [forks with no trace of original repo are considered kangs]
++ [ ] Deploying Your Bot
 
 ### Can be found on telegram as [Emilia](https://t.me/EmiliaAnimeRoBot).
-
-##### For Session String, Run stringgen.py locally
 
 ### Status
 
@@ -19,8 +27,8 @@
 + [x] OpenSourced
 + [x] Working Instance Available
 + [x] Clean Code
-+ [x] Heroku Deploy
 + [x] Docker/Local Machine
++ [ ] Heroku Deploy
 
 #### Creator Info/Credits
 
@@ -40,8 +48,6 @@ Thanks To:
 
 
 
-The Support group can be reached out to at [Tangent](https://t.me/TangentChats), where you can ask for help about [Emilia](https://t.me/EmiliaAnimeRobot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
-
 <details>
 	<summary>Heroku Deploy</summary>
 	<br>
@@ -51,7 +57,7 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 	
   <h1>
     <p align="center">
-        <a href="https://heroku.com/deploy?template=https://github.com/IzuMeow/EmiliaAnimeBot">
+        <a href="https://heroku.com/deploy?template=https://github.com/IzumiCypherX/EmiliaAnimeBot">
             <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
         </a>
     </p>
