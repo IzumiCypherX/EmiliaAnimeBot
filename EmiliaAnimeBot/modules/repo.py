@@ -2,7 +2,7 @@ from EmiliaAnimeBot import dispatcher
 
 from telegram import ParseMode, Update
 from telegram.ext import CommandHandler, CallbackContext
-from telegram.ext.dispatcher import  run_aysnc
+from telegram.ext.dispatcher import  run_async
 
 GIT_PIC = "https://telegra.ph/file/311df2003dc985a39ddf6.jpg"
 
