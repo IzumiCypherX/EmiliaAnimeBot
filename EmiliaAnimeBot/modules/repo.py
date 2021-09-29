@@ -1,7 +1,8 @@
 from EmiliaAnimeBot import dispatcher
 
 from telegram import ParseMode, Update
-from telegram.ext import CommandHandler, run_aysnc,CallbackContext
+from telegram.ext import CommandHandler, CallbackContext
+from telegram.ext.dispatcher import  run_aysnc
 
 GIT_PIC = "https://telegra.ph/file/311df2003dc985a39ddf6.jpg"
 
