@@ -34,4 +34,4 @@ def repo(update: Update, context: CallbackContext):
 
 REPO_HANDLER = CommandHandler("repo", repo)
 
-disaptcher.add_handler(REPO_HANDLER)
+dispatcher.add_handler(REPO_HANDLER)
