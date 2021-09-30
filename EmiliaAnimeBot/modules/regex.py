@@ -7,7 +7,7 @@ from pyrogram import filters
 from EmiliaAnimeBot import pgram as app
 from EmiliaAnimeBot.utils.filter_groups import regex_group
 
-__mod_name__ = "Regex"
+__mod_name__ = "Sed"
 __help__ = "Just a Regex function \n\n Example: s/foo/bar"
 
 
