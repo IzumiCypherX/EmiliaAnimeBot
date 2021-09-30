@@ -24,7 +24,7 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
     LOGGER.error(
         "You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting."
     )
-    quit(1)
+    sys.exit(1)
 
 ENV = bool(os.environ.get('ENV', False))
 
@@ -90,9 +90,8 @@ if ENV:
     SUPPORT_CHAT = os.environ.get('SUPPORT_CHAT', None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get('SPAMWATCH_SUPPORT_CHAT', None)
     SPAMWATCH_API = os.environ.get('SPAMWATCH_API', None)
-    BOT_ID = 1975581385
+    LOG_GROUP_ID = os.environ.get('LOG_GROUP_ID', None)
 
-    LOG_GROUP_ID = -1001595626208
     try:
         BL_CHATS = set(int(x) for x in os.environ.get('BL_CHATS', "").split())
     except ValueError:
@@ -143,7 +142,7 @@ else:
     CERT_PATH = Config.CERT_PATH
     API_ID = Config.API_ID
     API_HASH = Config.API_HASH
-
+    LOG_GROUP_ID = Config.LOG_GROUP_ID
     DB_URI = Config.SQLALCHEMY_DATABASE_URI
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
@@ -173,7 +172,7 @@ DEV_USERS.add(OWNER_ID)
 
 if not SPAMWATCH_API:
     sw = None
-    LOGGER.warning("SpamWatch API key missing! recheck your config.")
+    LOGGER.warning("SPAMWATCH_API not found! Recheck!")
 else:
     sw = spamwatch.Client(SPAMWATCH_API)
 
@@ -184,11 +183,13 @@ mongo_client = MongoClient(MONGO_DB_URI)
 db = mongo_client.EmiliaAnimeBot
 dispatcher = updater.dispatcher
 
+
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
 DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
+
 
 # Load at end to ensure all prev variables have been set
 from EmiliaAnimeBot.modules.helper_funcs.handlers import (CustomCommandHandler,
@@ -199,3 +200,24 @@ from EmiliaAnimeBot.modules.helper_funcs.handlers import (CustomCommandHandler,
 tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
+
+print("Starting Pyrogram Client")
+pgram.start()
+
+print("Aquiring BOT Client Info")
+
+bottie = pgram.get_me()
+
+BOT_ID = bottie.id
+BOT_USERNAME = bottie.username
+BOT_NAME = bottie.first_name
+BOT_MENTION = bottie.mention
+
+
+
+end_credits = """
+INFO GATHERED!
+Client: Emilia Pyro
+Copyright: (c) 2021 EmiliaAnimeBot
+"""
+print(end_credits)

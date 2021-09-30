@@ -4,6 +4,18 @@
 [![Support Group!](https://img.shields.io/badge/Join%20Group-↗-green)](https://t.me/TangentXOfficial)
 
 
+### Support Info
+
+
+The Support group can be reached out to at [Tangent](https://t.me/TangentChats), where you can ask for help about [Emilia](https://t.me/EmiliaAnimeRobot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. <br>
+
+
+These are the Things that Tangent Can Help You With:
+
++ [x] Forks
++ [x] Main Repo Erros/Guidance
++ [ ] Kangs [forks with no trace of original repo are considered kangs]
++ [ ] Deploying Your Bot
 
 ### Can be found on telegram as [Emilia](https://t.me/EmiliaAnimeRoBot).
 
@@ -15,6 +27,8 @@
 + [x] OpenSourced
 + [x] Working Instance Available
 + [x] Clean Code
++ [x] Docker/Local Machine
++ [ ] Heroku Deploy
 
 #### Creator Info/Credits
 
@@ -28,11 +42,11 @@ Thanks To:
 
 > @kanekiken44
 
+> @TheHamkerCat
+
 ```
 
 
-
-The Support group can be reached out to at [Tangent](https://t.me/TangentChats), where you can ask for help about [Emilia](https://t.me/EmiliaAnimeRobot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
 
 <details>
 	<summary>Heroku Deploy</summary>
@@ -54,11 +68,11 @@ The Easiest Way to Deploy This Bot is Via Heroku.
 <details>
     <summary>More Deploy Options</summary>
     <br>
-    <h2 align="center">
+    <p align="center">
 
     Deploying on Local Machine
 
-<h2>
+</p>
 
 ```console
     IzumiCypherx@arch:~$ git clone https://github.com/IzumiCypherX/EmiliaAnimeBot
