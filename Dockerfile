@@ -65,7 +65,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 RUN git clone -b Alpha https://github.com/IzumiCypherX/EmiliaAnimeBot /root/EmiliaAnimeBot 
-WORKDIR /app
+WORKDIR /root/EmiliaAnimeBot
 
 COPY ./EmiliaAnimeBot/sample_config.py ./EmiliaAnimeBot/config.py* /root/EmiliaAnimeBot/EmiliaAnimeBot/
 
