@@ -1,6 +1,3 @@
-# Pyrogram Module For Download Song From YouTube 
-# 🍀 © @Mr_Dark_Prince
-# ⚠️ Do not edit this lines
 import os
 import requests
 import aiohttp
@@ -66,7 +63,7 @@ def song(client, message):
         message.reply_audio(audio_file, caption=rep, thumb=thumb_name, parse_mode='md', title=title, duration=dur)
         m.delete()
     except Exception as e:
-        m.edit('❌ Error report it to @EmiliaAnimeBotSupport')
+        m.edit('An error Occured! \nReport at @TangentChats')
         print(e)
 
     try:
@@ -75,9 +72,6 @@ def song(client, message):
     except Exception as e:
         print(e)
 
-__help__= """
-/song- To download the required song from YouTube
-"""
 
 SONG_HANDLER = DisableAbleCommandHandler("song", song)
 

@@ -9,12 +9,8 @@ from EmiliaAnimeBot import pgram as app
 from EmiliaAnimeBot.pyrogramee.pluginshelper import edit_or_reply as eor
 from EmiliaAnimeBot.pyrogramee.errors import capture_err
 from EmiliaAnimeBot.utils.filter_groups import chatbot_group
-from EmiliaAnimeBot import ARQ_API_KEY
-
-ARQ_API_URL="https://thearq.tech"
-aiohttpsession = ClientSession()
-
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+from EmiliaAnimeBot.arqclient import arq
+from EmiliaAnimeBot import BOT_ID
 
 __mod_name__ = "ChatBot"
 __help__ = """
@@ -42,6 +38,8 @@ async def chat_bot_toggle(db, message: Message):
             message, text="**Usage:**\n/chatbot [ENABLE|DISABLE]"
         )
 
+
+# Enabled | Disable Chatbot
 
 
 @app.on_message(filters.command("chatbot") & ~filters.edited)
@@ -85,6 +83,6 @@ async def chatbot_talk(_, message: Message):
         return
     if not message.reply_to_message.from_user:
         return
-    if message.reply_to_message.from_user.id != 1975581385:      # This is Emilia's ID, chnage it to yours when deploying
+    if message.reply_to_message.from_user.id != BOT_ID:
         return
     await type_and_send(message)

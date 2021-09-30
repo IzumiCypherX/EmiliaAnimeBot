@@ -9,7 +9,6 @@ import aiohttp
 import urllib.request
 from urllib.parse import urlencode
 import requests
-from bs4 import BeautifulSoup
 from PIL import Image
 from search_engine_parser import GoogleSearch
 
@@ -35,7 +34,7 @@ async def _(event):
     if event.fwd_from:
         return
     
-    webevent = await event.reply("searching........")
+    webevent = await event.reply("Searching........")
     match = event.pattern_match.group(1)
     page = re.findall(r"page=\d+", match)
     try:
@@ -89,10 +88,9 @@ opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36"
 opener.addheaders = [("User-agent", useragent)]
 
-
+"""
 @register(pattern=r"^/reverse(?: |$)(\d*)")
 async def okgoogle(img):
-    """ For .reverse command, Google search images and stickers. """
     if os.path.isfile("okgoogle.png"):
         os.remove("okgoogle.png")
     
@@ -161,7 +159,7 @@ async def okgoogle(img):
             f"[{guess}]({fetchUrl})\n\n[Visually similar images]({imgspage})"
         )
 
-
+"""
 async def ParseSauce(googleurl):
     """Parse/Scrape the HTML code for the info we want."""
 
@@ -267,7 +265,7 @@ async def apk(e):
             + app_link
             + "'>View in Play Store</a>"
         )
-        app_details += "\n\n===> Masha <==="
+        app_details += "\n\n===> Emilia <==="
         await e.reply(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await e.reply("No result found in search. Please enter **Valid app name**")
@@ -275,13 +273,5 @@ async def apk(e):
         await e.reply("Exception Occured:- " + str(err))
 
 
-__mod_name__ = "GOOGLE"
+__mod_name__ = "Google"
 
-__help__ = """
- ❍ /google <text>*:* Perform a google search
- ❍ /img <text>*:* Search Google for images and returns them\nFor greater no. of results specify lim, For eg: `/img hello lim=10`
- ❍ /app <appname>*:* Searches for an app in Play Store and returns its details.
- ❍ /reverse: Does a reverse image search of the media which it was replied to.
- ❍ Masha <query>*:* Masha answers the query
-  💡Ex: `Masha where is India?`
-"""

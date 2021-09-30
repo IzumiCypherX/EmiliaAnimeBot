@@ -1,56 +1,31 @@
-from mtranslate import translate
-from EmiliaAnimeBot import telethn
-import json
-import requests
-from EmiliaAnimeBot.events import register
-from telethon import *
-from telethon.tl import functions
-import os
-import urllib.request
-from typing import List
-from typing import Optional
-from telethon.tl import types
-from telethon.tl.types import *
+from EmiliaAnimeBot import pgram
+from EmiliaAnimeBot.arqclient import arq
+from EmiliaAnimeBot.pyrogramee.errors import capture_err
+
+from pyrogram import filters
 
 
-async def is_register_admin(chat, user):
-    if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
-
-        return isinstance(
-            (await
-             oko(functions.channels.GetParticipantRequest(chat,
-                                                           user))).participant,
-            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
+@pgram.on_message(filters.command("tr") & ~filters.edited)
+@capture_err
+async def tr(_, message):
+    if len(message.command) != 2:
+        return await message.reply_text("Usage: __/tr <languge code>__")
+    lang = message.text.split(None, 1)[1]
+    if not message.reply_to_message or not lang:
+        return await message.reply_text(
+            "Reply to a message with /tr [language code]"
+            + "\nGet supported language list from here -"
+            + " https://py-googletrans.readthedocs.io/en"
+            + "/latest/#googletrans-languages"
         )
-    if isinstance(chat, types.InputPeerChat):
-
-        ui = await oko.get_peer_id(user)
-        ps = (await oko(functions.messages.GetFullChatRequest(chat.chat_id)
-                         )).full_chat.participants.participants
-        return isinstance(
-            next((p for p in ps if p.user_id == ui), None),
-            (types.ChatParticipantAdmin, types.ChatParticipantCreator),
+    reply = message.reply_to_message
+    text = reply.text or reply.caption
+    if not text:
+        return await message.reply_text(
+            "Reply to a text to translate it"
         )
-    return None
+    result = await arq.translate(text, lang)
+    if not result.ok:
+        return await message.reply_text(result.result)
+    await message.reply_text(result.result.translatedText)
 
-
-@register(pattern="^/tr (.*)")
-async def _(event):
-
-    input_str = event.pattern_match.group(1)
-    if event.reply_to_msg_id:
-        previous_message = await event.get_reply_message()
-        text = previous_message.message
-        lan = input_str
-    
-    try:
-        translated = translate(text,lan,"auto")
-        await event.reply(translated)
-    except Exception as exc:
-        print(exc)
-        await event.reply("**Server Error !**\nTry Again.")
-
-help = """
-- /tr [List of Language Codes](t.me/fateunionupdates/32) :- as reply to a long message.
-"""
-__mod_name__= "Translator"

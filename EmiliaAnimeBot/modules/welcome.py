@@ -171,7 +171,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Owner Sama just Entered the Chat",
+                    "Oh,The Izumi himself has joined the chat !",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
@@ -181,7 +181,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "A member of the Dev Team Just Joined",
+                    "Whoa! A member of the 🍁SHINOBI•RANKS🍁 just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -189,7 +189,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "A Member of the Sudo Team Just Joined",
+                    "GOD! I wasn't expecting a high level Shinobi in here!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -197,7 +197,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "A Part of Gban Management Team Just Arrived.",
+                    "Huh a Shinobi?! A respected Shinobi just arrived!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -205,14 +205,14 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
-                    "A Whitelisted user joined a chat",
+                    "OH YEAH! A Chunin just joined!",
                     reply_to_message_id=reply)
                 continue
 
             # Welcome Tigers
             elif new_mem.id in WOLVES:
                 update.effective_message.reply_text(
-                    "Nvm, I present to you- A Ranked User!",
+                    "JEZZ! I wasn't expecting a Shinobi to come here!",
                     reply_to_message_id=reply)
                 continue
 
@@ -1051,7 +1051,7 @@ dispatcher.add_handler(CLEAN_SERVICE_HANDLER)
 dispatcher.add_handler(BUTTON_VERIFY_HANDLER)
 dispatcher.add_handler(WELCOME_MUTE_HELP)
 
-__mod_name__ = "Welcomes/Goodbyes"
+__mod_name__ = "Greetings"
 __command_list__ = []
 __handlers__ = [
     NEW_MEM_HANDLER,

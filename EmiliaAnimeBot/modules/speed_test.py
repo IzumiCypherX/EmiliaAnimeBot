@@ -47,7 +47,7 @@ def speedtestxyz_callback(update: Update, context: CallbackContext):
                 replymsg, parse_mode=ParseMode.MARKDOWN)
     else:
         query.answer(
-            "You are required to join Heroes Association to use this command.")
+            "Only DEVS can Execute this Command")
 
 
 SPEED_TEST_HANDLER = DisableAbleCommandHandler("speedtest", speedtestxyz)

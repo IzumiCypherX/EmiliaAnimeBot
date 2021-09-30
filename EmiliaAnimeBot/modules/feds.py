@@ -1,3 +1,7 @@
+
+# A Huge Thanks to Arya Hikari, MrYacha and also peaktoogo[Mizukito Akito On Telegram] for making Feds. 
+# Their work is Highly Appreciated by The Emilia Team
+
 import csv
 import json
 import os
@@ -24,15 +28,6 @@ from telegram.ext import (CallbackContext, CallbackQueryHandler, CommandHandler,
                           run_async)
 from telegram.utils.helpers import (mention_html, mention_markdown)
 
-# Hello bot owner, I spended for feds many hours of my life, Please don't remove this if you still respect MrYacha and peaktogoo and AyraHikari too
-# Federation by MrYacha 2018-2019
-# Federation rework by Mizukito Akito 2019
-# Federation update v2 by Ayra Hikari 2019
-# Time spended on feds = 10h by #MrYacha
-# Time spended on reworking on the whole feds = 22+ hours by @peaktogoo
-# Time spended on updating version to v2 = 26+ hours by @AyraHikari
-# Total spended for making this features is 68+ hours
-# LOGGER.info("Original federation module by MrYacha, reworked by Mizukito Akito (@peaktogoo) on Telegram.")
 
 FBAN_ERRORS = {
     "User is an administrator of the chat", "Chat not found",
