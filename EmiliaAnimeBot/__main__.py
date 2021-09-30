@@ -63,7 +63,7 @@ You can either use /help or the Commands Button Given Below To get a list of my 
 buttons = [
     [
         InlineKeyboardButton(
-            text="🏹Summon ME🏹",url="t.me/{BOT_USERNAME}?startgroup=true"
+            text="🏹Summon ME🏹",url=f"t.me/{BOT_USERNAME}?startgroup=true"
         ),
     ],
     [
@@ -79,7 +79,7 @@ buttons = [
          
     [
        InlineKeyboardButton(
-           text="🐱 Support", url="https://t.me/{SUPPORT_CHAT}"
+           text="🐱 Support", url=f"https://t.me/{SUPPORT_CHAT}"
          ),
     ],
     [
@@ -210,10 +210,10 @@ def start(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="Support", url="https://telegram.dog/{SUPPORT_CHAT}")
+                  InlineKeyboardButton(text="Support", url=f"https://telegram.dog/{SUPPORT_CHAT}")
                   ],
                   [
-                  InlineKeyboardButton(text="Help", url="https://t.me/{BOT_USERNAME}?start=help")
+                  InlineKeyboardButton(text="Help", url=f"https://t.me/{BOT_USERNAME}?start=help")
                   ],
                   [
                   InlineKeyboardButton(text="Sᴏᴜʀᴄᴇ", url="https://github.com/IzumiCypherX/EmiliaAnimeBot")
