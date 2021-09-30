@@ -65,11 +65,11 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/EmiliaAnimeBot
-RUN git clone -b Alpha https://github.com/IzumiCypherX/EmiliaAnimeBot /root/EmiliaAnimeBot
-WORKDIR /root/EmiliaAnimeBot
+RUN git clone -b Alpha https://github.com/IzumiCypherX/EmiliaAnimeBot /app
+WORKDIR /app
 
 #Copy config file to /root/EmiliaAnimeBot/EmiliaAnimeBot
-COPY ./EmiliaAnimeBot/sample_config.py ./EmiliaAnimeBot/config.py* /root/EmiliaAnimeBot/EmiliaAnimeBot/
+COPY ./EmiliaAnimeBot/sample_config.py ./EmiliaAnimeBot/config.py* /app/EmiliaAnimeBot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
