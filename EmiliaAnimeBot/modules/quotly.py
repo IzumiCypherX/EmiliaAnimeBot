@@ -9,7 +9,12 @@ from EmiliaAnimeBot.pyrogramee.errors import capture_err
 from Python_ARQ import ARQ
 from aiohttp import ClientSession
 
-from EmiliaAnimeBot.arqclient import arq
+aiohttpsession = ClientSession()
+
+ARQ_API_URL="https://thearq.tech"
+ARQ_API_KEY= "MTXJXE-ELSWXE-UDRXJC-JCJQXN-ARQ"
+
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 
 async def quotify(messages: list):
@@ -47,7 +52,7 @@ async def quotly_func(client, message: Message):
         return await message.reply_text(
             "Replied message has no text, can't quote it."
         )
-    m = await message.reply_text("Processing...")
+    m = await message.reply_text("Quoting Messages")
     if len(message.command) < 2:
         messages = [message.reply_to_message]
 

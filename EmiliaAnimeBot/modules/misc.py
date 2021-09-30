@@ -79,17 +79,17 @@ def markdown_help(update: Update, context: CallbackContext):
 __help__ = """
 *Available commands:*
 *Markdown:*
- • `/markdownhelp` *:* quick summary of how markdown works in telegram - can only be called in private chats
+ • `/markdownhelp`*:* quick summary of how markdown works in telegram - can only be called in private chats
 *Paste:*
- • `/paste` *:* Saves replied content to `nekobin.com` and replies with a url
+ • `/paste`*:* Saves replied content to `nekobin.com` and replies with a url
 *Urban Dictonary:*
- • `/ud <word>` *:* Type the word or expression you want to search use
+ • `/ud <word>`*:* Type the word or expression you want to search use
 *Reverse:*
- • `/reverse` *:* Does a reverse image search of the media which it was replied to.
+ • '/reverse' *:* Does a reverse image search of the media which it was replied to.
 *Wikipedia:*
  • `/wiki <query>`*:* wikipedia your query
 *Currency converter:* 
- • `/cash` *:* currency converter
+ • `/cash`*:* currency converter
 Example:
  `/cash 1 USD INR`  
       _OR_

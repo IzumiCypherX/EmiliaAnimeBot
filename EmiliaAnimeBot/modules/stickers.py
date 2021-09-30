@@ -33,7 +33,7 @@ def stickerid(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             "Hello "
             + f"{mention_html(msg.from_user.id, msg.from_user.first_name)}"
-            + ", Please reply to sticker message to get id",
+            + ", Please reply to sticker message to get id sticker",
             parse_mode=ParseMode.HTML,
         )
 
@@ -130,7 +130,7 @@ def kang(update: Update, context: CallbackContext):
         elif msg.reply_to_message.sticker and msg.reply_to_message.sticker.emoji:
             sticker_emoji = msg.reply_to_message.sticker.emoji
         else:
-            sticker_emoji = "🐱"
+            sticker_emoji = "👿"
 
         if not is_animated:
             try:
@@ -162,17 +162,13 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"This Sticker was Kanged Sucessfully.\nEmoji : {sticker_emoji}",
-                    reply_markup = InlineKeyboardMarkup(
-                        [
-                            InlineKeyboardButton(text= "View Pack", url= "t.me/addsticker/{packname}")
-                        ]
-                    ),
+                    f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
+                    + f"\nEmoji is: {sticker_emoji}",
                     parse_mode=ParseMode.MARKDOWN,
                 )
 
             except OSError as e:
-                msg.reply_text("Only Images/Other stickers can be Kanged")
+                msg.reply_text("I can only kang images m8.")
                 print(e)
                 return
 
@@ -245,7 +241,7 @@ def kang(update: Update, context: CallbackContext):
                     emojis=sticker_emoji,
                 )
                 msg.reply_text(
-                    f"Sticker successfully added to)"
+                    f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
                     + f"\nEmoji is: {sticker_emoji}",
                     parse_mode=ParseMode.MARKDOWN,
                 )
@@ -265,14 +261,12 @@ def kang(update: Update, context: CallbackContext):
                     msg.reply_text("Invalid emoji(s).")
                 elif e.message == "Internal Server Error: sticker set not found (500)":
                     msg.reply_text(
-                    f"This Sticker was Kanged Sucessfully.\nEmoji : {sticker_emoji}",
-                    reply_markup = InlineKeyboardMarkup(
-                        [
-                            InlineKeyboardButton(text= "View Pack", url= "t.me/addsticker/{packname}")
-                        ]
-                    ),
-                    parse_mode=ParseMode.MARKDOWN,
-                )
+                        "Sticker successfully added to [pack](t.me/addstickers/%s)"
+                        % packname
+                        + "\n"
+                        "Emoji is:" + " " + sticker_emoji,
+                        parse_mode=ParseMode.MARKDOWN,
+                    )
                 print(e)
 
     elif args:
@@ -312,16 +306,12 @@ def kang(update: Update, context: CallbackContext):
                 emojis=sticker_emoji,
             )
             msg.reply_text(
-                    f"This Sticker was Kanged Sucessfully.\nEmoji : {sticker_emoji}",
-                    reply_markup = InlineKeyboardMarkup(
-                        [
-                            InlineKeyboardButton(text= "View Pack", url= "t.me/addsticker/{packname}")
-                        ]
-                    ),
-                    parse_mode=ParseMode.MARKDOWN,
-                )
+                f"Sticker successfully added to [pack](t.me/addstickers/{packname})"
+                + f"\nEmoji is: {sticker_emoji}",
+                parse_mode=ParseMode.MARKDOWN,
+            )
         except OSError as e:
-            msg.reply_text("I can only kang images")
+            msg.reply_text("I can only kang images m8.")
             print(e)
             return
         except TelegramError as e:
@@ -460,13 +450,13 @@ def makepack_internal(
 
 
 __help__ = """
- ❍ `/stickerid`*:* reply to a sticker to me to tell you its file ID.
- ❍ `/getsticker`*:* reply to a sticker to me to upload its raw PNG file.
- ❍ `/kang`*:* reply to a sticker to add it to your pack.
- ❍ `/stickers`*:* Find stickers for given term on combot sticker catalogue
+ ❍ /stickerid*:* reply to a sticker to me to tell you its file ID.
+ ❍ /getsticker*:* reply to a sticker to me to upload its raw PNG file.
+ ❍ /kang*:* reply to a sticker to add it to your pack.
+ ❍ /stickers*:* Find stickers for given term on combot sticker catalogue
 """
 
-__mod_name__ = "Stickers"
+__mod_name__ = "STICKERS"
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker)
 KANG_HANDLER = DisableAbleCommandHandler("kang", kang, admin_ok=True)

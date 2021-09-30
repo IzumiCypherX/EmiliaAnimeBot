@@ -22,6 +22,27 @@ def runs(update: Update, context: CallbackContext):
 
 
 @run_async
+def igris(update: Update, context: CallbackContext):
+    update.effective_message.reply_text(random.choice(fun_strings.IGRIS_STRINGS))
+                                                
+@run_async
+def arise(update: Update, context: CallbackContext):
+    message = update.effective_message
+    name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
+    reply_photo = message.reply_to_message.reply_photo if message.reply_to_message else message.reply_photo
+    reply_photo(
+        random.choice(fun_strings.IGRIS_IMG), caption=f'*Command Me {name}*')
+     
+
+@run_async
+def senpai(update: Update, context: CallbackContext):
+    message = update.effective_message
+    name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
+    reply_photo = message.reply_to_message.reply_photo if message.reply_to_message else message.reply_photo
+    reply_photo(
+        random.choice(fun_strings.CUTVEIN_IMG), caption=f'*here I am for you {name} senpai , I will destroy you..*')
+
+@run_async
 def truth(update: Update, context: CallbackContext):
     update.effective_message.reply_text(random.choice(fun_strings.TRUTH_STRINGS))
 
@@ -34,6 +55,23 @@ def insult(update: Update, _):
 @run_async
 def dare(update: Update, context: CallbackContext):
     update.effective_message.reply_text(random.choice(fun_strings.DARE_STRINGS))
+    
+@run_async
+def sanitize(update: Update, context: CallbackContext):
+    message = update.effective_message
+    name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
+    reply_animation = message.reply_to_message.reply_animation if message.reply_to_message else message.reply_animation
+    reply_animation(GIF_ID, caption=f'*Sanitizes {name}*')
+
+
+@run_async
+def sanitize(update: Update, context: CallbackContext):
+    message = update.effective_message
+    name = message.reply_to_message.from_user.first_name if message.reply_to_message else message.from_user.first_name
+    reply_animation = message.reply_to_message.reply_animation if message.reply_to_message else message.reply_animation
+    reply_animation(
+        random.choice(fun_strings.GIFS), caption=f'*Sanitizes {name}*')
+
 
 @run_async
 def slap(update: Update, context: CallbackContext):
@@ -82,7 +120,7 @@ def slap(update: Update, context: CallbackContext):
     throw = random.choice(fun_strings.THROW)
 
     if update.effective_user.id == 1096215023:
-        temp = "The Catto scratches {user2}"
+        temp = "@NeoTheKitty scratches {user2}"
 
     reply = temp.format(
         user1=user1, user2=user2, item=item, hits=hit, throws=throw)
@@ -149,6 +187,15 @@ def shrug(update: Update, context: CallbackContext):
 
 
 @run_async
+def bluetext(update: Update, context: CallbackContext):
+    msg = update.effective_message
+    reply_text = msg.reply_to_message.reply_text if msg.reply_to_message else msg.reply_text
+    reply_text(
+        "/BLUE /TEXT\n/MUST /CLICK\n/I /AM /A /STUPID /ANIMAL /THAT /IS /ATTRACTED /TO /COLORS"
+    )
+
+
+@run_async
 def rlg(update: Update, context: CallbackContext):
     eyes = random.choice(fun_strings.EYES)
     mouth = random.choice(fun_strings.MOUTHS)
@@ -173,56 +220,73 @@ def table(update: Update, context: CallbackContext):
     reply_text(random.choice(fun_strings.TABLE))
 
 __help__ = """
- ❍ `/runs`*:* Reply a random string from an array of replies
- ❍ `/slap`*:* Slap a user, or get slapped if not a reply 🌝
- ❍ `/shrug`*:* Get shrug XD
- ❍ `/table`*:* Get flip/unflip :v
- ❍ `/rlg`*:* Join ears,nose,mouth and create an emo ;-;
- ❍ `/shout <keyword>`*:* Write anything you want to give loud shout
- ❍ `/weebify <text>`*:* Returns a weebified text
- ❍ `/pat`*:* Pats a user, or get patted (^-^)
+ • `/runs`*:* reply a random string from an array of replies
+ • `/slap`*:* slap a user, or get slapped if not a reply 🌝
+ • `/shrug`*:* get shrug XD
+ • `/table`*:* get flip/unflip :v
+ • `/bluetext`*:* check urself :V
+ • `/rlg`*:* Join ears,nose,mouth and create an emo ;-;
+ • `/shout <keyword>`*:* write anything you want to give loud shout
+ • `/weebify <text>`*:* returns a weebified text
+ • `/sanitize`*:* always use this before `/pat` or any contact
+ • `/pat`*:* pats a user, or get patted (^-^)
+ • `/uwu`*:* gives a UwU reaction with girf or sticker
+ • `/owo`*:* gives a OwO reaction with gif or sticket
   - - - - - - - - - -
-❍ *Games* 🎲 *:*
- ❍ `/truth`*:* Get ready to reveal a surprising truth🤫
- ❍ `/dare`*:* A dare is on way 😈
- ❍ `/insult`*:* Insult the person
- ❍ `/decide`*:* Randomly answers yes/no/maybe/idk
- ❍ `/toss`*:* Tosses A coin
- ❍ `/roll`*:* Roll a dice & get you a number
+• *Games* 🎲 *:*
+ • `/truth`*:* Get ready to reveal a surprising truth🤫
+ • `/dare`*:* A dare is on way 😈
+ • `/igris`*:* Summon up IGRIS
+ • `/insult`*:* Insult the person
+ • `/decide`*:* Randomly answers yes/no/maybe/idk
+ • `/toss`*:* Tosses A coin
+ • `/roll`*:* Roll a dice & get you a number
+ • `/senpai`*:* call Yumeko senpai to help you 
 """
 
-RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
+INSULT_HANDLER = DisableAbleCommandHandler("insult", insult)
+ARISE_HANDLER = DisableAbleCommandHandler("arise", arise)   
+SENPAI_HANDLER = DisableAbleCommandHandler("senpai", senpai)                                   
+IGRIS_HANDLER = DisableAbleCommandHandler("igris", igris)
 TRUTH_HANDLER = DisableAbleCommandHandler("truth", truth)
 DARE_HANDLER = DisableAbleCommandHandler("dare", dare)
-INSULT_HANDLER = DisableAbleCommandHandler("insult", insult)
+SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize)
+RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap)
 PAT_HANDLER = DisableAbleCommandHandler("pat", pat)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
+BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
 RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
 
 dispatcher.add_handler(INSULT_HANDLER)
+dispatcher.add_handler(ARISE_HANDLER)     
+dispatcher.add_handler(SENPAI_HANDLER)                                     
+dispatcher.add_handler(IGRIS_HANDLER)
 dispatcher.add_handler(TRUTH_HANDLER)
 dispatcher.add_handler(DARE_HANDLER)
+dispatcher.add_handler(SANITIZE_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
 dispatcher.add_handler(PAT_HANDLER)
 dispatcher.add_handler(ROLL_HANDLER)
 dispatcher.add_handler(TOSS_HANDLER)
 dispatcher.add_handler(SHRUG_HANDLER)
+dispatcher.add_handler(BLUETEXT_HANDLER)
 dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
 
 __mod_name__ = "Fun"
 __command_list__ = [
-    "runs", "slap", "roll", "toss", "shrug", "rlg", "decide",
-    "table", "pat", "dare", "truth", "insult"
+    "runs", "slap", "roll", "toss", "shrug", "bluetext", "rlg", "decide",
+    "table", "pat", "sanitize", "senpai"
 ]
 __handlers__ = [
-    RUNS_HANDLER, TRUTH_HANDLER, DARE_HANDLER, SLAP_HANDLER, PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
-    SHRUG_HANDLER, RLG_HANDLER, DECIDE_HANDLER, TABLE_HANDLER, INSULT_HANDLER,
+    RUNS_HANDLER,IGRIS_HANDLER,ARISE_HANDLER,SENPAI_HANDLER,TRUTH_HANDLER, DARE_HANDLER, SLAP_HANDLER, PAT_HANDLER, ROLL_HANDLER, TOSS_HANDLER,
+    SHRUG_HANDLER, BLUETEXT_HANDLER, RLG_HANDLER, DECIDE_HANDLER, TABLE_HANDLER,INSULT_HANDLER, 
+    SANITIZE_HANDLER
 ]

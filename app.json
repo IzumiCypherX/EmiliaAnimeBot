@@ -149,6 +149,11 @@
          "description": "Set this to True if you want to delete command messages from users who don't have the perms to run that command.",
          "value": "True"
       },
+      "AI_API_KEY": {
+      "description": "Make your bot talk using Intellivoid's chatbot API, No Need of This",
+         "required": false,
+         "value": ""
+      },      
       "BAN_STICKER": {
          "description": "ID of the sticker you want to use when banning people. Keep this Empty",
          "required": false,
@@ -161,11 +166,6 @@
       },
       "ARQ_API_KEY": {
          "description": "Get one @ARQRobot on Telegram",
-         "required": true,
-         "value": ""
-      },
-      "LOG_GROUP_ID": {
-         "description": "The ID of the Group where the bot will spam with shitty errors and techy stuff",
          "required": true,
          "value": ""
       }

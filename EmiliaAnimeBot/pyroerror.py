@@ -1,7 +1,8 @@
+
 import sys
 import traceback
 from functools import wraps
-from EmiliaAnimeBot import pgram, LOG_GROUP_ID
+from EmiliaAnimeBot import pgram, SUPPORT_CHAT
 
 def split_limits(text):
     if len(text) < 2048:
@@ -16,8 +17,8 @@ def split_limits(text):
         else:
             result.append(small_msg)
             small_msg = line
-        
-    result.append(small_msg)
+    else:
+        result.append(small_msg)
 
     return result
 
@@ -40,8 +41,8 @@ def capture_err(func):
                 ),
             )
             for x in error_feedback:
-                await pgram.send_message(
-                    LOG_GROUP_ID,
+                await pbot.send_message(
+                    SUPPORT_CHAT,
                     x
                 )
             raise err

@@ -448,14 +448,14 @@ def removerace(update: Update, context: CallbackContext) -> str:
 @run_async
 @whitelist_plus
 def demonrace(update: Update, context: CallbackContext):
-    reply = "<b>All Rankers:</b>\n"
+    reply = "<b>Known members of Shinobi Grace🎗:</b>\n"
     bot = context.bot
     for each_user in WOLVES:
         user_id = int(each_user)
         try:
             user = bot.get_chat(user_id)
 
-            reply += f"❍ {mention_html(user_id, html.escape(user.first_name))}\n"
+            reply += f"• {mention_html(user_id, html.escape(user.first_name))}\n"
         except TelegramError:
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
@@ -464,13 +464,13 @@ def demonrace(update: Update, context: CallbackContext):
 @run_async
 @whitelist_plus
 def warcommanders(update: Update, context: CallbackContext):
-    reply = "<b>All Whitelisted(s) 🥈:</b>\n"
+    reply = "<b>Known War Commander 🥈:</b>\n"
     bot = context.bot
     for each_user in TIGERS:
         user_id = int(each_user)
         try:
             user = bot.get_chat(user_id)
-            reply += f"❍ {mention_html(user_id, html.escape(user.first_name))}\n"
+            reply += f"• {mention_html(user_id, html.escape(user.first_name))}\n"
         except TelegramError:
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
@@ -480,12 +480,12 @@ def warcommanders(update: Update, context: CallbackContext):
 @whitelist_plus
 def supremedemons(update: Update, context: CallbackContext):
     bot = context.bot
-    reply = "<b>All Support Users🥇:</b>\n"
+    reply = "<b>Known Supreme Shinobi🥇:</b>\n"
     for each_user in DEMONS:
         user_id = int(each_user)
         try:
             user = bot.get_chat(user_id)
-            reply += f"❍ {mention_html(user_id, html.escape(user.first_name))}\n"
+            reply += f"• {mention_html(user_id, html.escape(user.first_name))}\n"
         except TelegramError:
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
@@ -496,12 +496,12 @@ def supremedemons(update: Update, context: CallbackContext):
 def commandments(update: Update, context: CallbackContext):
     bot = context.bot
     true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>All Sudos🏅:</b>\n"
+    reply = "<b>Known Shinobis with Commandments 🏅:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
             user = bot.get_chat(user_id)
-            reply += f"❍ {mention_html(user_id, html.escape(user.first_name))}\n"
+            reply += f"• {mention_html(user_id, html.escape(user.first_name))}\n"
         except TelegramError:
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
@@ -512,35 +512,35 @@ def commandments(update: Update, context: CallbackContext):
 def paradise(update: Update, context: CallbackContext):
     bot = context.bot
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>🍁All Devs⚡️:</b>\n"
+    reply = "<b>🍁Shinobis with access to Chakra⚡️:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
             user = bot.get_chat(user_id)
-            reply += f"❍ {mention_html(user_id, html.escape(user.first_name))}\n"
+            reply += f"• {mention_html(user_id, html.escape(user.first_name))}\n"
         except TelegramError:
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
 
-SUDO_HANDLER = CommandHandler(("addsudo", "sudoadd"), addcommandment)
-ADDSUPREME_HANDLER = CommandHandler(("addsupport", "supportadd"), addsupreme)
-ADDWARLEVEL_HANDLER = CommandHandler(("addwhite"), addwarlevel)
-ADDRACE_HANDLER = CommandHandler(("addrank", "rankadd"), addrace)
-UNSUDO_HANDLER = CommandHandler(("delsudo", "rmsudo"), removecommandment)
-REMOVESUPREME_HANDLER = CommandHandler(("delsupport", "rmsupport"),
+SUDO_HANDLER = CommandHandler(("addcommandment", "addtendemon"), addcommandment)
+ADDSUPREME_HANDLER = CommandHandler(("addsupreme", "addsdemon"), addsupreme)
+ADDWARLEVEL_HANDLER = CommandHandler(("addwarlevel"), addwarlevel)
+ADDRACE_HANDLER = CommandHandler(("addrace", "adddemon"), addrace)
+UNSUDO_HANDLER = CommandHandler(("removecommandment", "removecommandment"), removecommandment)
+REMOVESUPREME_HANDLER = CommandHandler(("removesupreme", "removesupreme"),
                                    removesupreme)
-REMOVEWARCOMMANDER_HANDLER = CommandHandler(("delwhite"), removewarcommander)
-REMOVERACE_HANDLER = CommandHandler(("delrank", "rmrank"),
+REMOVEWARCOMMANDER_HANDLER = CommandHandler(("removewarcommander"), removewarcommander)
+REMOVERACE_HANDLER = CommandHandler(("removerace", "removedemon"),
                                      removerace)
 
-DEMONRACE_HANDLER = CommandHandler(["rankers", "rankers"],
+DEMONRACE_HANDLER = CommandHandler(["demonrace", "racemembers"],
                                        demonrace)
-WARCOMMANDERS_HANDLER = CommandHandler(["whites"], warcommanders)
-SUPREMEDEMONS_HANDLER = CommandHandler(["supports", "gbanners"], supremedemons)
-COMMANDMENTS_HANDLER = CommandHandler(["sudos", "listsudo"], commandments)
-PARADISE_HANDLER = CommandHandler(["gods", "chinese"], paradise)
+WARCOMMANDERS_HANDLER = CommandHandler(["warcommanders"], warcommanders)
+SUPREMEDEMONS_HANDLER = CommandHandler(["supremedemons", "sdemons"], supremedemons)
+COMMANDMENTS_HANDLER = CommandHandler(["commandments", "tendemons"], commandments)
+PARADISE_HANDLER = CommandHandler(["paradise", "paradise"], paradise)
 
 dispatcher.add_handler(SUDO_HANDLER)
 dispatcher.add_handler(ADDSUPREME_HANDLER)

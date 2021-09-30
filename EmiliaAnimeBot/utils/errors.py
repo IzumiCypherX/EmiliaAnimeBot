@@ -1,8 +1,7 @@
 import sys
 import traceback
 from functools import wraps
-from EmiliaAnimeBot import pgram as app
-from EmiliaAnimeBot import  LOG_GROUP_ID
+from EmiliaAnimeBot import app, LOG_GROUP_ID
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
 
@@ -19,8 +18,8 @@ def split_limits(text):
         else:
             result.append(small_msg)
             small_msg = line
-        
-    result.append(small_msg)
+    else:
+        result.append(small_msg)
 
     return result
 

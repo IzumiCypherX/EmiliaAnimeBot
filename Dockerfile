@@ -64,10 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-RUN git clone -b Alpha https://github.com/IzumiCypherX/EmiliaAnimeBot /app
-WORKDIR /app
+# Copy Python Requirements to /root/EmiliaAnimeBot
+RUN git clone -b Alpha https://github.com/IzumiCypherX/EmiliaAnimeBot /root/EmiliaAnimeBot
+WORKDIR /root/EmiliaAnimeBot
 
-COPY ./EmiliaAnimeBot/sample_config.py ./EmiliaAnimeBot/config.py* /app/EmiliaAnimeBot/
+#Copy config file to /root/EmiliaAnimeBot/EmiliaAnimeBot
+COPY ./EmiliaAnimeBot/sample_config.py ./EmiliaAnimeBot/config.py* /root/EmiliaAnimeBot/EmiliaAnimeBot/
 
 ENV PATH="/home/bot/bin:$PATH"
 

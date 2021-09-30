@@ -1,4 +1,3 @@
-# thanks to @TheHamkerCat
 import re
 import sre_constants
 
@@ -7,8 +6,8 @@ from pyrogram import filters
 from EmiliaAnimeBot import pgram as app
 from EmiliaAnimeBot.utils.filter_groups import regex_group
 
-__mod_name__ = "Sed"
-__help__ = "Just a Regex function \n\n Example: s/foo/bar"
+__MODULE__ = "Sed"
+__HELP__ = "**Usage:**\ns/hmm/owo"
 
 
 DELIMITERS = ("/", ":", "|", "_")

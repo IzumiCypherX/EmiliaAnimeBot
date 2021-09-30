@@ -13,7 +13,7 @@ from EmiliaAnimeBot import telethn
 
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
-db = client["emiliaanimebot"]
+db = client["yumekojabamibot"]
 gbanned = db.gban
 
 def register(**args):

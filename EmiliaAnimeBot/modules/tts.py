@@ -7,6 +7,7 @@ import random
 from telegram import ChatAction
 from gtts import gTTS
 import time
+from telegram import ChatAction
 from feedparser import parse
 import json
 import urllib.request
@@ -33,19 +34,21 @@ def tts(update: Update, context: CallbackContext):
     update.message.chat.send_action(ChatAction.RECORD_AUDIO)
     lang="ml"
     tts = gTTS(reply, lang)
-    tts.save("owo.mp3")
-    with open("owo.mp3", "rb") as f:
+    tts.save("k.mp3")
+    with open("k.mp3", "rb") as f:
         linelist = list(f)
         linecount = len(linelist)
     if linecount == 1:
         update.message.chat.send_action(ChatAction.RECORD_AUDIO)
         lang = "en"
         tts = gTTS(reply, lang)
-        tts.save("owo.mp3")
-    with open("owo.mp3", "rb") as speech:
+        tts.save("k.mp3")
+    with open("k.mp3", "rb") as speech:
         update.message.reply_voice(speech, quote=False)
 
-
+__help__ = """
+ - /tts <text>: convert text to speech
+ """
 TTS_HANDLER = DisableAbleCommandHandler("tts", tts, pass_args=True)
 dispatcher.add_handler(TTS_HANDLER)
 

@@ -13,7 +13,11 @@ from EmiliaAnimeBot.modules.sql import antiflood_sql as sql
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CallbackQueryHandler, CommandHandler, Filters, MessageHandler, run_async
 from telegram.utils.helpers import mention_html, escape_markdown
+from EmiliaAnimeBot import dispatcher
+from EmiliaAnimeBot.modules.helper_funcs.chat_status import is_user_admin, user_admin, can_restrict
 from EmiliaAnimeBot.modules.helper_funcs.string_handling import extract_time
+from EmiliaAnimeBot.modules.log_channel import loggable
+from EmiliaAnimeBot.modules.sql import antiflood_sql as sql
 from EmiliaAnimeBot.modules.connection import connected
 from EmiliaAnimeBot.modules.helper_funcs.alternate import send_message
 FLOOD_GROUP = 3
@@ -358,7 +362,7 @@ will result in restricting that user.
  `1w` = 1 week
  """
 
-__mod_name__ = "Floods"
+__mod_name__ = "Anti-Flood"
 
 FLOOD_BAN_HANDLER = MessageHandler(
     Filters.all & ~Filters.status_update & Filters.group, check_flood)
