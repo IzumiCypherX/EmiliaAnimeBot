@@ -1,14 +1,17 @@
 import html
-from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
-from EmiliaAnimeBot import dispatcher, DRAGONS
-from EmiliaAnimeBot.modules.helper_funcs.extraction import extract_user
-from telegram.ext import CallbackContext, CallbackQueryHandler, Filters, run_async
-import EmiliaAnimeBot.modules.sql.approve_sql as sql
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import user_admin
-from EmiliaAnimeBot.modules.log_channel import loggable
+
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
-from telegram.utils.helpers import mention_html
 from telegram.error import BadRequest
+from telegram.ext import CallbackContext, CallbackQueryHandler, Filters, run_async
+from telegram.utils.helpers import mention_html
+
+import EmiliaAnimeBot.modules.sql.approve_sql as sql
+from EmiliaAnimeBot import dispatcher, DRAGONS
+from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
+from EmiliaAnimeBot.modules.helper_funcs.chat_status import user_admin
+from EmiliaAnimeBot.modules.helper_funcs.extraction import extract_user
+from EmiliaAnimeBot.modules.log_channel import loggable
+
 @loggable
 @user_admin
 @run_async
@@ -28,7 +31,7 @@ def approve(update, context):
         member = chat.get_member(user_id)
     except BadRequest:
         return ""
-    if member.status == "administrator" or member.status == "creator":
+    if member.status in ("administrator", "creator"):
         message.reply_text(
             "User is already admin - locks, blocklists, and antiflood already don't apply to them."
         )
@@ -73,7 +76,7 @@ def disapprove(update, context):
         member = chat.get_member(user_id)
     except BadRequest:
         return ""
-    if member.status == "administrator" or member.status == "creator":
+    if member.status in ("administrator", "creator"):
         message.reply_text("This user is an admin, they can't be unapproved.")
         return ""
     if not sql.is_approved(message.chat_id, user_id):
@@ -173,12 +176,12 @@ def unapproveall_btn(update: Update, context: CallbackContext):
     member = chat.get_member(query.from_user.id)
     if query.data == "unapproveall_user":
         if member.status == "creator" or query.from_user.id in DRAGONS:
-            users = []
             approved_users = sql.list_approved(chat.id)
-            for i in approved_users:
-                users.append(int(i.user_id))
+            users = [int(i.user_id) for i in approved_users]
             for user_id in users:
                 sql.disapprove(chat.id, user_id)
+            message.edit_text("Successfully Unapproved all user in this Chat.")
+            return
 
         if member.status == "administrator":
             query.answer("Only owner of the chat can do this.")
