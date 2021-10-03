@@ -12,6 +12,7 @@ from EmiliaAnimeBot.modules.helper_funcs.chat_status import user_admin
 from EmiliaAnimeBot.modules.helper_funcs.extraction import extract_user
 from EmiliaAnimeBot.modules.log_channel import loggable
 
+
 @loggable
 @user_admin
 @run_async
