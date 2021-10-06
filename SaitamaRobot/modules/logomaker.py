@@ -20,20 +20,20 @@ async def lego(event):
  await event.reply('Creating your logo...wait!')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./SaitamaRobot/resources/PicsArt_09-07-02.05.12.jpg')
+    img = Image.open('./SaitamaRobot/resources/d1xmeas-dfba9f91-c8c4-40fc-8370-c44369865a01.jpg')
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
     fillcolor = "gold"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./SaitamaRobot/resources/Muroslant.otf", 100)
+    font = ImageFont.truetype("./SaitamaRobot/resources/Death_Note_Font_by_Karlibell22.ttf", 100)
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
     draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(222, 222, 222))
     x = (image_widthz-w)/2
     y= ((image_heightz-h)/2+6)
-    draw.text((x, y), text, font=font, fill="green", stroke_width=7, stroke_fill="black")
+    draw.text((x, y), text, font=font, fill="white", stroke_width=7, stroke_fill="black")
     fname2 = "LogoByYone.png"
     img.save(fname2, "png")
     await tbot.send_file(event.chat_id, fname2, caption="Made By @nobydayaninfo")
@@ -60,13 +60,13 @@ async def lego(event):
  await event.reply('Creating your logo...wait!')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./SaitamaRobot/resources/PicsArt_09-07-02.05.12.jpg')
+    img = Image.open('./SaitamaRobot/resources/d1xmeas-dfba9f91-c8c4-40fc-8370-c44369865a01.jpg')
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
     fillcolor = "white"
     shadowcolor = "blue"
-    font = ImageFont.truetype("./SaitamaRobot/resources/Muroslant.otf", 100)
+    font = ImageFont.truetype("./SaitamaRobot/resources/Death_Note_Font_by_Karlibell22.ttf", 100)
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
