@@ -1,5 +1,5 @@
 # We're using Debian Slim Buster image
-FROM python:3.8.5-slim-buster
+FROM python:3.9.7-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -64,10 +64,10 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-RUN git clone -b Alpha https://github.com/IzumiCypherX/EmiliaAnimeBot /root/EmiliaAnimeBot 
-WORKDIR /root/EmiliaAnimeBot
+RUN git clone -b Stable https://github.com/IzumiCypherX/EmiliaAnimeBot /app
+WORKDIR /app
 
-COPY ./EmiliaAnimeBot/sample_config.py ./EmiliaAnimeBot/config.py* /root/EmiliaAnimeBot/EmiliaAnimeBot/
+COPY ./EmiliaAnimeBot/sample_config.py ./EmiliaAnimeBot/config.py* /app/EmiliaAnimeBot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
