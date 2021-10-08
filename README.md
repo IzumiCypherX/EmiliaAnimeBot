@@ -28,7 +28,7 @@ These are the Things that Tangent Can Help You With:
 + [x] Working Instance Available
 + [x] Clean Code
 + [x] Docker/Local Machine
-+ [ ] Heroku Deploy
++ [x] Heroku Deploy [Visit Support Group For Bypass Method]
 
 #### Creator Info/Credits
 
@@ -47,9 +47,8 @@ Thanks To:
 ```
 
 
-
 <details>
-	<summary>Heroku Deploy</summary>
+	<summary>Heroku/Railway Deploy</summary>
 	<br>
 	<b>
 The Easiest Way to Deploy This Bot is Via Heroku.
@@ -60,10 +59,14 @@ The Easiest Way to Deploy This Bot is Via Heroku.
         <a href="https://heroku.com/deploy?template=https://github.com/IzumiCypherX/EmiliaAnimeBot">
             <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
         </a>
-    </p>
 </h1>
-
 </details> 
+
+
+
+
+
+
 
 <details>
     <summary>More Deploy Options</summary>
