@@ -65,8 +65,13 @@ The Easiest Way to Deploy This Bot is Via Heroku.
             <img src="https://railway.app/button.svg" alt="Railway">
     </p>
 </h1>
-
 </details> 
+
+
+
+
+
+
 
 <details>
     <summary>More Deploy Options</summary>
