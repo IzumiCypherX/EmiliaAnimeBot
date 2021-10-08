@@ -59,11 +59,6 @@ The Easiest Way to Deploy This Bot is Via Heroku.
         <a href="https://heroku.com/deploy?template=https://github.com/IzumiCypherX/EmiliaAnimeBot">
             <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
         </a>
-    </p>
-    <p align="center">
-        <a href="https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FIzumiCypherX%2FEmiliaAnimeBot%2Ftree%2Fstable%2F&envs=API_ID%2CAPI_HASH%2CTOKEN%2CDATABASE_URL%2COWNER_ID%2COWNER_USERNAME%2CSUPPORT_CHAT%2CEVENT_LOGS%2CJOIN_LOGGER%2CCASH_API_KEY%2CTIME_API_KEY%2CDEV_USERS%2CDEMONS%2CTIGERS%2CDRAGONS%2CWOLVES%2CENV%2CWEBHOOK%2CPORT%2CNO_LOAD%2CALLOW_EXCL%2CDEL_CMDS%2CMONGO_DB_URI%2CARQ_API_KEY%2CLOG_GROUP_ID&optionalEnvs=DEV_USERS%2CDEMONS%2CTIGERS%2CDRAGONS%2CWOLVES%2CWEBHOOK%2CPORT%2CNO_LOAD&ENVDesc=Keep+as+it+is&WEBHOOKDesc=Leave+Empty&PORTDesc=Leave+as+it+is&NO_LOADDesc=The+modules+to+not+load&ALLOW_EXCLDesc=Allow+Exclaimation+as+Handler&ARQ_API_KEYDesc=Get+from+%40ARQRobot+on+TG&LOG_GROUP_IDDesc=The+Group+where+all+the+error+Msgs+will+Go&ENVDefault=ANYTHING&ALLOW_EXCLDefault=True&DEL_CMDSDefault=True">
-            <img src="https://railway.app/button.svg" alt="Railway">
-    </p>
 </h1>
 </details> 
 
