@@ -6,8 +6,8 @@ ENV PIP_NO_CACHE_DIR 1
 RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
 
 # Installing Required Packages
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install --no-install-recommends -y \
+RUN apt update && apt upgrade -y && \
+    apt install --no-install-recommends -y \
     debian-keyring \
     debian-archive-keyring \
     bash \
@@ -64,7 +64,7 @@ RUN apt-get update && apt-get upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-RUN git clone -b unstable https://github.com/sudo-nautilus/EmiliaAnimeBot /app
+RUN git clone -b Alpha https://github.com/IzumiCypherX/EmiliaAnimeBot /app
 WORKDIR /app
 
 COPY ./EmiliaAnimeBot/sample_config.py ./EmiliaAnimeBot/config.py* /app/EmiliaAnimeBot/
