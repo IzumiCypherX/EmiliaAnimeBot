@@ -19,7 +19,7 @@ from EmiliaAnimeBot.modules.helper_funcs.alternate import send_message
 FLOOD_GROUP = 3
 
 
-@run_async
+run_async=True
 @loggable
 def check_flood(update, context) -> str:
     user = update.effective_user  # type: Optional[User]
@@ -92,7 +92,7 @@ def check_flood(update, context) -> str:
                "\nDon't have enough permission to restrict users so automatically disabled anti-flood".format(chat.title)
 
 
-@run_async
+run_async=True
 @user_admin_no_reply
 @bot_admin
 def flood_button(update: Update, context: CallbackContext):
@@ -119,7 +119,7 @@ def flood_button(update: Update, context: CallbackContext):
             pass
 
 
-@run_async
+run_async=True
 @user_admin
 @loggable
 def set_flood(update, context) -> str:
@@ -198,7 +198,7 @@ def set_flood(update, context) -> str:
     return ""
 
 
-@run_async
+run_async=True
 def flood(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
@@ -234,7 +234,7 @@ def flood(update, context):
                 .format(limit))
 
 
-@run_async
+run_async=True
 @user_admin
 def set_flood_mode(update, context):
     chat = update.effective_chat  # type: Optional[Chat]

@@ -24,7 +24,7 @@ from emoji import UNICODE_EMOJI
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-@run_async
+run_async=True
 def tts(update: Update, context: CallbackContext):
     args = context.args
     current_time = datetime.strftime(datetime.now(), "%d.%m.%Y %H:%M:%S")

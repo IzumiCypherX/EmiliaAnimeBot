@@ -24,7 +24,7 @@ EmiliaAnimeRobot By @TheSidharthaRao
 
 """
 
-@run_async
+run_async=True
 def repo(update: Update, context: CallbackContext):
     update.effective_message.reply_photo(
         GIT_PIC,

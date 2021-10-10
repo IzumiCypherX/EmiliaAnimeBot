@@ -11,7 +11,7 @@ from telegram.utils.helpers import mention_html
 from telegram.error import BadRequest
 @loggable
 @user_admin
-@run_async
+run_async=True
 def approve(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -56,7 +56,7 @@ def approve(update, context):
 
 @loggable
 @user_admin
-@run_async
+run_async=True
 def disapprove(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -94,7 +94,7 @@ def disapprove(update, context):
 
 
 @user_admin
-@run_async
+run_async=True
 def approved(update, context):
     message = update.effective_message
     chat_title = message.chat.title
@@ -112,7 +112,7 @@ def approved(update, context):
 
 
 @user_admin
-@run_async
+run_async=True
 def approval(update, context):
     message = update.effective_message
     chat = update.effective_chat
@@ -134,7 +134,7 @@ def approval(update, context):
         )
 
 
-@run_async
+run_async=True
 def unapproveall(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
@@ -165,7 +165,7 @@ def unapproveall(update: Update, context: CallbackContext):
         )
 
 
-@run_async
+run_async=True
 def unapproveall_btn(update: Update, context: CallbackContext):
     query = update.callback_query
     chat = update.effective_chat

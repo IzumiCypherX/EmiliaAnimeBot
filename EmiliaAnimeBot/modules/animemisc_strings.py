@@ -66,3 +66,40 @@ QUOTES_IMG = (
       "https://i.imgur.com/6lG4tsO.jpg"
       
       ) 
+
+
+
+QUOTES_TEXT = (
+      r""""The world isn't perfect. But it's there for us, doing the best it can....that's what makes it so damn beautiful."
+~ Roy Mustang (Full Metal Alchemist)""",
+      r""""To know sorrow is not terrifying. What is terrifying is to know you can't go back to happiness you could have."
+~ Matsumoto Rangiku (Bleach)""",
+      r""""We are all like fireworks: we climb, we shine and always go our separate ways and become further apart. But even when that time comes, let's not disappear like a firework and continue to shine.. forever."
+~ Hitsugaya Toshiro (Bleach)""",
+      r""""Those who stand at the top determine what's wrong and what's right! This very place is neutral ground! Justice will prevail, you say? But of course it will! Whoever wins this war becomes justice!"
+~ Don Quixote Doflamingo (One Piece)  """,
+      r""""Fear is not evil. It tells you what weakness is. And once you know your weakness, you can become stronger as well as kinder." 
+~Gildarts Clive (Fairy Tail)""",
+      r""""Whatever you lose, you'll find it again. But what you throw away you'll never get back."
+
+~ Kenshin Himura (Rurouni Kenshin: Meiji Kenkaku Romantan) """,
+      r""""Fear is freedom! Subjugation is liberation! Contradiction is truth! Those are the facts of this world! And you will all surrender to them, you pigs in human clothing!" 
+
+~ Satsuki Kiryuuin (Kill la Kill) """,
+      r""""I am the hope of the universe. I am the answer to all living things that cry out for peace. I am protector of the innocent. I am the light in the darkness. I am truth. Ally to good! Nightmare to you!" 
+
+~ Son Goku (Dragon Ball Z)""",
+      r""""Religion, ideology, resources, land, spite, love or just because… No matter how pathetic the reason, it’s enough to start war. War will never cease to exist… reasons can be thought up after the fact… Human nature pursues strife."
+~ Paine (Naruto Shippuden)""",
+      r""""People, who can’t throw something important away, can never hope to change anything."
+~ Armin Arlert (Shingeki no Kyojin / Attack on Titan) """,
+      r"""“I want you to be happy. I want you to laugh a lot. I don’t know what exactly I’ll be able to do for you, but I’ll always be by your side.” 
+
+~ Kagome (InuYasha)""",
+      r"""“Thinking you’re no-good and worthless is the worst thing you can do”
+
+~ Nobito (Doraemon)""",
+      r"""“Don’t give up, there’s no shame in falling down! True shame is to not stand up again!”
+
+~ Shintaro Midorima (Kuroko No Basket)   """
+)

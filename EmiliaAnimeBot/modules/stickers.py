@@ -17,7 +17,7 @@ from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
 combot_stickers_url = "https://combot.org/telegram/stickers?q="
 
 
-@run_async
+run_async=True
 def stickerid(update: Update, context: CallbackContext):
     msg = update.effective_message
     if msg.reply_to_message and msg.reply_to_message.sticker:
@@ -38,7 +38,7 @@ def stickerid(update: Update, context: CallbackContext):
         )
 
 
-@run_async
+run_async=True
 def cb_sticker(update: Update, context: CallbackContext):
     msg = update.effective_message
     split = msg.text.split(" ", 1)
@@ -75,7 +75,7 @@ def getsticker(update: Update, context: CallbackContext):
         )
 
 
-@run_async
+run_async=True
 def kang(update: Update, context: CallbackContext):
     msg = update.effective_message
     user = update.effective_user

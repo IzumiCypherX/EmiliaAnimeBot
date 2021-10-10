@@ -7,7 +7,7 @@ from EmiliaAnimeBot import dispatcher
 from EmiliaAnimeBot.modules.helper_funcs.chat_status import dev_plus
 
 
-@run_async
+run_async=True
 @dev_plus
 def logs(update: Update, context: CallbackContext):
     message = update.effective_message
