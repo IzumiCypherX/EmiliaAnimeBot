@@ -42,7 +42,7 @@ def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
 ### Deep link example ends
 
 
-run_async=True
+@run_async
 @dev_plus
 @gloggable
 def addcommandment(update: Update, context: CallbackContext) -> str:
@@ -98,7 +98,7 @@ def addcommandment(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-run_async=True
+@run_async
 @sudo_plus
 @gloggable
 def addsupreme(
@@ -156,7 +156,7 @@ def addsupreme(
     return log_message
 
 
-run_async=True
+@run_async
 @sudo_plus
 @gloggable
 def addwarlevel(update: Update, context: CallbackContext) -> str:
@@ -212,7 +212,7 @@ def addwarlevel(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-run_async=True
+@run_async
 @sudo_plus
 @gloggable
 def addrace(update: Update, context: CallbackContext) -> str:
@@ -274,7 +274,7 @@ def addrace(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-run_async=True
+@run_async
 @dev_plus
 @gloggable
 def removecommandment(update: Update, context: CallbackContext) -> str:
@@ -318,7 +318,7 @@ def removecommandment(update: Update, context: CallbackContext) -> str:
         return ""
 
 
-run_async=True
+@run_async
 @sudo_plus
 @gloggable
 def removesupreme(update: Update, context: CallbackContext) -> str:
@@ -361,7 +361,7 @@ def removesupreme(update: Update, context: CallbackContext) -> str:
         return ""
 
 
-run_async=True
+@run_async
 @sudo_plus
 @gloggable
 def removewarcommander(update: Update, context: CallbackContext) -> str:
@@ -403,7 +403,7 @@ def removewarcommander(update: Update, context: CallbackContext) -> str:
         return ""
 
 
-run_async=True
+@run_async
 @sudo_plus
 @gloggable
 def removerace(update: Update, context: CallbackContext) -> str:
@@ -445,7 +445,7 @@ def removerace(update: Update, context: CallbackContext) -> str:
         return ""
 
 
-run_async=True
+@run_async
 @whitelist_plus
 def demonrace(update: Update, context: CallbackContext):
     reply = "<b>All Rankers:</b>\n"
@@ -461,7 +461,7 @@ def demonrace(update: Update, context: CallbackContext):
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
-run_async=True
+@run_async
 @whitelist_plus
 def warcommanders(update: Update, context: CallbackContext):
     reply = "<b>All Whitelisted(s) 🥈:</b>\n"
@@ -476,7 +476,7 @@ def warcommanders(update: Update, context: CallbackContext):
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
-run_async=True
+@run_async
 @whitelist_plus
 def supremedemons(update: Update, context: CallbackContext):
     bot = context.bot
@@ -491,7 +491,7 @@ def supremedemons(update: Update, context: CallbackContext):
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
-run_async=True
+@run_async
 @whitelist_plus
 def commandments(update: Update, context: CallbackContext):
     bot = context.bot
@@ -507,7 +507,7 @@ def commandments(update: Update, context: CallbackContext):
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
-run_async=True
+@run_async
 @whitelist_plus
 def paradise(update: Update, context: CallbackContext):
     bot = context.bot

@@ -17,7 +17,7 @@ from EmiliaAnimeBot.modules.log_channel import loggable
 from EmiliaAnimeBot.modules.helper_funcs.alternate import send_message
 
 
-run_async=True
+@run_async
 @connection_status
 @bot_admin
 @can_promote
@@ -99,7 +99,7 @@ def promote(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-run_async=True
+@run_async
 @connection_status
 @bot_admin
 @can_promote
@@ -172,7 +172,7 @@ def demote(update: Update, context: CallbackContext) -> str:
         return
 
 
-run_async=True
+@run_async
 @connection_status
 @bot_admin
 @can_promote
@@ -236,7 +236,7 @@ def set_title(update: Update, context: CallbackContext):
         parse_mode=ParseMode.HTML)
 
 
-run_async=True
+@run_async
 @bot_admin
 @can_pin
 @user_admin
@@ -276,7 +276,7 @@ def pin(update: Update, context: CallbackContext) -> str:
         return log_message
 
 
-run_async=True
+@run_async
 @bot_admin
 @can_pin
 @user_admin
@@ -302,7 +302,7 @@ def unpin(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-run_async=True
+@run_async
 @bot_admin
 @user_admin
 @connection_status
@@ -327,7 +327,7 @@ def invite(update: Update, context: CallbackContext):
         )
 
 
-run_async=True
+@run_async
 @connection_status
 def adminlist(update, context):
     chat = update.effective_chat  # type: Optional[Chat]

@@ -125,7 +125,7 @@ if is_module_loaded(FILENAME):
                 else:
                     return True
 
-    run_async=True
+    @run_async
     @connection_status
     @user_admin
     def disable(update: Update, context: CallbackContext):
@@ -148,7 +148,7 @@ if is_module_loaded(FILENAME):
         else:
             update.effective_message.reply_text("What should I disable?")
 
-    run_async=True
+    @run_async
     @connection_status
     @user_admin
     def disable_module(update: Update, context: CallbackContext):
@@ -199,7 +199,7 @@ if is_module_loaded(FILENAME):
         else:
             update.effective_message.reply_text("What should I disable?")
 
-    run_async=True
+    @run_async
     @connection_status
     @user_admin
     def enable(update: Update, context: CallbackContext):
@@ -220,7 +220,7 @@ if is_module_loaded(FILENAME):
         else:
             update.effective_message.reply_text("What should I enable?")
 
-    run_async=True
+    @run_async
     @connection_status
     @user_admin
     def enable_module(update: Update, context: CallbackContext):
@@ -271,7 +271,7 @@ if is_module_loaded(FILENAME):
         else:
             update.effective_message.reply_text("What should I enable?")
 
-    run_async=True
+    @run_async
     @connection_status
     @user_admin
     def list_cmds(update: Update, context: CallbackContext):
@@ -297,7 +297,7 @@ if is_module_loaded(FILENAME):
         return "The following commands are currently restricted:\n{}".format(
             result)
 
-    run_async=True
+    @run_async
     @connection_status
     def commands(update: Update, context: CallbackContext):
         chat = update.effective_chat

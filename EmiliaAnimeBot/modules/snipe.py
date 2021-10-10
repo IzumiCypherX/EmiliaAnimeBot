@@ -14,7 +14,7 @@ from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
 USERS_GROUP = 4
 
 
-run_async=True
+@run_async
 def snipe(update: Update, context: CallbackContext):
     args = context.args
     bot = context.bot

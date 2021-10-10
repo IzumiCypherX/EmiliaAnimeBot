@@ -50,7 +50,7 @@ ENUM_FUNC_MAP = {
 }
 
 
-run_async=True
+@run_async
 @typing_action
 def list_handlers(update, context):
     chat = update.effective_chat
@@ -265,7 +265,7 @@ def stop_filter(update, context):
     )
 
 
-run_async=True
+@run_async
 def reply_filter(update, context):
     chat = update.effective_chat  # type: Optional[Chat]
     message = update.effective_message  # type: Optional[Message]
@@ -480,7 +480,7 @@ def reply_filter(update, context):
                 break
 
 
-run_async=True
+@run_async
 def rmall_filters(update, context):
     chat = update.effective_chat
     user = update.effective_user
@@ -501,7 +501,7 @@ def rmall_filters(update, context):
             parse_mode=ParseMode.MARKDOWN)
 
 
-run_async=True
+@run_async
 def rmall_callback(update, context):
     query = update.callback_query
     chat = update.effective_chat

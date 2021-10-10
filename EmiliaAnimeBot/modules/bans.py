@@ -32,7 +32,7 @@ from EmiliaAnimeBot.modules.helper_funcs.string_handling import extract_time
 from EmiliaAnimeBot.modules.log_channel import gloggable, loggable
 
 
-run_async=True
+@run_async
 @connection_status
 @bot_admin
 @can_restrict
@@ -139,7 +139,7 @@ def ban(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-run_async=True
+@run_async
 @connection_status
 @bot_admin
 @can_restrict
@@ -228,7 +228,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-run_async=True
+@run_async
 @connection_status
 @bot_admin
 @can_restrict
@@ -288,7 +288,7 @@ def punch(update: Update, context: CallbackContext) -> str:
     return log_message
 
 
-run_async=True
+@run_async
 @bot_admin
 @can_restrict
 def punchme(update: Update, context: CallbackContext):
@@ -304,7 +304,7 @@ def punchme(update: Update, context: CallbackContext):
         update.effective_message.reply_text("Huh? I can't :/")
 
 
-run_async=True
+@run_async
 @connection_status
 @bot_admin
 @can_restrict
@@ -353,7 +353,7 @@ def unban(update: Update, context: CallbackContext) -> str:
     return log
 
 
-run_async=True
+@run_async
 @connection_status
 @bot_admin
 @can_restrict
