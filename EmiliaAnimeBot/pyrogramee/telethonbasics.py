@@ -19,21 +19,20 @@ async def convert_to_image(event, borg):
     ):
         await borg.send_message(event.chat_id, "`Format Not Supported.`")
         return
-    else:
-        try:
-            time.time()
-            downloaded_file_name = await borg.download_media(
-                lmao.media, sedpath, "`Downloading...`"
-            )
+    try:
+        time.time()
+        downloaded_file_name = await borg.download_media(
+            lmao.media, sedpath, "`Downloading...`"
+        )
 
-        except Exception as e:  # pylint:disable=C0103,W0703
-            await borg.send_message(event.chat_id, str(e))
-        else:
-            lel = await borg.send_message(
-                event.chat_id,
-                "Downloaded to `{}` successfully.".format(downloaded_file_name),
-            )
-            await lel.delete
+    except Exception as e:  # pylint:disable=C0103,W0703
+        await borg.send_message(event.chat_id, str(e))
+    else:
+        lel = await borg.send_message(
+            event.chat_id,
+            "Downloaded to `{}` successfully.".format(downloaded_file_name),
+        )
+        await lel.delete
     if not os.path.exists(downloaded_file_name):
         lel = await borg.send_message(event.chat_id, "Download Unsucessfull :(")
         await lel.delete
@@ -116,10 +115,7 @@ async def get_all_admin_chats(event):
 async def is_admin(event, user):
     try:
         sed = await event.client.get_permissions(event.chat_id, user)
-        if sed.is_admin:
-            is_mod = True
-        else:
-            is_mod = False
+        is_mod = bool(sed.is_admin)
     except:
         is_mod = False
     return is_mod

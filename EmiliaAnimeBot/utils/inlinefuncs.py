@@ -295,7 +295,6 @@ async def torrent_func(answers, text):
                 ),
             )
         )
-        pass
     return answers
 
 

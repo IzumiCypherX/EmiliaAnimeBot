@@ -312,10 +312,8 @@ def removecommandment(update: Update, context: CallbackContext) -> str:
                 chat.title)) + log_message
 
         return log_message
-
-    else:
-        message.reply_text("This user is not a S-RANK Hunter!")
-        return ""
+    message.reply_text("This user is not a S-RANK Hunter!")
+    return ""
 
 
 @run_async
@@ -355,10 +353,8 @@ def removesupreme(update: Update, context: CallbackContext) -> str:
             log_message = f"<b>{html.escape(chat.title)}:</b>\n" + log_message
 
         return log_message
-
-    else:
-        message.reply_text("This user is not a A-RANK Shinobi!")
-        return ""
+    message.reply_text("This user is not a A-RANK Shinobi!")
+    return ""
 
 
 @run_async
@@ -398,9 +394,8 @@ def removewarcommander(update: Update, context: CallbackContext) -> str:
             log_message = f"<b>{html.escape(chat.title)}:</b>\n" + log_message
 
         return log_message
-    else:
-        message.reply_text("This user is not a C-RANK HUNTER!")
-        return ""
+    message.reply_text("This user is not a C-RANK HUNTER!")
+    return ""
 
 
 @run_async
@@ -440,9 +435,8 @@ def removerace(update: Update, context: CallbackContext) -> str:
             log_message = f"<b>{html.escape(chat.title)}:</b>\n" + log_message
 
         return log_message
-    else:
-        message.reply_text("This user is not a B-RANK HUNTER!")
-        return ""
+    message.reply_text("This user is not a B-RANK HUNTER!")
+    return ""
 
 
 @run_async

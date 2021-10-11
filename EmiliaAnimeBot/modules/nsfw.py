@@ -3,16 +3,15 @@ import html
 import nekos
 import requests
 from PIL import Image
-from telegram import ParseMode
-from EmiliaAnimeBot import dispatcher, updater
-import EmiliaAnimeBot.modules.sql.nsfw_sql as sql
-from EmiliaAnimeBot.modules.log_channel import gloggable
-from telegram import Message, Chat, Update, Bot, MessageEntity
+from telegram import Bot, Chat, Message, MessageEntity, ParseMode, Update
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CommandHandler, run_async, CallbackContext
-from EmiliaAnimeBot.modules.helper_funcs.filters import CustomFilters
-from EmiliaAnimeBot.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
+from EmiliaAnimeBot import dispatcher, updater
+from EmiliaAnimeBot.modules.helper_funcs.chat_status import user_admin
+from EmiliaAnimeBot.modules.helper_funcs.filters import CustomFilters
+import EmiliaAnimeBot.modules.sql.nsfw_sql as sql
+from EmiliaAnimeBot.modules.log_channel import gloggable
 
 @run_async
 @user_admin
@@ -31,9 +30,8 @@ def add_nsfw(update: Update, context: CallbackContext):
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         )
         return message
-    else:
-        msg.reply_text("NSFW Mode is already Activated for this chat!")
-        return ""
+    msg.reply_text("NSFW Mode is already Activated for this chat!")
+    return ""
 
 
 @run_async
@@ -47,15 +45,14 @@ def rem_nsfw(update: Update, context: CallbackContext):
     if not is_nsfw:
         msg.reply_text("NSFW Mode is already Deactivated")
         return ""
-    else:
-        sql.rem_nsfw(chat.id)
-        msg.reply_text("Rolled Back to SFW Mode!")
-        message = (
-            f"<b>{html.escape(chat.title)}:</b>\n"
-            f"DEACTIVATED_NSFW\n"
-            f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        )
-        return message
+    sql.rem_nsfw(chat.id)
+    msg.reply_text("Rolled Back to SFW Mode!")
+    message = (
+        f"<b>{html.escape(chat.title)}:</b>\n"
+        f"DEACTIVATED_NSFW\n"
+        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+    )
+    return message
 
 @run_async
 def list_nsfw_chats(update: Update, context: CallbackContext):

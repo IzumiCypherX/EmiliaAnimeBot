@@ -69,12 +69,10 @@ if is_module_loaded(FILENAME):
                                         chat, user.id)
                                 if not is_disabled:
                                     return None
-                                else:
-                                    return args, filter_result
+                                return args, filter_result
 
                             return args, filter_result
-                        else:
-                            return False
+                        return False
 
     class DisableAbleMessageHandler(MessageHandler):
 
@@ -102,8 +100,7 @@ if is_module_loaded(FILENAME):
             if super().check_update(update):
                 if sql.is_command_disabled(chat.id, self.friendly):
                     return False
-                else:
-                    return args, filter_result
+                return args, filter_result
 
     class DisableAbleRegexHandler(RegexHandler):
 
@@ -122,8 +119,7 @@ if is_module_loaded(FILENAME):
             if super().check_update(update):
                 if sql.is_command_disabled(chat.id, self.friendly):
                     return False
-                else:
-                    return True
+                return True
 
     @run_async
     @connection_status

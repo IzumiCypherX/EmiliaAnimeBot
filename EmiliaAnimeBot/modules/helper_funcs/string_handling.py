@@ -99,11 +99,9 @@ def markdown_parser(txt: str,
                         match.start(1) <= start and end <= match.end(1)
                         for match in LINK_REGEX.finditer(txt)):
                     continue
-                # else, check the escapes between the prev and last and forcefully escape the url to avoid mangling
-                else:
-                    # TODO: investigate possible offset bug when lots of emoji are present
-                    res += _selective_escape(txt[prev:start] or
-                                             "") + escape_markdown(ent_text)
+                # TODO: investigate possible offset bug when lots of emoji are present
+                res += _selective_escape(txt[prev:start] or
+                                         "") + escape_markdown(ent_text)
 
             # code handling
             elif ent.type == "code":
@@ -167,26 +165,23 @@ def escape_invalid_curly_brackets(text: str, valids: List[str]) -> str:
                 idx += 2
                 new_text += "{{{{"
                 continue
-            else:
-                success = False
-                for v in valids:
-                    if text[idx:].startswith('{' + v + '}'):
-                        success = True
-                        break
-                if success:
-                    new_text += text[idx:idx + len(v) + 2]
-                    idx += len(v) + 2
-                    continue
-                else:
-                    new_text += "{{"
+            success = False
+            for v in valids:
+                if text[idx:].startswith('{' + v + '}'):
+                    success = True
+                    break
+            if success:
+                new_text += text[idx:idx + len(v) + 2]
+                idx += len(v) + 2
+                continue
+            new_text += "{{"
 
         elif text[idx] == "}":
             if idx + 1 < len(text) and text[idx + 1] == "}":
                 idx += 2
                 new_text += "}}}}"
                 continue
-            else:
-                new_text += "}}"
+            new_text += "}}"
 
         else:
             new_text += text[idx]
@@ -220,8 +215,7 @@ def split_quotes(text: str) -> List:
         if not key:
             key = text[0] + text[0]
         return list(filter(None, [key, rest]))
-    else:
-        return text.split(None, 1)
+    return text.split(None, 1)
 
 
 def remove_escapes(text: str) -> str:
@@ -268,11 +262,10 @@ def extract_time(message, time_val):
             # how even...?
             return ""
         return bantime
-    else:
-        message.reply_text(
-            "Invalid time type specified. Expected m,h, or d, got: {}".format(
-                time_val[-1]))
-        return ""
+    message.reply_text(
+        "Invalid time type specified. Expected m,h, or d, got: {}".format(
+            time_val[-1]))
+    return ""
 
 
 def markdown_to_html(text):

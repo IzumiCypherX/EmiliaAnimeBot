@@ -3,25 +3,28 @@ from telegram import Message
 from telegram.ext import BaseFilter
 
 
-class CustomFilters(object):
+class CustomFilters:
 
     class _Supporters(BaseFilter):
 
-        def filter(self, message: Message):
+        @staticmethod
+        def filter(message: Message):
             return bool(message.from_user and message.from_user.id in DEMONS)
 
     support_filter = _Supporters()
 
     class _Sudoers(BaseFilter):
 
-        def filter(self, message: Message):
+        @staticmethod
+        def filter(message: Message):
             return bool(message.from_user and message.from_user.id in DRAGONS)
 
     sudo_filter = _Sudoers()
 
     class _Developers(BaseFilter):
 
-        def filter(self, message: Message):
+        @staticmethod
+        def filter(message: Message):
             return bool(message.from_user and message.from_user.id in DEV_USERS)
 
     dev_filter = _Developers()
@@ -40,7 +43,8 @@ class CustomFilters(object):
 
     class _HasText(BaseFilter):
 
-        def filter(self, message: Message):
+        @staticmethod
+        def filter(message: Message):
             return bool(message.text or message.sticker or message.photo or
                         message.document or message.video)
 

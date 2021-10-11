@@ -281,12 +281,11 @@ async def get_administrators(chat: Chat) -> List[User]:
 
     if _get:
         return _get
-    else:
-        set(
-            chat.id,
-            [member.user for member in await chat.get_members(filter="administrators")],
-        )
-        return await get_administrators(chat)
+    set(
+        chat.id,
+        [member.user for member in await chat.get_members(filter="administrators")],
+    )
+    return await get_administrators(chat)
 
 
 def admins_only(func: Callable) -> Coroutine:
@@ -414,12 +413,11 @@ def get_url(message_1: Message) -> Union[str, None]:
 
 
 async def fetch(url):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as resp:
-            try:
-                data = await resp.json()
-            except Exception:
-                data = await resp.text()
+    async with aiohttp.ClientSession() as session, session.get(url) as resp:
+        try:
+            data = await resp.json()
+        except Exception:
+            data = await resp.text()
     return data
 
 
@@ -436,7 +434,7 @@ async def json_object_prettify(objecc):
     dicc = objecc.__dict__
     output = ""
     for key, value in dicc.items():
-        if key == "pinned_message" or key == "photo" or key == "_" or key == "_client":
+        if key in ("pinned_message", "photo", "_", "_client"):
             continue
         output += f"**{key}:** `{value}`\n"
     return output

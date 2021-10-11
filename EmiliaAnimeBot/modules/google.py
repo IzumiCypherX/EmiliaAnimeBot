@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import urllib
-from EmiliaAnimeBot import telethn as tbot
+from EmiliaAnimeBot import *
+from EmiliaAnimeBot.events import register
 import glob
 import io
 import os
@@ -19,10 +20,6 @@ from telethon import *
 from telethon.tl import functions
 from telethon.tl import types
 from telethon.tl.types import *
-
-from EmiliaAnimeBot import *
-
-from EmiliaAnimeBot.events import register
 
 opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36"
@@ -88,7 +85,7 @@ opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.157 Mobile Safari/537.36"
 opener.addheaders = [("User-agent", useragent)]
 
-"""
+r"""
 @register(pattern=r"^/reverse(?: |$)(\d*)")
 async def okgoogle(img):
     if os.path.isfile("okgoogle.png"):
@@ -162,7 +159,6 @@ async def okgoogle(img):
 """
 async def ParseSauce(googleurl):
     """Parse/Scrape the HTML code for the info we want."""
-
     source = opener.open(googleurl).read()
     soup = BeautifulSoup(source, "html.parser")
 

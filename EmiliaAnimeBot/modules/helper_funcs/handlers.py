@@ -73,9 +73,8 @@ class CustomCommandHandler(CommandHandler):
             except:
                 user_id = None
 
-            if user_id:
-                if sql.is_user_blacklisted(user_id):
-                    return False
+            if user_id and sql.is_user_blacklisted(user_id):
+                return False
 
             if message.text and len(message.text) > 1:
                 fst_word = message.text.split(None, 1)[0]
@@ -95,18 +94,16 @@ class CustomCommandHandler(CommandHandler):
                     filter_result = self.filters(update)
                     if filter_result:
                         return args, filter_result
-                    else:
-                        return False
+                    return False
 
     def handle_update(self, update, dispatcher, check_result, context=None):
         if context:
             self.collect_additional_context(context, update, dispatcher,
                                             check_result)
             return self.callback(update, context)
-        else:
-            optional_args = self.collect_optional_args(dispatcher, update,
-                                                       check_result)
-            return self.callback(dispatcher.bot, update, **optional_args)
+        optional_args = self.collect_optional_args(dispatcher, update,
+                                                   check_result)
+        return self.callback(dispatcher.bot, update, **optional_args)
 
     def collect_additional_context(self, context, update, dispatcher,
                                    check_result):
@@ -137,7 +134,3 @@ class CustomMessageHandler(MessageHandler):
             self.filters &= ~(
                 Filters.update.edited_message
                 | Filters.update.edited_channel_post)
-
-        def check_update(self, update):
-            if isinstance(update, Update) and update.effective_message:
-                return self.filters(update)

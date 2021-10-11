@@ -3,12 +3,12 @@ from EmiliaAnimeBot.modules.disable import DisableAbleCommandHandler
 from EmiliaAnimeBot import dispatcher, DRAGONS
 from EmiliaAnimeBot.modules.helper_funcs.extraction import extract_user
 from telegram.ext import CallbackContext, CallbackQueryHandler, Filters, run_async
+from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
+from telegram.error import BadRequest
+from telegram.utils.helpers import mention_html
 import EmiliaAnimeBot.modules.sql.approve_sql as sql
 from EmiliaAnimeBot.modules.helper_funcs.chat_status import user_admin
 from EmiliaAnimeBot.modules.log_channel import loggable
-from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
-from telegram.utils.helpers import mention_html
-from telegram.error import BadRequest
 @loggable
 @user_admin
 @run_async
@@ -28,7 +28,7 @@ def approve(update, context):
         member = chat.get_member(user_id)
     except BadRequest:
         return ""
-    if member.status == "administrator" or member.status == "creator":
+    if member.status in ("administrator", "creator"):
         message.reply_text(
             "User is already admin - locks, blocklists, and antiflood already don't apply to them."
         )
@@ -73,7 +73,7 @@ def disapprove(update, context):
         member = chat.get_member(user_id)
     except BadRequest:
         return ""
-    if member.status == "administrator" or member.status == "creator":
+    if member.status in ("administrator", "creator"):
         message.reply_text("This user is an admin, they can't be unapproved.")
         return ""
     if not sql.is_approved(message.chat_id, user_id):
@@ -107,8 +107,7 @@ def approved(update, context):
     if msg.endswith("approved.\n"):
         message.reply_text(f"No users are approved in {chat_title}.")
         return ""
-    else:
-        message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
+    message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
 
 
 @user_admin

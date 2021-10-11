@@ -150,7 +150,7 @@ def new_member(update: Update, context: CallbackContext):
         welcome_bool = True
         media_wel = False
 
-        if sw != None:
+        if sw is not None:
             sw_ban = sw.get_ban(new_mem.id)
             if sw_ban:
                 return
@@ -179,7 +179,7 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Devs
-            elif new_mem.id in DEV_USERS:
+            if new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
                     "Whoa! A member of the 🍁SHINOBI•RANKS🍁 just joined!",
                     reply_to_message_id=reply,
@@ -187,7 +187,7 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Sudos
-            elif new_mem.id in DRAGONS:
+            if new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
                     "GOD! I wasn't expecting a high level Shinobi in here!",
                     reply_to_message_id=reply,
@@ -195,7 +195,7 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Support
-            elif new_mem.id in DEMONS:
+            if new_mem.id in DEMONS:
                 update.effective_message.reply_text(
                     "Huh a Shinobi?! A respected Shinobi just arrived!",
                     reply_to_message_id=reply,
@@ -203,21 +203,21 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Whitelisted
-            elif new_mem.id in TIGERS:
+            if new_mem.id in TIGERS:
                 update.effective_message.reply_text(
                     "OH YEAH! A Chunin just joined!",
                     reply_to_message_id=reply)
                 continue
 
             # Welcome Tigers
-            elif new_mem.id in WOLVES:
+            if new_mem.id in WOLVES:
                 update.effective_message.reply_text(
                     "JEZZ! I wasn't expecting a Shinobi to come here!",
                     reply_to_message_id=reply)
                 continue
 
             # Welcome yourself
-            elif new_mem.id == bot.id:
+            if new_mem.id == bot.id:
                 creator = None
                 for x in bot.bot.get_chat_administrators(
                         update.effective_chat.id):
@@ -239,59 +239,57 @@ def new_member(update: Update, context: CallbackContext):
                 update.effective_message.reply_text(
                     "Watashi ga kita!", reply_to_message_id=reply)
                 continue
+            buttons = sql.get_welc_buttons(chat.id)
+            keyb = build_keyboard(buttons)
+
+            if welc_type not in (sql.Types.TEXT, sql.Types.BUTTON_TEXT):
+                media_wel = True
+
+            first_name = (
+                new_mem.first_name or "PersonWithNoName"
+            )  # edge case of empty name - occurs for some bugs.
+
+            if cust_welcome:
+                if cust_welcome == sql.DEFAULT_WELCOME:
+                    cust_welcome = random.choice(
+                        sql.DEFAULT_WELCOME_MESSAGES).format(
+                            first=escape_markdown(first_name))
+
+                if new_mem.last_name:
+                    fullname = escape_markdown(
+                        f"{first_name} {new_mem.last_name}")
+                else:
+                    fullname = escape_markdown(first_name)
+                count = chat.get_members_count()
+                mention = mention_markdown(new_mem.id,
+                                           escape_markdown(first_name))
+                if new_mem.username:
+                    username = "@" + escape_markdown(new_mem.username)
+                else:
+                    username = mention
+
+                valid_format = escape_invalid_curly_brackets(
+                    cust_welcome, VALID_WELCOME_FORMATTERS)
+                res = valid_format.format(
+                    first=escape_markdown(first_name),
+                    last=escape_markdown(new_mem.last_name or first_name),
+                    fullname=escape_markdown(fullname),
+                    username=username,
+                    mention=mention,
+                    count=count,
+                    chatname=escape_markdown(chat.title),
+                    id=new_mem.id,
+                )
 
             else:
-                buttons = sql.get_welc_buttons(chat.id)
-                keyb = build_keyboard(buttons)
+                res = random.choice(sql.DEFAULT_WELCOME_MESSAGES).format(
+                    first=escape_markdown(first_name))
+                keyb = []
 
-                if welc_type not in (sql.Types.TEXT, sql.Types.BUTTON_TEXT):
-                    media_wel = True
-
-                first_name = (
-                    new_mem.first_name or "PersonWithNoName"
-                )  # edge case of empty name - occurs for some bugs.
-
-                if cust_welcome:
-                    if cust_welcome == sql.DEFAULT_WELCOME:
-                        cust_welcome = random.choice(
-                            sql.DEFAULT_WELCOME_MESSAGES).format(
-                                first=escape_markdown(first_name))
-
-                    if new_mem.last_name:
-                        fullname = escape_markdown(
-                            f"{first_name} {new_mem.last_name}")
-                    else:
-                        fullname = escape_markdown(first_name)
-                    count = chat.get_members_count()
-                    mention = mention_markdown(new_mem.id,
-                                               escape_markdown(first_name))
-                    if new_mem.username:
-                        username = "@" + escape_markdown(new_mem.username)
-                    else:
-                        username = mention
-
-                    valid_format = escape_invalid_curly_brackets(
-                        cust_welcome, VALID_WELCOME_FORMATTERS)
-                    res = valid_format.format(
-                        first=escape_markdown(first_name),
-                        last=escape_markdown(new_mem.last_name or first_name),
-                        fullname=escape_markdown(fullname),
-                        username=username,
-                        mention=mention,
-                        count=count,
-                        chatname=escape_markdown(chat.title),
-                        id=new_mem.id,
-                    )
-
-                else:
-                    res = random.choice(sql.DEFAULT_WELCOME_MESSAGES).format(
-                        first=escape_markdown(first_name))
-                    keyb = []
-
-                backup_message = random.choice(
-                    sql.DEFAULT_WELCOME_MESSAGES).format(
-                        first=escape_markdown(first_name))
-                keyboard = InlineKeyboardMarkup(keyb)
+            backup_message = random.choice(
+                sql.DEFAULT_WELCOME_MESSAGES).format(
+                    first=escape_markdown(first_name))
+            keyboard = InlineKeyboardMarkup(keyb)
 
         else:
             welcome_bool = False
@@ -308,83 +306,82 @@ def new_member(update: Update, context: CallbackContext):
         if new_mem.is_bot:
             should_mute = False
 
-        if user.id == new_mem.id:
-            if should_mute:
-                if welc_mutes == "soft":
-                    bot.restrict_chat_member(
-                        chat.id,
-                        new_mem.id,
-                        permissions=ChatPermissions(
-                            can_send_messages=True,
-                            can_send_media_messages=False,
-                            can_send_other_messages=False,
-                            can_invite_users=False,
-                            can_pin_messages=False,
-                            can_send_polls=False,
-                            can_change_info=False,
-                            can_add_web_page_previews=False,
-                        ),
-                        until_date=(int(time.time() + 24 * 60 * 60)),
-                    )
-                if welc_mutes == "strong":
-                    welcome_bool = False
-                    if not media_wel:
-                        VERIFIED_USER_WAITLIST.update({
-                            new_mem.id: {
-                                "should_welc": should_welc,
-                                "media_wel": False,
-                                "status": False,
-                                "update": update,
-                                "res": res,
-                                "keyboard": keyboard,
-                                "backup_message": backup_message,
-                            }
-                        })
-                    else:
-                        VERIFIED_USER_WAITLIST.update({
-                            new_mem.id: {
-                                "should_welc": should_welc,
-                                "chat_id": chat.id,
-                                "status": False,
-                                "media_wel": True,
-                                "cust_content": cust_content,
-                                "welc_type": welc_type,
-                                "res": res,
-                                "keyboard": keyboard,
-                            }
-                        })
-                    new_join_mem = f"[{escape_markdown(new_mem.first_name)}](tg://user?id={user.id})"
-                    message = msg.reply_text(
-                        f"{new_join_mem}, click the button below to prove you're human.\nYou have 120 seconds.",
-                        reply_markup=InlineKeyboardMarkup([{
-                            InlineKeyboardButton(
-                                text="Yes, I'm human.",
-                                callback_data=f"user_join_({new_mem.id})",
-                            )
-                        }]),
-                        parse_mode=ParseMode.MARKDOWN,
-                        reply_to_message_id=reply,
-                    )
-                    bot.restrict_chat_member(
-                        chat.id,
-                        new_mem.id,
-                        permissions=ChatPermissions(
-                            can_send_messages=False,
-                            can_invite_users=False,
-                            can_pin_messages=False,
-                            can_send_polls=False,
-                            can_change_info=False,
-                            can_send_media_messages=False,
-                            can_send_other_messages=False,
-                            can_add_web_page_previews=False,
-                        ),
-                    )
-                    job_queue.run_once(
-                        partial(check_not_bot, new_mem, chat.id,
-                                message.message_id),
-                        120,
-                        name="welcomemute",
-                    )
+        if user.id == new_mem.id and should_mute:
+            if welc_mutes == "soft":
+                bot.restrict_chat_member(
+                    chat.id,
+                    new_mem.id,
+                    permissions=ChatPermissions(
+                        can_send_messages=True,
+                        can_send_media_messages=False,
+                        can_send_other_messages=False,
+                        can_invite_users=False,
+                        can_pin_messages=False,
+                        can_send_polls=False,
+                        can_change_info=False,
+                        can_add_web_page_previews=False,
+                    ),
+                    until_date=(int(time.time() + 24 * 60 * 60)),
+                )
+            if welc_mutes == "strong":
+                welcome_bool = False
+                if not media_wel:
+                    VERIFIED_USER_WAITLIST.update({
+                        new_mem.id: {
+                            "should_welc": should_welc,
+                            "media_wel": False,
+                            "status": False,
+                            "update": update,
+                            "res": res,
+                            "keyboard": keyboard,
+                            "backup_message": backup_message,
+                        }
+                    })
+                else:
+                    VERIFIED_USER_WAITLIST.update({
+                        new_mem.id: {
+                            "should_welc": should_welc,
+                            "chat_id": chat.id,
+                            "status": False,
+                            "media_wel": True,
+                            "cust_content": cust_content,
+                            "welc_type": welc_type,
+                            "res": res,
+                            "keyboard": keyboard,
+                        }
+                    })
+                new_join_mem = f"[{escape_markdown(new_mem.first_name)}](tg://user?id={user.id})"
+                message = msg.reply_text(
+                    f"{new_join_mem}, click the button below to prove you're human.\nYou have 120 seconds.",
+                    reply_markup=InlineKeyboardMarkup([{
+                        InlineKeyboardButton(
+                            text="Yes, I'm human.",
+                            callback_data=f"user_join_({new_mem.id})",
+                        )
+                    }]),
+                    parse_mode=ParseMode.MARKDOWN,
+                    reply_to_message_id=reply,
+                )
+                bot.restrict_chat_member(
+                    chat.id,
+                    new_mem.id,
+                    permissions=ChatPermissions(
+                        can_send_messages=False,
+                        can_invite_users=False,
+                        can_pin_messages=False,
+                        can_send_polls=False,
+                        can_change_info=False,
+                        can_send_media_messages=False,
+                        can_send_other_messages=False,
+                        can_add_web_page_previews=False,
+                    ),
+                )
+                job_queue.run_once(
+                    partial(check_not_bot, new_mem, chat.id,
+                            message.message_id),
+                    120,
+                    name="welcomemute",
+                )
 
         if welcome_bool:
             if media_wel:
@@ -465,7 +462,7 @@ def left_member(update: Update, context: CallbackContext):
         if left_mem:
 
             # Thingy for spamwatched users
-            if sw != None:
+            if sw is not None:
                 sw_ban = sw.get_ban(left_mem.id)
                 if sw_ban:
                     return
@@ -485,7 +482,7 @@ def left_member(update: Update, context: CallbackContext):
                 return
 
             # Give the devs a special goodbye
-            elif left_mem.id in DEV_USERS:
+            if left_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
                     "See you later at the SOLO•GUILD ADIOUS!",
                     reply_to_message_id=reply,
@@ -493,7 +490,7 @@ def left_member(update: Update, context: CallbackContext):
                 return
 
             # if media goodbye, use appropriate function for it
-            if goodbye_type != sql.Types.TEXT and goodbye_type != sql.Types.BUTTON_TEXT:
+            if goodbye_type not in (sql.Types.TEXT, sql.Types.BUTTON_TEXT):
                 ENUM_FUNC_MAP[goodbye_type](chat.id, cust_goodbye)
                 return
 
@@ -562,7 +559,7 @@ def welcome(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
         )
 
-        if welcome_type == sql.Types.BUTTON_TEXT or welcome_type == sql.Types.TEXT:
+        if welcome_type in (sql.Types.BUTTON_TEXT, sql.Types.TEXT):
             buttons = sql.get_welc_buttons(chat.id)
             if noformat:
                 welcome_m += revert_buttons(buttons)
@@ -754,7 +751,7 @@ def welcomemute(update: Update, context: CallbackContext) -> str:
                 f"#WELCOME_MUTE\n"
                 f"<b>• Admin:</b> {mention_html(user.id, user.first_name)}\n"
                 f"Has toggled welcome mute to <b>OFF</b>.")
-        elif args[0].lower() in ["soft"]:
+        if args[0].lower() in ["soft"]:
             sql.set_welcome_mutes(chat.id, "soft")
             msg.reply_text(
                 "I will restrict users' permission to send media for 24 hours.")
@@ -763,7 +760,7 @@ def welcomemute(update: Update, context: CallbackContext) -> str:
                 f"#WELCOME_MUTE\n"
                 f"<b>• Admin:</b> {mention_html(user.id, user.first_name)}\n"
                 f"Has toggled welcome mute to <b>SOFT</b>.")
-        elif args[0].lower() in ["strong"]:
+        if args[0].lower() in ["strong"]:
             sql.set_welcome_mutes(chat.id, "strong")
             msg.reply_text(
                 "I will now mute people when they join until they prove they're not a bot.\nThey will have 120seconds before they get kicked."
@@ -773,12 +770,11 @@ def welcomemute(update: Update, context: CallbackContext) -> str:
                 f"#WELCOME_MUTE\n"
                 f"<b>• Admin:</b> {mention_html(user.id, user.first_name)}\n"
                 f"Has toggled welcome mute to <b>STRONG</b>.")
-        else:
-            msg.reply_text(
-                "Please enter `off`/`no`/`soft`/`strong`!",
-                parse_mode=ParseMode.MARKDOWN,
-            )
-            return ""
+        msg.reply_text(
+            "Please enter `off`/`no`/`soft`/`strong`!",
+            parse_mode=ParseMode.MARKDOWN,
+        )
+        return ""
     else:
         curr_setting = sql.welcome_mutes(chat.id)
         reply = (
@@ -814,7 +810,7 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
                 f"#CLEAN_WELCOME\n"
                 f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
                 f"Has toggled clean welcomes to <code>ON</code>.")
-    elif args[0].lower() in ("off", "no"):
+    if args[0].lower() in ("off", "no"):
         sql.set_clean_welcome(str(chat.id), False)
         update.effective_message.reply_text(
             "I won't delete old welcome messages.")
@@ -822,10 +818,9 @@ def clean_welcome(update: Update, context: CallbackContext) -> str:
                 f"#CLEAN_WELCOME\n"
                 f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
                 f"Has toggled clean welcomes to <code>OFF</code>.")
-    else:
-        update.effective_message.reply_text(
-            "I understand 'on/yes' or 'off/no' only!")
-        return ""
+    update.effective_message.reply_text(
+        "I understand 'on/yes' or 'off/no' only!")
+    return ""
 
 
 @run_async

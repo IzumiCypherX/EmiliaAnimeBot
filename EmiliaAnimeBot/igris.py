@@ -4,7 +4,7 @@ from EmiliaAnimeBot import telethn
 """Triggers start command in pm and in groupchats"""
 def emiliabot(**args):
     """New message."""
-    pattern = args.get('pattern', None)
+    pattern = args.get('pattern')
     r_pattern = r'^[/!]'
     if pattern is not None and not pattern.startswith('(?i)'):
         args['pattern'] = '(?i)' + pattern
@@ -19,7 +19,7 @@ def emiliabot(**args):
 
 def inlinequery(**args):
     """Inline query."""
-    pattern = args.get('pattern', None)
+    pattern = args.get('pattern')
     if pattern is not None and not pattern.startswith('(?i)'):
         args['pattern'] = '(?i)' + pattern
 
