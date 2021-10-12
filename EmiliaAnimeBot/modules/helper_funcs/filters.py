@@ -5,31 +5,31 @@ from telegram.ext import BaseFilter
 
 class CustomFilters:
 
-    class _Supporters(BaseFilter):
+    class Supporters(BaseFilter):
 
         @staticmethod
         def filter(message: Message):
             return bool(message.from_user and message.from_user.id in DEMONS)
 
-    support_filter = _Supporters()
+    support_filter = Supporters()
 
-    class _Sudoers(BaseFilter):
+    class Sudoers(BaseFilter):
 
         @staticmethod
         def filter(message: Message):
             return bool(message.from_user and message.from_user.id in DRAGONS)
 
-    sudo_filter = _Sudoers()
+    sudo_filter = Sudoers()
 
-    class _Developers(BaseFilter):
+    class Developers(BaseFilter):
 
         @staticmethod
         def filter(message: Message):
             return bool(message.from_user and message.from_user.id in DEV_USERS)
 
-    dev_filter = _Developers()
+    dev_filter = Developers()
 
-    class _MimeType(BaseFilter):
+    class MimeType(BaseFilter):
 
         def __init__(self, mimetype):
             self.mime_type = mimetype
@@ -39,13 +39,13 @@ class CustomFilters:
             return bool(message.document and
                         message.document.mime_type == self.mime_type)
 
-    mime_type = _MimeType
+    mime_type = MimeType
 
-    class _HasText(BaseFilter):
+    class HasText(BaseFilter):
 
         @staticmethod
         def filter(message: Message):
             return bool(message.text or message.sticker or message.photo or
                         message.document or message.video)
 
-    has_text = _HasText()
+    has_text = thankHasText()
