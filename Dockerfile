@@ -5,7 +5,7 @@ ENV PIP_NO_CACHE_DIR 1
 
 RUN sed -i.bak 's/us-west-2\.ec2\.//' /etc/apt/sources.list
 
-RUN echo "a trigger"
+RUN echo "a trigger2"
 
 # Installing Required Packages
 RUN apt-get update && apt-get upgrade -y && \
