@@ -48,4 +48,4 @@ class CustomFilters:
             return bool(message.text or message.sticker or message.photo or
                         message.document or message.video)
 
-    has_text = thankHasText()
+    has_text = HasText()
