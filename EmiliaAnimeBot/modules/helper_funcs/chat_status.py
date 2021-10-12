@@ -3,7 +3,6 @@ from cachetools import TTLCache
 from threading import RLock
 from EmiliaAnimeBot import (DEL_CMDS, DEV_USERS, DRAGONS, SUPPORT_CHAT, DEMONS,
                           TIGERS, WOLVES, dispatcher)
-from EmiliaAnimeBot.modules import connection
 
 from telegram import Chat, ChatMember, ParseMode, Update
 from telegram.ext import CallbackContext
