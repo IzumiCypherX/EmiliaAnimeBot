@@ -382,4 +382,6 @@ def connection_status(func):
 
     return connected_status
 
+from EmiliaAnimeBot.modules import connection
+
 connected = connection.connected
