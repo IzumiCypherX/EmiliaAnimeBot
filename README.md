@@ -38,7 +38,7 @@ Thanks To:
 
 > @PaulSonofLars
 
-> @sudo_nautilus
+> @pokurt
 
 > @kanekiken44
 
