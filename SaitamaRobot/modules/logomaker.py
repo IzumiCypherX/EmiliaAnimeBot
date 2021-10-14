@@ -20,7 +20,7 @@ async def lego(event):
  await event.reply('Creating your logo...wait!')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./SaitamaRobot/resources/d1xmeas-dfba9f91-c8c4-40fc-8370-c44369865a01.jpg')
+    img = Image.open('./SaitamaRobot/resources/d1xmeas-20211014_071313.jpg')
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
@@ -60,7 +60,7 @@ async def lego(event):
  await event.reply('Creating your logo...wait!')
  try:
     text = event.pattern_match.group(1)
-    img = Image.open('./SaitamaRobot/resources/d1xmeas-dfba9f91-c8c4-40fc-8370-c44369865a01.jpg')
+    img = Image.open('./SaitamaRobot/resources/20211014_071313.jpg')
     draw = ImageDraw.Draw(img)
     image_widthz, image_heightz = img.size
     pointsize = 500
