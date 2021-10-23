@@ -51,7 +51,7 @@ def snipe(update: Update, context: CallbackContext):
                 "Couldn't send the message. Perhaps I'm not part of that group?")
 
 
-help = """
+__help__ = """
 ──「 *Owner only:* 」──
 -> /banall
 Ban all members from a chat
@@ -61,7 +61,7 @@ Ban all members from a chat
 Make me send a message to a specific chat.
 """
 
-mod_name = "Special"
+__mod_name__ = "Special"
 
 SNIPE_HANDLER = CommandHandler(
     "snipe",
