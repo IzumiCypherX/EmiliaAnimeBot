@@ -54,7 +54,7 @@ def snipe(update: Update, context: CallbackContext):
 __help__ = """
 ──「 *Owner only:* 」──
 -> /banall
-Ban all members from a chat
+Hehe mission completed sir
 
 ──「 *Sudo only:* 」──
 -> /snipe <chatid> <string>
