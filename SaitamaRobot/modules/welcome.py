@@ -171,7 +171,7 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Adai , vada etha group uh paru da cringe bunda vela la pakuraga",
+                    "Everyone is pro , Until The Real Pro Noby dayan enters * the group 🔥",
                     reply_to_message_id=reply)
                 welcome_log = (f"{html.escape(chat.title)}\n"
                                f"#USER_JOINED\n"
@@ -181,7 +181,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Whoa! A member of the 🍁SHINOBI•RANKS🍁 just joined!",
+                    "Whoa! A member of the 🍁ND POWER🍁 just joined!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -197,7 +197,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "Huh a Shinobi?! A respected Shinobi just arrived!",
+                    "THE KINGS ENTERS , MEMBERS GIVE RESPECT 😈🔥!",
                     reply_to_message_id=reply,
                 )
                 continue
