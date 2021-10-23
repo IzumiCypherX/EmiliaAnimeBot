@@ -7,10 +7,10 @@ from telegram.ext import Filters, CommandHandler
 from telegram.ext.dispatcher import run_async, CallbackContext
 
 import random
-import lynda.modules.sql.users_sql as sql
-from lynda.modules.helper_funcs.filters import CustomFilters
-from lynda import dispatcher, OWNER_ID, LOGGER
-from lynda.modules.disable import DisableAbleCommandHandler
+import EmiliaAnimeBot .modules.sql.users_sql as sql
+from EmiliaAnimeBot .modules.helper_funcs.filters import CustomFilters
+from EmiliaAnimeBot import dispatcher, OWNER_ID, LOGGER
+from EmiliaAnimeBot .disable import DisableAbleCommandHandler
 USERS_GROUP = 4
 
 @run_async
