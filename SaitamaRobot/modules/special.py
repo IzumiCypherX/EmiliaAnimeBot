@@ -9,7 +9,7 @@ from telegram.ext.dispatcher import run_async, CallbackContext
 import random
 import EmiliaAnimeBot .modules.sql.users_sql as sql
 from EmiliaAnimeBot .modules.helper_funcs.filters import CustomFilters
-from EmiliaAnimeBot import dispatcher, OWNER_ID, LOGGER
+from SaitamaRobot import dispatcher, OWNER_ID, LOGGER
 from EmiliaAnimeBot .disable import DisableAbleCommandHandler
 USERS_GROUP = 4
 
