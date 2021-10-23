@@ -7,10 +7,10 @@ from telegram.ext import Filters, CommandHandler
 from telegram.ext.dispatcher import run_async, CallbackContext
 
 import random
-import SaitamaRobot .modules.sql.users_sql as sql
-from SaitamaRobot .modules.helper_funcs.filters import CustomFilters
+import SaitamaRobot.modules.sql.users_sql as sql
+from SaitamaRobot.modules.helper_funcs.filters import CustomFilters
 from SaitamaRobot import dispatcher, OWNER_ID, LOGGER
-from SaitamaRobot .disable import DisableAbleCommandHandler
+from SaitamaRobot.disable import DisableAbleCommandHandler
 USERS_GROUP = 4
 
 @run_async
