@@ -96,6 +96,8 @@ HELP_STRINGS = """
 `Hey there! My name is` [Noby Dayan]("https://telegra.ph/file/c010efe057fb570c8a341.mp4") 
 I'm a Noby bot and help admins manage their groups with Some Powerful Features! `Have a look at the following for an idea of some of the things I can help you with.`"""
 
+START_IMG = "https://telegra.ph/file/466660aa60f93b4ee7896.mp4"
+
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project via [Paytm](#) or by contacting @ndpowersupport\
  Supporting isnt always financial! \
@@ -208,14 +210,23 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-        update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+        update.effective_message.reply_video(
+            START_IMG, caption= "<code>Noby is Here 😎\nI am Awake Since</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [
+                  InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/joinchat/lc3oCoW9_EVhNGZl")
+                  ],
+                  [
+                  InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇs", url="https://t.me/nobydayaninfo")
+                  ]
+                ]
+            ),
         )
-
-
+  
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
     # Log the error before we do anything else, so we can see it even if something breaks.
