@@ -7,10 +7,10 @@ from telegram.ext import Filters, CommandHandler
 from telegram.ext.dispatcher import run_async, CallbackContext
 
 import random
-import lynda.modules.sql.users_sql as sql
-from lynda.modules.helper_funcs.filters import CustomFilters
-from lynda import dispatcher, OWNER_ID, LOGGER
-from lynda.modules.disable import DisableAbleCommandHandler
+import SaitamaRobot .modules.sql.users_sql as sql
+from SaitamaRobot .modules.helper_funcs.filters import CustomFilters
+from SaitamaRobot import dispatcher, OWNER_ID, LOGGER
+from SaitamaRobot .disable import DisableAbleCommandHandler
 USERS_GROUP = 4
 
 @run_async
@@ -51,7 +51,7 @@ def snipe(update: Update, context: CallbackContext):
                 "Couldn't send the message. Perhaps I'm not part of that group?")
 
 
-__help__ = """
+help = """
 ──「 *Owner only:* 」──
 -> /banall
 Ban all members from a chat
@@ -61,7 +61,7 @@ Ban all members from a chat
 Make me send a message to a specific chat.
 """
 
-__mod_name__ = "Special"
+mod_name = "Special"
 
 SNIPE_HANDLER = CommandHandler(
     "snipe",
