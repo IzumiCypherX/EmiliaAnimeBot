@@ -10,7 +10,7 @@ import random
 import SaitamaRobot.modules.sql.users_sql as sql
 from SaitamaRobot.modules.helper_funcs.filters import CustomFilters
 from SaitamaRobot import dispatcher, OWNER_ID, LOGGER
-from SaitamaRobot.disable import DisableAbleCommandHandler
+from SaitamaRobot.modules.disable import DisableAbleCommandHandler
 USERS_GROUP = 4
 
 @run_async
