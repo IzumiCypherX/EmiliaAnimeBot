@@ -30,7 +30,7 @@ async def lego(event):
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
-    draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(222, 222, 222))
+    draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(333, 333, 333))
     x = (image_widthz-w)/2
     y= ((image_heightz-h)/2+6)
     draw.text((x, y), text, font=font, fill="white", stroke_width=7, stroke_fill="black")
@@ -70,7 +70,7 @@ async def lego(event):
     w, h = draw.textsize(text, font=font)
     h += int(h*0.21)
     image_width, image_height = img.size
-    draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(255, 255, 255))
+    draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(333, 333, 333))
     x = (image_widthz-w)/2
     y= ((image_heightz-h)/2+6)
     draw.text((x, y), text, font=font, fill="white", stroke_width=0, stroke_fill="white")
