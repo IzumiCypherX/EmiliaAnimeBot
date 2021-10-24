@@ -71,16 +71,21 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
+              text="📈 Bot Support", url="https://t.me/ndpowersupportgroup"),
+     
+    ],
+    [
+        InlineKeyboardButton(
             text="📮 Update Channel", url="https://t.me/nobydayaninfo"),
     ],
     [
         InlineKeyboardButton(
-            text="📑 Loges", url="https://t.me/ndpowerbanlist"),
+            text="📑 Logs", url="https://t.me/ndpowerbanlist"),
           
 
 
 InlineKeyboardButton(
-            text="🐱 SUPPORT", url="https://t.me/joinchat/UYawrbDUQ5slNS19"
+            text="🐱 Spam group", url="https://t.me/joinchat/UYawrbDUQ5slNS19"
         ),
 
     ],
