@@ -64,7 +64,7 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-RUN git clone -b Stable https://github.com/IzumiCypherX/EmiliaAnimeBot /app
+RUN git clone -b Extra-Features https://github.com/IzumiCypherX/EmiliaAnimeBot /app
 WORKDIR /app
 
 COPY ./EmiliaAnimeBot/sample_config.py ./EmiliaAnimeBot/config.py* /app/EmiliaAnimeBot/
