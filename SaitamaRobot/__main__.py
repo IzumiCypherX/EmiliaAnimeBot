@@ -393,7 +393,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..👩‍💼 I'm *Noby Dayan*
+            text=""" Hi..😎 I'm *Noby Dayan*
                  \nHere is the [Anime Group](https://t.me/nobydayaninfo) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -691,7 +691,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Nothing Is Possible Till Noby Enters There [😎](https://telegra.ph/file/352be4f544848a220d009.mp4)", parse_mode=ParseMode.MARKDOWN)
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "I'm noby spread love and peace [😎](https://telegra.ph/file/352be4f544848a220d009.mp4)", parse_mode=ParseMode.MARKDOWN)
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
