@@ -101,7 +101,7 @@ HELP_STRINGS = """
 `Hey there! My name is` [Noby Dayan]("https://telegra.ph/file/c010efe057fb570c8a341.mp4") 
 I'm a Noby bot and help admins manage their groups with Some Powerful Features! `Have a look at the following for an idea of some of the things I can help you with.`"""
 
-START_IMG = "https://telegra.ph/file/466660aa60f93b4ee7896.mp4"
+START_IMG = "https://telegra.ph/file/3d6f9ea37e8fb8d12497a.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project via [Paytm](#) or by contacting @ndpowersupport\
