@@ -45,13 +45,13 @@ def ban(update: Update, context: CallbackContext) -> str:
             raise
 
     if user_id == bot.id:
-        message.reply_text("I will ban you becareful baka 👺")
+        message.reply_text("Hello mother Licker I said licker 🤣,")
         return log_message
 
     if is_user_ban_protected(chat, user_id, member) and user not in DEV_USERS:
         if user_id == OWNER_ID:
             message.reply_text(
-                "Trying to put me against the God of Chakra huh?")
+                "If owner banned , you'll be kicked my me 😂😂")
             return log_message
         elif user_id in DEV_USERS:
             message.reply_text("I can't act against our own.")
