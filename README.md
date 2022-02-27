@@ -1,10 +1,10 @@
 ![Emilia](https://telegra.ph/file/3a2d5f40a0f3932c527a5.jpg)
-# Emilia
+# Emilia [Unmaintained]
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/IzumiCypherX/EmiliaAnimeBot/graphs/commit-activity) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://perso.crans.org/besson/LICENSE.html)<br> [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)<br> [![Updates channel!](https://img.shields.io/badge/Join%20Channel-↗-red)](https://t.me/TangentXOfficial) 
 [![Support Group!](https://img.shields.io/badge/Join%20Group-↗-green)](https://t.me/TangentXOfficial)
 
 
-### Support Info
+### Support Info [Deprecated]
 
 
 The Support group can be reached out to at [Tangent](https://t.me/TangentChats), where you can ask for help about [Emilia](https://t.me/EmiliaAnimeRobot), discover/request new features, report bugs, and stay in the loop whenever a new update is available. <br>
@@ -21,11 +21,11 @@ These are the Things that Tangent Can Help You With:
 
 ### Status
 
-+ [x] Maintained
-+ [x] Support Group Included
++ [ ] Maintained
++ [ ] Support Group Included
 + [x] Free
 + [x] OpenSourced
-+ [x] Working Instance Available
++ [ ] Working Instance Available
 + [x] Clean Code
 + [x] Docker/Local Machine
 + [x] Heroku Deploy [Visit Support Group For Bypass Method]
